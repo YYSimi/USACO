@@ -1,0 +1,62 @@
+/*
+ID:  ysimidjiy1
+LANG: C
+TASK: palsquare
+*/
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int smartpow(int a, int b) {
+
+  int c = 1;
+
+  if (b == 0) return 1;
+  while (b > 1) {
+
+    if (b%2) {
+      c*=a;
+      //      printf("c is %d\n", c);
+      b--;
+    }
+    else {
+      a*=a;
+      // printf("a is %d\n", a);
+      b = b/2;
+    }
+
+  }
+  //printf("answer:  %d\n", a*c);
+  return a*c;
+}
+
+
+int main(){
+
+  char curstr[19]; //We will store the current square here.
+  FILE *fin = fopen("palsquare.in", "r");
+  FILE *fout = fopen("palsquare.out", "w");
+  int base, square, current=1, i = 0, logger, placeval;
+  float opti;
+
+  fscanf(fin, "%d\n", &base);
+  opti = log(base);
+  //printf("opti: %f\n", opti);
+
+  while (current < 301) {
+    logger = current;
+    square = current*current;
+    
+    while (logger > 1) {
+      placeval = (int)floor(log(logger)/opti); //calculate place value
+      logger = logger - placeval;
+    }
+   
+    current++;
+  }
+
+
+  exit(0);
+
+}
