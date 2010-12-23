@@ -11,10 +11,10 @@ TASK: preface
 #include <assert.h>
 
 typedef struct num {
-    int whole[5];  // I, X, C, M, empty  -- Takes values 0-3
-    int half[4];   // V, L, D, empty -- Takes values 0-1 
-    int c_whole[4]; //IX, XC, CM, empty -- takes values 0-1
-    int c_half[4]; // IV, XL, CD, empty -- takes values 0-1 
+    int whole[6];  // I, X, C, M, empty  -- Takes values 0-3
+    int half[5];   // V, L, D, empty -- Takes values 0-1 
+    int c_whole[5]; //IX, XC, CM, empty -- takes values 0-1
+    int c_half[5]; // IV, XL, CD, empty -- takes values 0-1 
 } num_t;
 
 void inc_whole(num_t *num, int loc);
@@ -59,6 +59,7 @@ void inc_half(num_t *num, int loc){
         num->half[loc] = 0;
         inc_whole(num, loc+1);
     }
+    return;
 }
 
 /* Performs an increment on num_inc while tracking the total number of
@@ -83,6 +84,7 @@ void inc_all(num_t *num_inc, num_t *num_total){
         num_total->half[i] += num_inc->half[i];
     }
     
+    return;
 }
 
 void fprint_num(FILE *stream, num_t num){
@@ -90,6 +92,7 @@ void fprint_num(FILE *stream, num_t num){
     if (num.whole[0] + num.c_whole[0] + num.c_half[0] != 0) {
         fprintf(stream, "I %d\n", num.whole[0]+num.c_whole[0]+num.c_half[0]);
     }
+    //printf("works after whole[0]\n");
     if (num.half[0] + num.c_half[0] != 0) {
         fprintf(stream, "V %d\n", num.half[0] + num.c_half[0]);
     }
@@ -97,6 +100,7 @@ void fprint_num(FILE *stream, num_t num){
         fprintf(stream, "X %d\n", num.whole[1]+num.c_whole[0]+num.c_whole[1]+
                 num.c_half[1]);
     }
+    //printf("works after whole[1]\n");
     if (num.half[1]+num.c_half[1] != 0) {
         fprintf(stream, "L %d\n", num.half[1]+num.c_half[1]);
     }
@@ -104,14 +108,18 @@ void fprint_num(FILE *stream, num_t num){
         fprintf(stream, "C %d\n", num.whole[2]+num.c_whole[1]+num.c_whole[2]+
                 num.c_half[2]);
     }
+    //printf("works after whole[2]\n");
     if (num.half[2]+num.c_half[2] != 0) {
         fprintf(stream, "D %d\n", num.half[2]+num.c_half[2]);
     }
-    if (num.whole[3]+num.c_whole[2]+num.c_whole[3] + num.c_half[3] != 0) {
-        fprintf(stream, "M %d\n", num.whole[3]+num.c_whole[2]+num.c_whole[3]+
-                num.c_half[3]);
+    //printf("Works after half[2]\n");
+    if (num.whole[3]+num.c_whole[2]+num.c_whole[3]+num.c_half[3] != 0) {
+        fprintf(stream, "M %d\n",
+                num.whole[3]+num.c_whole[2]+num.c_whole[3]+num.c_half[3]);
     }
-
+    //printf("works after whole[3]\n");    
+     
+    return;
 }
 
 int main(){
@@ -122,7 +130,7 @@ int main(){
     int inVal;
     int i;
     fscanf(fin, "%d\n", &inVal);
-    printf("%d\n\n", inVal);
+    //printf("%d\n\n", inVal);
 
     num_t numInc, numTotal;
     for (i = 0; i < 5; i++){
@@ -138,22 +146,27 @@ int main(){
         numTotal.c_half[i] = 0;
     }
 
-
+    /*
     printf("\nInc starts:\n");
     fprint_num(stdout, numInc);
     printf("\nTotal starts:\n");
     fprint_num(stdout, numTotal);
-
+    */
 
     for (i = 0; i < inVal; i++){
         inc_all(&numInc, &numTotal); 
     }
     
+    
     printf("\nInc ends:\n");
     fprint_num(stdout, numInc);
     printf("\nTotal ends:\n");
     fprint_num(stdout, numTotal);
-
     fprint_num(fout, numTotal);
+    
+    
+    
+    
+    exit(0);
 
 }
