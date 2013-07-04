@@ -1,0 +1,116 @@
+clear
+[H[2Jg++ -g -pg -lm rect1.cpp
+./a.out rect1.in
+Inserted rectangle (0, 0), (19, 19), 1 into our list
+iteration 0
+processing (2, 2), (18, 18), c: 2
+Iter is at (0, 0), (19, 19), 1
+Calling ProcessPoint.  Args:  nPointColor:  2, nOldColor: 1
+Inserted rectangle (0, 0), (1, 1), 1 into our list
+Inserted rectangle (0, 3), (1, 1), 1 into our list
+Inserted rectangle (2, 2), (1, 1), 2 into our list
+Inserted rectangle (3, 2), (1, 1), 1 into our list
+Deleting rectangle (3, 2), (1, 1), 1
+Iter is at (2, 2), (1, 1), 2
+Calling ProcessPoint.  Args:  nPointColor:  2, nOldColor: 1
+Deleting rectangle (2, 2), (1, 1), 2
+Iter is at (0, 3), (1, 1), 1
+Calling ProcessPoint.  Args:  nPointColor:  2, nOldColor: 1
+Deleting rectangle (0, 3), (1, 1), 1
+Iter is at (0, 0), (1, 1), 1
+Calling ProcessPoint.  Args:  nPointColor:  2, nOldColor: 1
+Deleting rectangle (0, 0), (1, 1), 1
+Inserted rectangle (2, 2), (18, 18), 2 into our list
+iteration 1
+processing (0, 8), (19, 19), c: 3
+Iter is at (2, 2), (18, 18), 2
+Calling ProcessPoint.  Args:  nPointColor:  3, nOldColor: 2
+Deleting rectangle (2, 2), (18, 18), 2
+Iter is at (0, 0), (19, 19), 1
+Calling ProcessPoint.  Args:  nPointColor:  3, nOldColor: 2
+Inserted rectangle (0, 0), (-1, 18), 2 into our list
+Inserted rectangle (0, 20), (-1, 18), 2 into our list
+Inserted rectangle (1, 20), (-1, 18), 2 into our list
+Inserted rectangle (0, 20), (-1, 19), 3 into our list
+Deleting rectangle (0, 20), (-1, 19), 3
+Iter is at (1, 20), (-1, 18), 2
+Calling ProcessPoint.  Args:  nPointColor:  3, nOldColor: 2
+Deleting rectangle (1, 20), (-1, 18), 2
+Iter is at (0, 20), (-1, 18), 2
+Calling ProcessPoint.  Args:  nPointColor:  3, nOldColor: 2
+Deleting rectangle (0, 20), (-1, 18), 2
+Iter is at (0, 0), (19, 19), 1
+Calling ProcessPoint.  Args:  nPointColor:  3, nOldColor: 1
+Inserted rectangle (0, 0), (-1, 7), 1 into our list
+Inserted rectangle (0, 9), (-1, 7), 1 into our list
+Inserted rectangle (0, 8), (-1, 7), 3 into our list
+Inserted rectangle (1, 8), (-1, 7), 1 into our list
+Deleting rectangle (1, 8), (-1, 7), 1
+Iter is at (0, 8), (-1, 7), 3
+Calling ProcessPoint.  Args:  nPointColor:  3, nOldColor: 1
+Deleting rectangle (0, 8), (-1, 7), 3
+Iter is at (0, 9), (-1, 7), 1
+Calling ProcessPoint.  Args:  nPointColor:  3, nOldColor: 1
+Deleting rectangle (0, 9), (-1, 7), 1
+Iter is at (0, 0), (-1, 7), 1
+Calling ProcessPoint.  Args:  nPointColor:  3, nOldColor: 1
+Deleting rectangle (0, 0), (-1, 7), 1
+Inserted rectangle (0, 8), (19, 19), 3 into our list
+iteration 2
+processing (8, 0), (10, 19), c: 4
+Iter is at (0, 8), (19, 19), 3
+Calling ProcessPoint.  Args:  nPointColor:  4, nOldColor: 3
+Deleting rectangle (0, 8), (19, 19), 3
+Iter is at (0, 0), (-1, 18), 2
+Calling ProcessPoint.  Args:  nPointColor:  4, nOldColor: 3
+Deleting rectangle (0, 0), (-1, 18), 2
+Iter is at (0, 0), (19, 19), 1
+Calling ProcessPoint.  Args:  nPointColor:  4, nOldColor: 3
+Inserted rectangle (0, 0), (10, 19), 4 into our list
+Inserted rectangle (0, 20), (9, 19), 3 into our list
+Inserted rectangle (11, 20), (9, 19), 3 into our list
+Inserted rectangle (11, 20), (9, 18), 3 into our list
+Deleting rectangle (11, 20), (9, 18), 3
+Iter is at (11, 20), (9, 19), 3
+Calling ProcessPoint.  Args:  nPointColor:  4, nOldColor: 3
+Deleting rectangle (11, 20), (9, 19), 3
+Iter is at (0, 0), (10, 19), 4
+Calling ProcessPoint.  Args:  nPointColor:  4, nOldColor: 4
+Inserted rectangle (0, 0), (7, -1), 4 into our list
+Inserted rectangle (0, 1), (7, -1), 4 into our list
+Inserted rectangle (8, 0), (7, -1), 4 into our list
+Inserted rectangle (9, 0), (7, -1), 4 into our list
+Deleting rectangle (9, 0), (7, -1), 4
+Iter is at (8, 0), (7, -1), 4
+Calling ProcessPoint.  Args:  nPointColor:  4, nOldColor: 4
+Deleting rectangle (8, 0), (7, -1), 4
+Iter is at (0, 1), (7, -1), 4
+Calling ProcessPoint.  Args:  nPointColor:  4, nOldColor: 4
+Deleting rectangle (0, 1), (7, -1), 4
+Iter is at (0, 0), (7, -1), 4
+Calling ProcessPoint.  Args:  nPointColor:  4, nOldColor: 4
+Deleting rectangle (0, 0), (7, -1), 4
+Iter is at (0, 0), (19, 19), 1
+Calling ProcessPoint.  Args:  nPointColor:  4, nOldColor: 1
+Inserted rectangle (0, 0), (7, -1), 1 into our list
+Inserted rectangle (0, 1), (7, -1), 1 into our list
+Inserted rectangle (8, 0), (7, -1), 4 into our list
+Inserted rectangle (9, 0), (7, -1), 1 into our list
+Deleting rectangle (9, 0), (7, -1), 1
+Iter is at (8, 0), (7, -1), 4
+Calling ProcessPoint.  Args:  nPointColor:  4, nOldColor: 1
+Deleting rectangle (8, 0), (7, -1), 4
+Iter is at (0, 1), (7, -1), 1
+Calling ProcessPoint.  Args:  nPointColor:  4, nOldColor: 1
+Deleting rectangle (0, 1), (7, -1), 1
+Iter is at (0, 0), (7, -1), 1
+Calling ProcessPoint.  Args:  nPointColor:  4, nOldColor: 1
+Deleting rectangle (0, 0), (7, -1), 1
+Inserted rectangle (8, 0), (10, 19), 4 into our list
+Area: 60, color: 4
+Area: 0, color: 3
+Area: 220, color: 4
+Area: 400, color: 1
+cat rect1.out
+1 400
+4 280

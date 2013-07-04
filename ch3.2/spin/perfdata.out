@@ -1,0 +1,1372 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+  8.09      0.65     0.65 157330010     0.00     0.00  std::_List_iterator<CWedge>::_List_iterator(std::_List_node_base*)
+  7.34      1.24     0.59                             main
+  7.34      1.83     0.59 32830000     0.00     0.00  CWheel::AllowsLightThrough(int const&)
+  6.16      2.33     0.50 98300000     0.00     0.00  std::_List_iterator<CWedge>::operator!=(std::_List_iterator<CWedge> const&) const
+  6.03      2.81     0.49 32830000     0.00     0.00  CWedge::Contains(unsigned int)
+  4.91      3.21     0.40 45960000     0.00     0.00  std::_List_iterator<CWheel>::operator++(int)
+  4.11      3.54     0.33 64280005     0.00     0.00  std::list<CWheel, std::allocator<CWheel> >::end()
+  3.05      3.78     0.25 59030000     0.00     0.00  std::list<CWedge, std::allocator<CWedge> >::begin()
+  2.99      4.02     0.24 13100000     0.00     0.00  CWedge::operator+=(int)
+  2.86      4.25     0.23 98300010     0.00     0.00  std::list<CWedge, std::allocator<CWedge> >::end()
+  2.68      4.47     0.22 13100000     0.00     0.00  CWheel::step(int)
+  2.55      4.67     0.21 59030000     0.00     0.00  std::_List_iterator<CWheel>::operator->() const
+  2.49      4.87     0.20 64280000     0.00     0.00  std::_List_iterator<CWheel>::operator!=(std::_List_iterator<CWheel> const&) const
+  2.43      5.07     0.20 82600005     0.00     0.00  std::_List_iterator<CWheel>::_List_iterator(std::_List_node_base*)
+  2.43      5.26     0.20 39270000     0.00     0.00  std::_List_iterator<CWedge>::operator++(int)
+  2.24      5.44     0.18 45930000     0.00     0.00  std::_List_iterator<CWedge>::operator->() const
+  2.24      5.62     0.18 13100000     0.00     0.00  CWheel::FillValidChecksList(std::list<unsigned int, std::allocator<unsigned int> >&)
+  1.74      5.76     0.14 13100000     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::allocate(unsigned long, void const*)
+  1.74      5.90     0.14 18320000     0.00     0.00  std::list<CWheel, std::allocator<CWheel> >::begin()
+  1.68      6.04     0.14 13100000     0.00     0.00  std::list<unsigned int, std::allocator<unsigned int> >::_M_create_node(unsigned int const&)
+  1.62      6.17     0.13  2630000     0.00     0.00  std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_clear()
+  1.49      6.29     0.12 26199995     0.00     0.00  std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_Tp_allocator() const
+  1.37      6.40     0.11 13070000     0.00     0.00  std::_List_iterator<unsigned int>::operator++(int)
+  1.24      6.50     0.10 13100000     0.00     0.00  std::list<unsigned int, std::allocator<unsigned int> >::_M_insert(std::_List_iterator<unsigned int>, unsigned int const&)
+  1.12      6.59     0.09 15759995     0.00     0.00  std::_List_iterator<unsigned int>::operator!=(std::_List_iterator<unsigned int> const&) const
+  1.00      6.67     0.08 31479995     0.00     0.00  std::_List_iterator<unsigned int>::_List_iterator(std::_List_node_base*)
+  1.00      6.75     0.08 28800000     0.00     0.00  std::list<unsigned int, std::allocator<unsigned int> >::end()
+  1.00      6.83     0.08 13100000     0.00     0.00  std::list<unsigned int, std::allocator<unsigned int> >::push_back(unsigned int const&)
+  0.87      6.90     0.07  2630000     0.00     0.00  std::list<unsigned int, std::allocator<unsigned int> >::begin()
+  0.87      6.97     0.07 26199995     0.00     0.00  std::allocator<unsigned int>::allocator<std::_List_node<unsigned int> >(std::allocator<std::_List_node<unsigned int> > const&)
+  0.87      7.04     0.07 13099995     0.00     0.00  std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_put_node(std::_List_node<unsigned int>*)
+  0.87      7.11     0.07  2630001     0.00     0.00  std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_init()
+  0.75      7.17     0.06 26199995     0.00     0.00  std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_Node_allocator() const
+  0.75      7.23     0.06        5    12.00    16.01  std::_List_base<CWedge, std::allocator<CWedge> >::_M_clear()
+  0.75      7.29     0.06 13100000     0.00     0.00  std::_List_iterator<CWedge>::operator*() const
+  0.62      7.34     0.05    49995     0.00     0.00  std::list<unsigned int, std::allocator<unsigned int> >::_M_erase(std::_List_iterator<unsigned int>)
+  0.62      7.39     0.05 26199995     0.00     0.00  __gnu_cxx::new_allocator<unsigned int>::~new_allocator()
+  0.62      7.44     0.05 13100000     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::max_size() const
+  0.56      7.48     0.05 13100000     0.00     0.00  std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_node()
+  0.56      7.53     0.05        5     9.00    25.01  std::_List_base<CWedge, std::allocator<CWedge> >::~_List_base()
+  0.50      7.57     0.04 26199995     0.00     0.00  __gnu_cxx::new_allocator<unsigned int>::new_allocator()
+  0.50      7.61     0.04 26199995     0.00     0.00  std::allocator<unsigned int>::~allocator()
+  0.50      7.65     0.04        5     8.00     8.00  CWheel::AddWedge(CWedge const&)
+  0.50      7.69     0.04        1    40.01    40.01  global constructors keyed to g_newValidTimes
+  0.44      7.72     0.04        1    35.01    35.01  std::deque<int, std::allocator<int> >::push_back(int const&)
+  0.37      7.75     0.03 13100000     0.00     0.00  __gnu_cxx::new_allocator<unsigned int>::construct(unsigned int*, unsigned int const&)
+  0.37      7.78     0.03 13080000     0.00     0.00  std::_List_iterator<unsigned int>::operator*() const
+  0.37      7.81     0.03  2620000     0.00     0.00  std::list<unsigned int, std::allocator<unsigned int> >::clear()
+  0.37      7.84     0.03    10001     0.00     0.00  std::allocator<std::_List_node<unsigned int> >::allocator()
+  0.37      7.87     0.03        5     6.00     6.00  CWedge::CWedgeFromExtant(unsigned int, unsigned int)
+  0.31      7.90     0.03        5     5.00     5.00  CWheel::CWheel(unsigned int)
+  0.25      7.92     0.02 13100016     0.00     0.00  operator new(unsigned long, void*)
+  0.25      7.94     0.02 13099995     0.00     0.00  __gnu_cxx::new_allocator<unsigned int>::destroy(unsigned int*)
+  0.25      7.96     0.02        1    20.01    55.02  std::queue<int, std::deque<int, std::allocator<int> > >::push(int const&)
+  0.25      7.98     0.02                             std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_Node_allocator()
+  0.19      7.99     0.02        5     3.00     4.00  std::_List_base<CWedge, std::allocator<CWedge> >::_M_put_node(std::_List_node<CWedge>*)
+  0.19      8.01     0.02                             operator<<(std::ostream&, CWedge&)
+  0.12      8.02     0.01 13100000     0.00     0.00  CWedge::GetStart()
+  0.12      8.03     0.01 13099995     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::deallocate(std::_List_node<unsigned int>*, unsigned long)
+  0.12      8.04     0.01                             CWedge::GetId()
+  0.06      8.04     0.01        5     1.00     1.00  __gnu_cxx::new_allocator<std::_List_node<CWedge> >::deallocate(std::_List_node<CWedge>*, unsigned long)
+  0.00      8.04     0.00    49995     0.00     0.00  std::list<unsigned int, std::allocator<unsigned int> >::erase(std::_List_iterator<unsigned int>)
+  0.00      8.04     0.00    20000     0.00     0.00  std::_List_const_iterator<unsigned int>::_List_const_iterator(std::_List_node_base const*)
+  0.00      8.04     0.00    10001     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::new_allocator()
+  0.00      8.04     0.00    10001     0.00     0.00  std::_List_base<unsigned int, std::allocator<unsigned int> >::_List_impl::_List_impl()
+  0.00      8.04     0.00    10001     0.00     0.00  std::_List_base<unsigned int, std::allocator<unsigned int> >::_List_base()
+  0.00      8.04     0.00    10001     0.00     0.00  std::list<unsigned int, std::allocator<unsigned int> >::list()
+  0.00      8.04     0.00    10000     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::~new_allocator()
+  0.00      8.04     0.00    10000     0.00     0.00  std::_List_const_iterator<unsigned int>::operator==(std::_List_const_iterator<unsigned int> const&) const
+  0.00      8.04     0.00    10000     0.00     0.00  std::list<unsigned int, std::allocator<unsigned int> >::end() const
+  0.00      8.04     0.00    10000     0.00     0.00  std::list<unsigned int, std::allocator<unsigned int> >::begin() const
+  0.00      8.04     0.00    10000     0.00     0.00  std::allocator<std::_List_node<unsigned int> >::~allocator()
+  0.00      8.04     0.00    10000     0.00     0.00  std::_List_base<unsigned int, std::allocator<unsigned int> >::_List_impl::~_List_impl()
+  0.00      8.04     0.00    10000     0.00     0.00  std::_List_base<unsigned int, std::allocator<unsigned int> >::~_List_base()
+  0.00      8.04     0.00    10000     0.00     0.01  std::list<unsigned int, std::allocator<unsigned int> >::erase(std::_List_iterator<unsigned int>, std::_List_iterator<unsigned int>)
+  0.00      8.04     0.00    10000     0.00     0.00  std::list<unsigned int, std::allocator<unsigned int> >::~list()
+  0.00      8.04     0.00    10000     0.00     0.01  std::list<unsigned int, std::allocator<unsigned int> >::operator=(std::list<unsigned int, std::allocator<unsigned int> > const&)
+  0.00      8.04     0.00     9999     0.00     0.00  std::_List_const_iterator<unsigned int>::operator!=(std::_List_const_iterator<unsigned int> const&) const
+  0.00      8.04     0.00       28     0.00     0.00  std::_Deque_iterator<int, int&, int*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&)
+  0.00      8.04     0.00       28     0.00     0.00  std::__deque_buf_size(unsigned long)
+  0.00      8.04     0.00       20     0.00     0.00  __gnu_cxx::new_allocator<CWedge>::new_allocator()
+  0.00      8.04     0.00       20     0.00     0.00  __gnu_cxx::new_allocator<CWedge>::~new_allocator()
+  0.00      8.04     0.00       20     0.00     0.00  std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_Node_allocator() const
+  0.00      8.04     0.00       20     0.00     0.00  std::allocator<CWedge>::allocator<std::_List_node<CWedge> >(std::allocator<std::_List_node<CWedge> > const&)
+  0.00      8.04     0.00       20     0.00     0.00  std::allocator<CWedge>::~allocator()
+  0.00      8.04     0.00       15     0.00     0.00  std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_Tp_allocator() const
+  0.00      8.04     0.00       10     0.00     0.00  __gnu_cxx::new_allocator<CWedge>::construct(CWedge*, CWedge const&)
+  0.00      8.04     0.00       10     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<CWedge> >::allocate(unsigned long, void const*)
+  0.00      8.04     0.00       10     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<CWedge> >::new_allocator()
+  0.00      8.04     0.00       10     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<CWedge> >::~new_allocator()
+  0.00      8.04     0.00       10     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<CWedge> >::max_size() const
+  0.00      8.04     0.00       10     0.00     0.00  std::_Deque_base<int, std::allocator<int> >::_M_get_Tp_allocator() const
+  0.00      8.04     0.00       10     0.00     0.00  std::_List_const_iterator<CWedge>::operator!=(std::_List_const_iterator<CWedge> const&) const
+  0.00      8.04     0.00       10     0.00     0.00  std::allocator<std::_List_node<CWedge> >::~allocator()
+  0.00      8.04     0.00       10     0.00     0.00  std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_node()
+  0.00      8.04     0.00       10     0.00     0.00  std::_List_base<CWedge, std::allocator<CWedge> >::_M_init()
+  0.00      8.04     0.00       10     0.00     0.00  std::_Deque_iterator<int, int&, int*>::_S_buffer_size()
+  0.00      8.04     0.00       10     0.00     0.00  std::_List_const_iterator<CWedge>::_List_const_iterator(std::_List_node_base const*)
+  0.00      8.04     0.00       10     0.00     0.00  std::list<CWedge, std::allocator<CWedge> >::_M_create_node(CWedge const&)
+  0.00      8.04     0.00       10     0.00     0.00  std::list<CWedge, std::allocator<CWedge> >::_M_insert(std::_List_iterator<CWedge>, CWedge const&)
+  0.00      8.04     0.00       10     0.00     0.00  std::list<CWedge, std::allocator<CWedge> >::push_back(CWedge const&)
+  0.00      8.04     0.00        8     0.00     0.00  __gnu_cxx::new_allocator<int*>::new_allocator()
+  0.00      8.04     0.00        8     0.00     0.00  __gnu_cxx::new_allocator<int*>::~new_allocator()
+  0.00      8.04     0.00        8     0.00     0.00  std::_Deque_base<int, std::allocator<int> >::_M_get_map_allocator() const
+  0.00      8.04     0.00        8     0.00     0.00  std::allocator<int*>::allocator<int>(std::allocator<int> const&)
+  0.00      8.04     0.00        8     0.00     0.00  std::allocator<int*>::~allocator()
+  0.00      8.04     0.00        8     0.00     0.00  std::_Iter_base<std::_Deque_iterator<int, int const&, int const*>, false>::_S_base(std::_Deque_iterator<int, int const&, int const*>)
+  0.00      8.04     0.00        8     0.00     0.00  std::_Deque_iterator<int, int&, int*>::_M_set_node(int**)
+  0.00      8.04     0.00        8     0.00     0.00  std::_Deque_iterator<int, int&, int*>::_Deque_iterator()
+  0.00      8.04     0.00        6     0.00     0.00  std::_Deque_base<int, std::allocator<int> >::_M_get_Tp_allocator()
+  0.00      8.04     0.00        5     0.00    19.01  WheelFactory(std::istream&, unsigned int)
+  0.00      8.04     0.00        5     0.00     0.00  GCD(int const&, int const&)
+  0.00      8.04     0.00        5     0.00     0.00  LCM(int const&, int const&)
+  0.00      8.04     0.00        5     0.00     0.00  CWedge::Validate()
+  0.00      8.04     0.00        5     0.00     0.00  CWedge::CWedge(unsigned int, unsigned int)
+  0.00      8.04     0.00        5     0.00     0.00  CWedge::~CWedge()
+  0.00      8.04     0.00        5     0.00     0.00  CWheel::CWheel(CWheel const&)
+  0.00      8.04     0.00        5     0.00    25.01  CWheel::~CWheel()
+  0.00      8.04     0.00        5     0.00     0.00  __gnu_cxx::new_allocator<CWedge>::destroy(CWedge*)
+  0.00      8.04     0.00        5     0.00     0.00  __gnu_cxx::new_allocator<CWheel>::construct(CWheel*, CWheel const&)
+  0.00      8.04     0.00        5     0.00     0.00  __gnu_cxx::new_allocator<CWheel>::new_allocator()
+  0.00      8.04     0.00        5     0.00     0.00  __gnu_cxx::new_allocator<CWheel>::~new_allocator()
+  0.00      8.04     0.00        5     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<CWedge> >::new_allocator(__gnu_cxx::new_allocator<std::_List_node<CWedge> > const&)
+  0.00      8.04     0.00        5     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<CWheel> >::allocate(unsigned long, void const*)
+  0.00      8.04     0.00        5     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<CWheel> >::max_size() const
+  0.00      8.04     0.00        5     0.00     0.00  std::_List_base<CWheel, std::allocator<CWheel> >::_M_get_Tp_allocator() const
+  0.00      8.04     0.00        5     0.00     0.00  std::_List_base<CWheel, std::allocator<CWheel> >::_M_get_Node_allocator() const
+  0.00      8.04     0.00        5     0.00     0.00  std::_List_const_iterator<CWedge>::operator*() const
+  0.00      8.04     0.00        5     0.00     0.00  std::list<CWedge, std::allocator<CWedge> >::end() const
+  0.00      8.04     0.00        5     0.00     0.00  std::list<CWedge, std::allocator<CWedge> >::begin() const
+  0.00      8.04     0.00        5     0.00     0.00  std::allocator<CWheel>::allocator<std::_List_node<CWheel> >(std::allocator<std::_List_node<CWheel> > const&)
+  0.00      8.04     0.00        5     0.00     0.00  std::allocator<CWheel>::~allocator()
+  0.00      8.04     0.00        5     0.00     0.00  std::allocator<std::_List_node<CWedge> >::allocator<CWedge>(std::allocator<CWedge> const&)
+  0.00      8.04     0.00        5     0.00     0.00  std::allocator<std::_List_node<CWedge> >::allocator(std::allocator<std::_List_node<CWedge> > const&)
+  0.00      8.04     0.00        5     0.00     0.00  std::allocator<std::_List_node<CWedge> >::allocator()
+  0.00      8.04     0.00        5     0.00     0.00  std::_List_base<CWedge, std::allocator<CWedge> >::_List_impl::_List_impl(std::allocator<std::_List_node<CWedge> > const&)
+  0.00      8.04     0.00        5     0.00     0.00  std::_List_base<CWedge, std::allocator<CWedge> >::_List_impl::_List_impl()
+  0.00      8.04     0.00        5     0.00     0.00  std::_List_base<CWedge, std::allocator<CWedge> >::_List_impl::~_List_impl()
+  0.00      8.04     0.00        5     0.00     0.00  std::_List_base<CWedge, std::allocator<CWedge> >::_List_base(std::allocator<CWedge> const&)
+  0.00      8.04     0.00        5     0.00     0.00  std::_List_base<CWedge, std::allocator<CWedge> >::_List_base()
+  0.00      8.04     0.00        5     0.00     0.00  std::_List_base<CWheel, std::allocator<CWheel> >::_M_get_node()
+  0.00      8.04     0.00        5     0.00     0.00  std::_List_const_iterator<CWedge>::operator++()
+  0.00      8.04     0.00        5     0.00     0.00  void std::list<CWedge, std::allocator<CWedge> >::_M_initialize_dispatch<std::_List_const_iterator<CWedge> >(std::_List_const_iterator<CWedge>, std::_List_const_iterator<CWedge>, std::__false_type)
+  0.00      8.04     0.00        5     0.00     0.00  std::list<CWedge, std::allocator<CWedge> >::list(std::list<CWedge, std::allocator<CWedge> > const&)
+  0.00      8.04     0.00        5     0.00     0.00  std::list<CWedge, std::allocator<CWedge> >::list()
+  0.00      8.04     0.00        5     0.00    25.01  std::list<CWedge, std::allocator<CWedge> >::~list()
+  0.00      8.04     0.00        5     0.00     0.00  std::list<CWheel, std::allocator<CWheel> >::_M_create_node(CWheel const&)
+  0.00      8.04     0.00        5     0.00     0.00  std::list<CWheel, std::allocator<CWheel> >::_M_insert(std::_List_iterator<CWheel>, CWheel const&)
+  0.00      8.04     0.00        5     0.00     0.00  std::list<CWheel, std::allocator<CWheel> >::push_back(CWheel const&)
+  0.00      8.04     0.00        4     0.00     0.00  __gnu_cxx::new_allocator<int*>::deallocate(int**, unsigned long)
+  0.00      8.04     0.00        4     0.00     0.00  __gnu_cxx::new_allocator<int*>::allocate(unsigned long, void const*)
+  0.00      8.04     0.00        4     0.00     0.00  __gnu_cxx::new_allocator<int>::deallocate(int*, unsigned long)
+  0.00      8.04     0.00        4     0.00     0.00  __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*)
+  0.00      8.04     0.00        4     0.00     0.00  __gnu_cxx::new_allocator<int>::~new_allocator()
+  0.00      8.04     0.00        4     0.00     0.00  __gnu_cxx::new_allocator<int*>::max_size() const
+  0.00      8.04     0.00        4     0.00     0.00  __gnu_cxx::new_allocator<int>::max_size() const
+  0.00      8.04     0.00        4     0.00     0.00  std::allocator<int>::~allocator()
+  0.00      8.04     0.00        4     0.00     0.00  std::_Deque_base<int, std::allocator<int> >::_Deque_impl::~_Deque_impl()
+  0.00      8.04     0.00        4     0.00     0.00  std::_Deque_base<int, std::allocator<int> >::_M_allocate_map(unsigned long)
+  0.00      8.04     0.00        4     0.00     0.00  std::_Deque_base<int, std::allocator<int> >::_M_create_nodes(int**, int**)
+  0.00      8.04     0.00        4     0.00     0.00  std::_Deque_base<int, std::allocator<int> >::_M_allocate_node()
+  0.00      8.04     0.00        4     0.00     0.00  std::_Deque_base<int, std::allocator<int> >::_M_destroy_nodes(int**, int**)
+  0.00      8.04     0.00        4     0.00     0.00  std::_Deque_base<int, std::allocator<int> >::_M_deallocate_map(int**, unsigned long)
+  0.00      8.04     0.00        4     0.00     0.00  std::_Deque_base<int, std::allocator<int> >::_M_initialize_map(unsigned long)
+  0.00      8.04     0.00        4     0.00     0.00  std::_Deque_base<int, std::allocator<int> >::_M_deallocate_node(int*)
+  0.00      8.04     0.00        4     0.00     0.00  std::_Deque_base<int, std::allocator<int> >::~_Deque_base()
+  0.00      8.04     0.00        4     0.00     0.00  std::_Deque_iterator<int, int const&, int const*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&)
+  0.00      8.04     0.00        4     0.00     0.00  std::deque<int, std::allocator<int> >::_M_destroy_data(std::_Deque_iterator<int, int&, int*>, std::_Deque_iterator<int, int&, int*>, std::allocator<int> const&)
+  0.00      8.04     0.00        4     0.00     0.00  std::deque<int, std::allocator<int> >::end()
+  0.00      8.04     0.00        4     0.00     0.00  std::deque<int, std::allocator<int> >::begin()
+  0.00      8.04     0.00        4     0.00     0.00  std::deque<int, std::allocator<int> >::~deque()
+  0.00      8.04     0.00        4     0.00     0.00  std::_Miter_base<std::_Deque_iterator<int, int const&, int const*> >::iterator_type std::__miter_base<std::_Deque_iterator<int, int const&, int const*> >(std::_Deque_iterator<int, int const&, int const*>)
+  0.00      8.04     0.00        4     0.00     0.00  std::_Niter_base<std::_Deque_iterator<int, int const&, int const*> >::iterator_type std::__niter_base<std::_Deque_iterator<int, int const&, int const*> >(std::_Deque_iterator<int, int const&, int const*>)
+  0.00      8.04     0.00        4     0.00     0.00  unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&)
+  0.00      8.04     0.00        2     0.00     0.00  __gnu_cxx::new_allocator<int>::new_allocator(__gnu_cxx::new_allocator<int> const&)
+  0.00      8.04     0.00        2     0.00     0.00  __gnu_cxx::new_allocator<int>::new_allocator()
+  0.00      8.04     0.00        2     0.00     0.00  std::deque<int, std::allocator<int> >::end() const
+  0.00      8.04     0.00        2     0.00     0.00  std::deque<int, std::allocator<int> >::size() const
+  0.00      8.04     0.00        2     0.00     0.00  std::deque<int, std::allocator<int> >::begin() const
+  0.00      8.04     0.00        2     0.00     0.00  std::allocator<int>::allocator(std::allocator<int> const&)
+  0.00      8.04     0.00        2     0.00     0.00  std::allocator<int>::allocator()
+  0.00      8.04     0.00        2     0.00     0.00  std::_Iter_base<std::_Deque_iterator<int, int&, int*>, false>::_S_base(std::_Deque_iterator<int, int&, int*>)
+  0.00      8.04     0.00        2     0.00     0.00  std::_Deque_base<int, std::allocator<int> >::_Deque_impl::_Deque_impl()
+  0.00      8.04     0.00        2     0.00     0.00  std::_Deque_base<int, std::allocator<int> >::_Deque_impl::_Deque_impl(std::allocator<int> const&)
+  0.00      8.04     0.00        2     0.00     0.00  std::_Deque_base<int, std::allocator<int> >::_Deque_base(std::allocator<int> const&, unsigned long)
+  0.00      8.04     0.00        2     0.00     0.00  std::_Deque_base<int, std::allocator<int> >::_Deque_base()
+  0.00      8.04     0.00        2     0.00     0.00  std::_Deque_iterator<int, int&, int*> std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>)
+  0.00      8.04     0.00        2     0.00     0.00  std::_Deque_iterator<int, int const&, int const*>::_S_buffer_size()
+  0.00      8.04     0.00        2     0.00     0.00  std::_Deque_iterator<int, int&, int*> std::__uninitialized_copy<true>::uninitialized_copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>)
+  0.00      8.04     0.00        2     0.00     0.00  std::deque<int, std::allocator<int> >::deque(std::deque<int, std::allocator<int> > const&)
+  0.00      8.04     0.00        2     0.00     0.00  std::deque<int, std::allocator<int> >::deque()
+  0.00      8.04     0.00        2     0.00     0.00  std::queue<int, std::deque<int, std::allocator<int> > >::queue(std::deque<int, std::allocator<int> > const&)
+  0.00      8.04     0.00        2     0.00     0.00  std::_Niter_base<std::_Deque_iterator<int, int&, int*> >::iterator_type std::__niter_base<std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int&, int*>)
+  0.00      8.04     0.00        2     0.00     0.00  std::_Deque_iterator<int, int&, int*> std::__copy_move_a<false, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>)
+  0.00      8.04     0.00        2     0.00     0.00  std::_Deque_iterator<int, int&, int*> std::__copy_move_a2<false, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>)
+  0.00      8.04     0.00        2     0.00     0.00  std::_Deque_iterator<int, int&, int*> std::uninitialized_copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>)
+  0.00      8.04     0.00        2     0.00     0.00  std::_Deque_iterator<int, int&, int*> std::__uninitialized_copy_a<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>, int>(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>, std::allocator<int>&)
+  0.00      8.04     0.00        2     0.00     0.00  std::_Deque_iterator<int, int&, int*> std::copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>)
+  0.00      8.04     0.00        2     0.00     0.00  std::_Deque_iterator<int, int const&, int const*>::difference_type std::operator-<int, int const&, int const*>(std::_Deque_iterator<int, int const&, int const*> const&, std::_Deque_iterator<int, int const&, int const*> const&)
+  0.00      8.04     0.00        2     0.00     0.00  std::_Deque_iterator<int, int&, int*>::difference_type std::operator-<int, int&, int*>(std::_Deque_iterator<int, int&, int*> const&, std::_Deque_iterator<int, int&, int*> const&)
+  0.00      8.04     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      8.04     0.00        1     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<CWheel> >::new_allocator()
+  0.00      8.04     0.00        1     0.00     0.00  __gnu_cxx::new_allocator<int>::construct(int*, int const&)
+  0.00      8.04     0.00        1     0.00     0.00  std::allocator<std::_List_node<CWheel> >::allocator()
+  0.00      8.04     0.00        1     0.00     0.00  std::_List_base<CWheel, std::allocator<CWheel> >::_List_impl::_List_impl()
+  0.00      8.04     0.00        1     0.00     0.00  std::_List_base<CWheel, std::allocator<CWheel> >::_M_init()
+  0.00      8.04     0.00        1     0.00     0.00  std::_List_base<CWheel, std::allocator<CWheel> >::_List_base()
+  0.00      8.04     0.00        1     0.00     0.00  std::list<CWheel, std::allocator<CWheel> >::list()
+  0.00      8.04     0.00        1     0.00     0.00  std::operator|(std::_Ios_Openmode, std::_Ios_Openmode)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.12% of 8.04 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     98.9    0.59    7.37                 main [1]
+                0.59    1.48 32830000/32830000     CWheel::AllowsLightThrough(int const&) [2]
+                0.18    1.40 13100000/13100000     CWheel::FillValidChecksList(std::list<unsigned int, std::allocator<unsigned int> >&) [3]
+                0.22    0.78 13100000/13100000     CWheel::step(int) [4]
+                0.03    0.49 2620000/2620000     std::list<unsigned int, std::allocator<unsigned int> >::clear() [10]
+                0.33    0.15 64280000/64280005     std::list<CWheel, std::allocator<CWheel> >::end() [14]
+                0.40    0.00 45960000/45960000     std::_List_iterator<CWheel>::operator++(int) [16]
+                0.21    0.00 59030000/59030000     std::_List_iterator<CWheel>::operator->() const [20]
+                0.20    0.00 64280000/64280000     std::_List_iterator<CWheel>::operator!=(std::_List_iterator<CWheel> const&) const [21]
+                0.14    0.04 18320000/18320000     std::list<CWheel, std::allocator<CWheel> >::begin() [25]
+                0.00    0.13       5/5           CWheel::~CWheel() [28]
+                0.11    0.00 13070000/13070000     std::_List_iterator<unsigned int>::operator++(int) [32]
+                0.00    0.10       5/5           WheelFactory(std::istream&, unsigned int) [33]
+                0.09    0.00 15690000/15759995     std::_List_iterator<unsigned int>::operator!=(std::_List_iterator<unsigned int> const&) const [35]
+                0.04    0.04 15690000/28800000     std::list<unsigned int, std::allocator<unsigned int> >::end() [27]
+                0.07    0.01 2620000/2630000     std::list<unsigned int, std::allocator<unsigned int> >::begin() [39]
+                0.02    0.04       1/1           std::queue<int, std::deque<int, std::allocator<int> > >::push(int const&) [43]
+                0.00    0.05   10000/10000       std::list<unsigned int, std::allocator<unsigned int> >::operator=(std::list<unsigned int, std::allocator<unsigned int> > const&) [44]
+                0.00    0.03   10001/10001       std::list<unsigned int, std::allocator<unsigned int> >::list() [57]
+                0.03    0.00 13080000/13080000     std::_List_iterator<unsigned int>::operator*() const [58]
+                0.00    0.00   10000/10000       std::list<unsigned int, std::allocator<unsigned int> >::~list() [73]
+                0.00    0.00       5/5           std::list<CWheel, std::allocator<CWheel> >::push_back(CWheel const&) [74]
+                0.00    0.00       1/1           std::operator|(std::_Ios_Openmode, std::_Ios_Openmode) [214]
+                0.00    0.00       1/1           std::list<CWheel, std::allocator<CWheel> >::list() [213]
+-----------------------------------------------
+                0.59    1.48 32830000/32830000     main [1]
+[2]     25.7    0.59    1.48 32830000         CWheel::AllowsLightThrough(int const&) [2]
+                0.49    0.00 32830000/32830000     CWedge::Contains(unsigned int) [13]
+                0.11    0.19 45900000/98300010     std::list<CWedge, std::allocator<CWedge> >::end() [8]
+                0.14    0.14 32830000/59030000     std::list<CWedge, std::allocator<CWedge> >::begin() [12]
+                0.23    0.00 45900000/98300000     std::_List_iterator<CWedge>::operator!=(std::_List_iterator<CWedge> const&) const [11]
+                0.13    0.00 32830000/45930000     std::_List_iterator<CWedge>::operator->() const [26]
+                0.06    0.00 13070000/39270000     std::_List_iterator<CWedge>::operator++(int) [23]
+-----------------------------------------------
+                0.18    1.40 13100000/13100000     main [1]
+[3]     19.6    0.18    1.40 13100000         CWheel::FillValidChecksList(std::list<unsigned int, std::allocator<unsigned int> >&) [3]
+                0.08    0.78 13100000/13100000     std::list<unsigned int, std::allocator<unsigned int> >::push_back(unsigned int const&) [5]
+                0.06    0.11 26200000/98300010     std::list<CWedge, std::allocator<CWedge> >::end() [8]
+                0.13    0.00 26200000/98300000     std::_List_iterator<CWedge>::operator!=(std::_List_iterator<CWedge> const&) const [11]
+                0.05    0.05 13100000/59030000     std::list<CWedge, std::allocator<CWedge> >::begin() [12]
+                0.07    0.00 13100000/39270000     std::_List_iterator<CWedge>::operator++(int) [23]
+                0.05    0.00 13100000/45930000     std::_List_iterator<CWedge>::operator->() const [26]
+                0.01    0.00 13100000/13100000     CWedge::GetStart() [68]
+-----------------------------------------------
+                0.22    0.78 13100000/13100000     main [1]
+[4]     12.3    0.22    0.78 13100000         CWheel::step(int) [4]
+                0.24    0.00 13100000/13100000     CWedge::operator+=(int) [18]
+                0.06    0.11 26200000/98300010     std::list<CWedge, std::allocator<CWedge> >::end() [8]
+                0.13    0.00 26200000/98300000     std::_List_iterator<CWedge>::operator!=(std::_List_iterator<CWedge> const&) const [11]
+                0.05    0.05 13100000/59030000     std::list<CWedge, std::allocator<CWedge> >::begin() [12]
+                0.07    0.00 13100000/39270000     std::_List_iterator<CWedge>::operator++(int) [23]
+                0.06    0.00 13100000/13100000     std::_List_iterator<CWedge>::operator*() const [42]
+-----------------------------------------------
+                0.08    0.78 13100000/13100000     CWheel::FillValidChecksList(std::list<unsigned int, std::allocator<unsigned int> >&) [3]
+[5]     10.7    0.08    0.78 13100000         std::list<unsigned int, std::allocator<unsigned int> >::push_back(unsigned int const&) [5]
+                0.10    0.61 13100000/13100000     std::list<unsigned int, std::allocator<unsigned int> >::_M_insert(std::_List_iterator<unsigned int>, unsigned int const&) [6]
+                0.04    0.03 13100000/28800000     std::list<unsigned int, std::allocator<unsigned int> >::end() [27]
+-----------------------------------------------
+                0.10    0.61 13100000/13100000     std::list<unsigned int, std::allocator<unsigned int> >::push_back(unsigned int const&) [5]
+[6]      8.8    0.10    0.61 13100000         std::list<unsigned int, std::allocator<unsigned int> >::_M_insert(std::_List_iterator<unsigned int>, unsigned int const&) [6]
+                0.14    0.48 13100000/13100000     std::list<unsigned int, std::allocator<unsigned int> >::_M_create_node(unsigned int const&) [9]
+-----------------------------------------------
+                0.24    0.00 59030000/157330010     std::list<CWedge, std::allocator<CWedge> >::begin() [12]
+                0.41    0.00 98300010/157330010     std::list<CWedge, std::allocator<CWedge> >::end() [8]
+[7]      8.1    0.65    0.00 157330010         std::_List_iterator<CWedge>::_List_iterator(std::_List_node_base*) [7]
+-----------------------------------------------
+                0.00    0.00      10/98300010     std::list<CWedge, std::allocator<CWedge> >::push_back(CWedge const&) [75]
+                0.06    0.11 26200000/98300010     CWheel::step(int) [4]
+                0.06    0.11 26200000/98300010     CWheel::FillValidChecksList(std::list<unsigned int, std::allocator<unsigned int> >&) [3]
+                0.11    0.19 45900000/98300010     CWheel::AllowsLightThrough(int const&) [2]
+[8]      7.9    0.23    0.41 98300010         std::list<CWedge, std::allocator<CWedge> >::end() [8]
+                0.41    0.00 98300010/157330010     std::_List_iterator<CWedge>::_List_iterator(std::_List_node_base*) [7]
+-----------------------------------------------
+                0.14    0.48 13100000/13100000     std::list<unsigned int, std::allocator<unsigned int> >::_M_insert(std::_List_iterator<unsigned int>, unsigned int const&) [6]
+[9]      7.6    0.14    0.48 13100000         std::list<unsigned int, std::allocator<unsigned int> >::_M_create_node(unsigned int const&) [9]
+                0.05    0.19 13100000/13100000     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_node() [19]
+                0.06    0.09 13100000/26199995     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_Tp_allocator() const [17]
+                0.03    0.02 13100000/13100000     __gnu_cxx::new_allocator<unsigned int>::construct(unsigned int*, unsigned int const&) [50]
+                0.02    0.03 13100000/26199995     std::allocator<unsigned int>::~allocator() [34]
+-----------------------------------------------
+                0.03    0.49 2620000/2620000     main [1]
+[10]     6.4    0.03    0.49 2620000         std::list<unsigned int, std::allocator<unsigned int> >::clear() [10]
+                0.13    0.29 2620000/2630000     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_clear() [15]
+                0.07    0.00 2620000/2630001     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_init() [40]
+-----------------------------------------------
+                0.13    0.00 26200000/98300000     CWheel::step(int) [4]
+                0.13    0.00 26200000/98300000     CWheel::FillValidChecksList(std::list<unsigned int, std::allocator<unsigned int> >&) [3]
+                0.23    0.00 45900000/98300000     CWheel::AllowsLightThrough(int const&) [2]
+[11]     6.2    0.50    0.00 98300000         std::_List_iterator<CWedge>::operator!=(std::_List_iterator<CWedge> const&) const [11]
+-----------------------------------------------
+                0.05    0.05 13100000/59030000     CWheel::step(int) [4]
+                0.05    0.05 13100000/59030000     CWheel::FillValidChecksList(std::list<unsigned int, std::allocator<unsigned int> >&) [3]
+                0.14    0.14 32830000/59030000     CWheel::AllowsLightThrough(int const&) [2]
+[12]     6.1    0.25    0.24 59030000         std::list<CWedge, std::allocator<CWedge> >::begin() [12]
+                0.24    0.00 59030000/157330010     std::_List_iterator<CWedge>::_List_iterator(std::_List_node_base*) [7]
+-----------------------------------------------
+                0.49    0.00 32830000/32830000     CWheel::AllowsLightThrough(int const&) [2]
+[13]     6.0    0.49    0.00 32830000         CWedge::Contains(unsigned int) [13]
+-----------------------------------------------
+                0.00    0.00       5/64280005     std::list<CWheel, std::allocator<CWheel> >::push_back(CWheel const&) [74]
+                0.33    0.15 64280000/64280005     main [1]
+[14]     6.0    0.33    0.15 64280005         std::list<CWheel, std::allocator<CWheel> >::end() [14]
+                0.15    0.00 64280005/82600005     std::_List_iterator<CWheel>::_List_iterator(std::_List_node_base*) [22]
+-----------------------------------------------
+                0.00    0.00   10000/2630000     std::_List_base<unsigned int, std::allocator<unsigned int> >::~_List_base() [72]
+                0.13    0.29 2620000/2630000     std::list<unsigned int, std::allocator<unsigned int> >::clear() [10]
+[15]     5.2    0.13    0.29 2630000         std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_clear() [15]
+                0.06    0.08 13050000/26199995     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_Tp_allocator() const [17]
+                0.07    0.01 13050000/13099995     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_put_node(std::_List_node<unsigned int>*) [37]
+                0.02    0.02 13050000/26199995     std::allocator<unsigned int>::~allocator() [34]
+                0.02    0.00 13050000/13099995     __gnu_cxx::new_allocator<unsigned int>::destroy(unsigned int*) [63]
+-----------------------------------------------
+                0.40    0.00 45960000/45960000     main [1]
+[16]     4.9    0.40    0.00 45960000         std::_List_iterator<CWheel>::operator++(int) [16]
+-----------------------------------------------
+                0.00    0.00   49995/26199995     std::list<unsigned int, std::allocator<unsigned int> >::_M_erase(std::_List_iterator<unsigned int>) [47]
+                0.06    0.08 13050000/26199995     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_clear() [15]
+                0.06    0.09 13100000/26199995     std::list<unsigned int, std::allocator<unsigned int> >::_M_create_node(unsigned int const&) [9]
+[17]     3.6    0.12    0.17 26199995         std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_Tp_allocator() const [17]
+                0.07    0.04 26199995/26199995     std::allocator<unsigned int>::allocator<std::_List_node<unsigned int> >(std::allocator<std::_List_node<unsigned int> > const&) [31]
+                0.06    0.00 26199995/26199995     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_Node_allocator() const [41]
+-----------------------------------------------
+                0.24    0.00 13100000/13100000     CWheel::step(int) [4]
+[18]     3.0    0.24    0.00 13100000         CWedge::operator+=(int) [18]
+-----------------------------------------------
+                0.05    0.19 13100000/13100000     std::list<unsigned int, std::allocator<unsigned int> >::_M_create_node(unsigned int const&) [9]
+[19]     2.9    0.05    0.19 13100000         std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_node() [19]
+                0.14    0.05 13100000/13100000     __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::allocate(unsigned long, void const*) [24]
+-----------------------------------------------
+                0.21    0.00 59030000/59030000     main [1]
+[20]     2.5    0.21    0.00 59030000         std::_List_iterator<CWheel>::operator->() const [20]
+-----------------------------------------------
+                0.20    0.00 64280000/64280000     main [1]
+[21]     2.5    0.20    0.00 64280000         std::_List_iterator<CWheel>::operator!=(std::_List_iterator<CWheel> const&) const [21]
+-----------------------------------------------
+                0.04    0.00 18320000/82600005     std::list<CWheel, std::allocator<CWheel> >::begin() [25]
+                0.15    0.00 64280005/82600005     std::list<CWheel, std::allocator<CWheel> >::end() [14]
+[22]     2.4    0.20    0.00 82600005         std::_List_iterator<CWheel>::_List_iterator(std::_List_node_base*) [22]
+-----------------------------------------------
+                0.06    0.00 13070000/39270000     CWheel::AllowsLightThrough(int const&) [2]
+                0.07    0.00 13100000/39270000     CWheel::step(int) [4]
+                0.07    0.00 13100000/39270000     CWheel::FillValidChecksList(std::list<unsigned int, std::allocator<unsigned int> >&) [3]
+[23]     2.4    0.20    0.00 39270000         std::_List_iterator<CWedge>::operator++(int) [23]
+-----------------------------------------------
+                0.14    0.05 13100000/13100000     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_node() [19]
+[24]     2.4    0.14    0.05 13100000         __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::allocate(unsigned long, void const*) [24]
+                0.05    0.00 13100000/13100000     __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::max_size() const [49]
+-----------------------------------------------
+                0.14    0.04 18320000/18320000     main [1]
+[25]     2.3    0.14    0.04 18320000         std::list<CWheel, std::allocator<CWheel> >::begin() [25]
+                0.04    0.00 18320000/82600005     std::_List_iterator<CWheel>::_List_iterator(std::_List_node_base*) [22]
+-----------------------------------------------
+                0.05    0.00 13100000/45930000     CWheel::FillValidChecksList(std::list<unsigned int, std::allocator<unsigned int> >&) [3]
+                0.13    0.00 32830000/45930000     CWheel::AllowsLightThrough(int const&) [2]
+[26]     2.2    0.18    0.00 45930000         std::_List_iterator<CWedge>::operator->() const [26]
+-----------------------------------------------
+                0.00    0.00   10000/28800000     std::list<unsigned int, std::allocator<unsigned int> >::operator=(std::list<unsigned int, std::allocator<unsigned int> > const&) [44]
+                0.04    0.03 13100000/28800000     std::list<unsigned int, std::allocator<unsigned int> >::push_back(unsigned int const&) [5]
+                0.04    0.04 15690000/28800000     main [1]
+[27]     1.9    0.08    0.07 28800000         std::list<unsigned int, std::allocator<unsigned int> >::end() [27]
+                0.07    0.00 28800000/31479995     std::_List_iterator<unsigned int>::_List_iterator(std::_List_node_base*) [36]
+-----------------------------------------------
+                0.00    0.13       5/5           main [1]
+[28]     1.6    0.00    0.13       5         CWheel::~CWheel() [28]
+                0.00    0.13       5/5           std::list<CWedge, std::allocator<CWedge> >::~list() [30]
+-----------------------------------------------
+                0.05    0.08       5/5           std::list<CWedge, std::allocator<CWedge> >::~list() [30]
+[29]     1.6    0.05    0.08       5         std::_List_base<CWedge, std::allocator<CWedge> >::~_List_base() [29]
+                0.06    0.02       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::_M_clear() [38]
+                0.00    0.00       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::_List_impl::~_List_impl() [150]
+-----------------------------------------------
+                0.00    0.13       5/5           CWheel::~CWheel() [28]
+[30]     1.6    0.00    0.13       5         std::list<CWedge, std::allocator<CWedge> >::~list() [30]
+                0.05    0.08       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::~_List_base() [29]
+-----------------------------------------------
+                0.07    0.04 26199995/26199995     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_Tp_allocator() const [17]
+[31]     1.4    0.07    0.04 26199995         std::allocator<unsigned int>::allocator<std::_List_node<unsigned int> >(std::allocator<std::_List_node<unsigned int> > const&) [31]
+                0.04    0.00 26199995/26199995     __gnu_cxx::new_allocator<unsigned int>::new_allocator() [52]
+-----------------------------------------------
+                0.11    0.00 13070000/13070000     main [1]
+[32]     1.4    0.11    0.00 13070000         std::_List_iterator<unsigned int>::operator++(int) [32]
+-----------------------------------------------
+                0.00    0.10       5/5           main [1]
+[33]     1.2    0.00    0.10       5         WheelFactory(std::istream&, unsigned int) [33]
+                0.04    0.00       5/5           CWheel::AddWedge(CWedge const&) [51]
+                0.03    0.00       5/5           CWedge::CWedgeFromExtant(unsigned int, unsigned int) [61]
+                0.03    0.00       5/5           CWheel::CWheel(unsigned int) [62]
+-----------------------------------------------
+                0.00    0.00   49995/26199995     std::list<unsigned int, std::allocator<unsigned int> >::_M_erase(std::_List_iterator<unsigned int>) [47]
+                0.02    0.02 13050000/26199995     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_clear() [15]
+                0.02    0.03 13100000/26199995     std::list<unsigned int, std::allocator<unsigned int> >::_M_create_node(unsigned int const&) [9]
+[34]     1.1    0.04    0.05 26199995         std::allocator<unsigned int>::~allocator() [34]
+                0.05    0.00 26199995/26199995     __gnu_cxx::new_allocator<unsigned int>::~new_allocator() [48]
+-----------------------------------------------
+                0.00    0.00   10000/15759995     std::list<unsigned int, std::allocator<unsigned int> >::operator=(std::list<unsigned int, std::allocator<unsigned int> > const&) [44]
+                0.00    0.00   59995/15759995     std::list<unsigned int, std::allocator<unsigned int> >::erase(std::_List_iterator<unsigned int>, std::_List_iterator<unsigned int>) [45]
+                0.09    0.00 15690000/15759995     main [1]
+[35]     1.1    0.09    0.00 15759995         std::_List_iterator<unsigned int>::operator!=(std::_List_iterator<unsigned int> const&) const [35]
+-----------------------------------------------
+                0.00    0.00   49995/31479995     std::list<unsigned int, std::allocator<unsigned int> >::erase(std::_List_iterator<unsigned int>) [46]
+                0.01    0.00 2630000/31479995     std::list<unsigned int, std::allocator<unsigned int> >::begin() [39]
+                0.07    0.00 28800000/31479995     std::list<unsigned int, std::allocator<unsigned int> >::end() [27]
+[36]     1.0    0.08    0.00 31479995         std::_List_iterator<unsigned int>::_List_iterator(std::_List_node_base*) [36]
+-----------------------------------------------
+                0.00    0.00   49995/13099995     std::list<unsigned int, std::allocator<unsigned int> >::_M_erase(std::_List_iterator<unsigned int>) [47]
+                0.07    0.01 13050000/13099995     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_clear() [15]
+[37]     1.0    0.07    0.01 13099995         std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_put_node(std::_List_node<unsigned int>*) [37]
+                0.01    0.00 13099995/13099995     __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::deallocate(std::_List_node<unsigned int>*, unsigned long) [69]
+-----------------------------------------------
+                0.06    0.02       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::~_List_base() [29]
+[38]     1.0    0.06    0.02       5         std::_List_base<CWedge, std::allocator<CWedge> >::_M_clear() [38]
+                0.02    0.01       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::_M_put_node(std::_List_node<CWedge>*) [64]
+                0.00    0.00       5/15          std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_Tp_allocator() const [106]
+                0.00    0.00       5/5           __gnu_cxx::new_allocator<CWedge>::destroy(CWedge*) [132]
+                0.00    0.00       5/20          std::allocator<CWedge>::~allocator() [105]
+-----------------------------------------------
+                0.00    0.00   10000/2630000     std::list<unsigned int, std::allocator<unsigned int> >::operator=(std::list<unsigned int, std::allocator<unsigned int> > const&) [44]
+                0.07    0.01 2620000/2630000     main [1]
+[39]     1.0    0.07    0.01 2630000         std::list<unsigned int, std::allocator<unsigned int> >::begin() [39]
+                0.01    0.00 2630000/31479995     std::_List_iterator<unsigned int>::_List_iterator(std::_List_node_base*) [36]
+-----------------------------------------------
+                0.00    0.00   10001/2630001     std::_List_base<unsigned int, std::allocator<unsigned int> >::_List_base() [56]
+                0.07    0.00 2620000/2630001     std::list<unsigned int, std::allocator<unsigned int> >::clear() [10]
+[40]     0.9    0.07    0.00 2630001         std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_init() [40]
+-----------------------------------------------
+                0.06    0.00 26199995/26199995     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_Tp_allocator() const [17]
+[41]     0.7    0.06    0.00 26199995         std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_Node_allocator() const [41]
+-----------------------------------------------
+                0.06    0.00 13100000/13100000     CWheel::step(int) [4]
+[42]     0.7    0.06    0.00 13100000         std::_List_iterator<CWedge>::operator*() const [42]
+-----------------------------------------------
+                0.02    0.04       1/1           main [1]
+[43]     0.7    0.02    0.04       1         std::queue<int, std::deque<int, std::allocator<int> > >::push(int const&) [43]
+                0.04    0.00       1/1           std::deque<int, std::allocator<int> >::push_back(int const&) [55]
+-----------------------------------------------
+                0.00    0.05   10000/10000       main [1]
+[44]     0.6    0.00    0.05   10000         std::list<unsigned int, std::allocator<unsigned int> >::operator=(std::list<unsigned int, std::allocator<unsigned int> > const&) [44]
+                0.00    0.05   10000/10000       std::list<unsigned int, std::allocator<unsigned int> >::erase(std::_List_iterator<unsigned int>, std::_List_iterator<unsigned int>) [45]
+                0.00    0.00   10000/2630000     std::list<unsigned int, std::allocator<unsigned int> >::begin() [39]
+                0.00    0.00   10000/15759995     std::_List_iterator<unsigned int>::operator!=(std::_List_iterator<unsigned int> const&) const [35]
+                0.00    0.00   10000/28800000     std::list<unsigned int, std::allocator<unsigned int> >::end() [27]
+                0.00    0.00   10000/10000       std::list<unsigned int, std::allocator<unsigned int> >::begin() const [95]
+                0.00    0.00   10000/10000       std::list<unsigned int, std::allocator<unsigned int> >::end() const [94]
+                0.00    0.00   10000/10000       std::_List_const_iterator<unsigned int>::operator==(std::_List_const_iterator<unsigned int> const&) const [93]
+                0.00    0.00    9999/9999        std::_List_const_iterator<unsigned int>::operator!=(std::_List_const_iterator<unsigned int> const&) const [98]
+-----------------------------------------------
+                0.00    0.05   10000/10000       std::list<unsigned int, std::allocator<unsigned int> >::operator=(std::list<unsigned int, std::allocator<unsigned int> > const&) [44]
+[45]     0.6    0.00    0.05   10000         std::list<unsigned int, std::allocator<unsigned int> >::erase(std::_List_iterator<unsigned int>, std::_List_iterator<unsigned int>) [45]
+                0.00    0.05   49995/49995       std::list<unsigned int, std::allocator<unsigned int> >::erase(std::_List_iterator<unsigned int>) [46]
+                0.00    0.00   59995/15759995     std::_List_iterator<unsigned int>::operator!=(std::_List_iterator<unsigned int> const&) const [35]
+-----------------------------------------------
+                0.00    0.05   49995/49995       std::list<unsigned int, std::allocator<unsigned int> >::erase(std::_List_iterator<unsigned int>, std::_List_iterator<unsigned int>) [45]
+[46]     0.6    0.00    0.05   49995         std::list<unsigned int, std::allocator<unsigned int> >::erase(std::_List_iterator<unsigned int>) [46]
+                0.05    0.00   49995/49995       std::list<unsigned int, std::allocator<unsigned int> >::_M_erase(std::_List_iterator<unsigned int>) [47]
+                0.00    0.00   49995/31479995     std::_List_iterator<unsigned int>::_List_iterator(std::_List_node_base*) [36]
+-----------------------------------------------
+                0.05    0.00   49995/49995       std::list<unsigned int, std::allocator<unsigned int> >::erase(std::_List_iterator<unsigned int>) [46]
+[47]     0.6    0.05    0.00   49995         std::list<unsigned int, std::allocator<unsigned int> >::_M_erase(std::_List_iterator<unsigned int>) [47]
+                0.00    0.00   49995/26199995     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_Tp_allocator() const [17]
+                0.00    0.00   49995/13099995     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_put_node(std::_List_node<unsigned int>*) [37]
+                0.00    0.00   49995/26199995     std::allocator<unsigned int>::~allocator() [34]
+                0.00    0.00   49995/13099995     __gnu_cxx::new_allocator<unsigned int>::destroy(unsigned int*) [63]
+-----------------------------------------------
+                0.05    0.00 26199995/26199995     std::allocator<unsigned int>::~allocator() [34]
+[48]     0.6    0.05    0.00 26199995         __gnu_cxx::new_allocator<unsigned int>::~new_allocator() [48]
+-----------------------------------------------
+                0.05    0.00 13100000/13100000     __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::allocate(unsigned long, void const*) [24]
+[49]     0.6    0.05    0.00 13100000         __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::max_size() const [49]
+-----------------------------------------------
+                0.03    0.02 13100000/13100000     std::list<unsigned int, std::allocator<unsigned int> >::_M_create_node(unsigned int const&) [9]
+[50]     0.6    0.03    0.02 13100000         __gnu_cxx::new_allocator<unsigned int>::construct(unsigned int*, unsigned int const&) [50]
+                0.02    0.00 13100000/13100016     operator new(unsigned long, void*) [66]
+-----------------------------------------------
+                0.04    0.00       5/5           WheelFactory(std::istream&, unsigned int) [33]
+[51]     0.5    0.04    0.00       5         CWheel::AddWedge(CWedge const&) [51]
+                0.00    0.00       5/10          std::list<CWedge, std::allocator<CWedge> >::push_back(CWedge const&) [75]
+-----------------------------------------------
+                0.04    0.00 26199995/26199995     std::allocator<unsigned int>::allocator<std::_List_node<unsigned int> >(std::allocator<std::_List_node<unsigned int> > const&) [31]
+[52]     0.5    0.04    0.00 26199995         __gnu_cxx::new_allocator<unsigned int>::new_allocator() [52]
+-----------------------------------------------
+                0.04    0.00       1/1           __do_global_ctors_aux [54]
+[53]     0.5    0.04    0.00       1         global constructors keyed to g_newValidTimes [53]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [207]
+-----------------------------------------------
+                                                 <spontaneous>
+[54]     0.5    0.00    0.04                 __do_global_ctors_aux [54]
+                0.04    0.00       1/1           global constructors keyed to g_newValidTimes [53]
+-----------------------------------------------
+                0.04    0.00       1/1           std::queue<int, std::deque<int, std::allocator<int> > >::push(int const&) [43]
+[55]     0.4    0.04    0.00       1         std::deque<int, std::allocator<int> >::push_back(int const&) [55]
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<int>::construct(int*, int const&) [85]
+-----------------------------------------------
+                0.00    0.03   10001/10001       std::list<unsigned int, std::allocator<unsigned int> >::list() [57]
+[56]     0.4    0.00    0.03   10001         std::_List_base<unsigned int, std::allocator<unsigned int> >::_List_base() [56]
+                0.00    0.03   10001/10001       std::_List_base<unsigned int, std::allocator<unsigned int> >::_List_impl::_List_impl() [60]
+                0.00    0.00   10001/2630001     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_init() [40]
+-----------------------------------------------
+                0.00    0.03   10001/10001       main [1]
+[57]     0.4    0.00    0.03   10001         std::list<unsigned int, std::allocator<unsigned int> >::list() [57]
+                0.00    0.03   10001/10001       std::_List_base<unsigned int, std::allocator<unsigned int> >::_List_base() [56]
+-----------------------------------------------
+                0.03    0.00 13080000/13080000     main [1]
+[58]     0.4    0.03    0.00 13080000         std::_List_iterator<unsigned int>::operator*() const [58]
+-----------------------------------------------
+                0.03    0.00   10001/10001       std::_List_base<unsigned int, std::allocator<unsigned int> >::_List_impl::_List_impl() [60]
+[59]     0.4    0.03    0.00   10001         std::allocator<std::_List_node<unsigned int> >::allocator() [59]
+                0.00    0.00   10001/10001       __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::new_allocator() [91]
+-----------------------------------------------
+                0.00    0.03   10001/10001       std::_List_base<unsigned int, std::allocator<unsigned int> >::_List_base() [56]
+[60]     0.4    0.00    0.03   10001         std::_List_base<unsigned int, std::allocator<unsigned int> >::_List_impl::_List_impl() [60]
+                0.03    0.00   10001/10001       std::allocator<std::_List_node<unsigned int> >::allocator() [59]
+-----------------------------------------------
+                0.03    0.00       5/5           WheelFactory(std::istream&, unsigned int) [33]
+[61]     0.4    0.03    0.00       5         CWedge::CWedgeFromExtant(unsigned int, unsigned int) [61]
+                0.00    0.00       5/5           CWedge::CWedge(unsigned int, unsigned int) [130]
+-----------------------------------------------
+                0.03    0.00       5/5           WheelFactory(std::istream&, unsigned int) [33]
+[62]     0.3    0.03    0.00       5         CWheel::CWheel(unsigned int) [62]
+                0.00    0.00       5/5           std::list<CWedge, std::allocator<CWedge> >::list() [155]
+                0.00    0.00       5/5           LCM(int const&, int const&) [128]
+-----------------------------------------------
+                0.00    0.00   49995/13099995     std::list<unsigned int, std::allocator<unsigned int> >::_M_erase(std::_List_iterator<unsigned int>) [47]
+                0.02    0.00 13050000/13099995     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_clear() [15]
+[63]     0.2    0.02    0.00 13099995         __gnu_cxx::new_allocator<unsigned int>::destroy(unsigned int*) [63]
+-----------------------------------------------
+                0.02    0.01       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::_M_clear() [38]
+[64]     0.2    0.02    0.01       5         std::_List_base<CWedge, std::allocator<CWedge> >::_M_put_node(std::_List_node<CWedge>*) [64]
+                0.01    0.00       5/5           __gnu_cxx::new_allocator<std::_List_node<CWedge> >::deallocate(std::_List_node<CWedge>*, unsigned long) [71]
+-----------------------------------------------
+                                                 <spontaneous>
+[65]     0.2    0.02    0.00                 std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_Node_allocator() [65]
+-----------------------------------------------
+                0.00    0.00       1/13100016     __gnu_cxx::new_allocator<int>::construct(int*, int const&) [85]
+                0.00    0.00       5/13100016     __gnu_cxx::new_allocator<CWheel>::construct(CWheel*, CWheel const&) [76]
+                0.00    0.00      10/13100016     __gnu_cxx::new_allocator<CWedge>::construct(CWedge*, CWedge const&) [82]
+                0.02    0.00 13100000/13100016     __gnu_cxx::new_allocator<unsigned int>::construct(unsigned int*, unsigned int const&) [50]
+[66]     0.2    0.02    0.00 13100016         operator new(unsigned long, void*) [66]
+-----------------------------------------------
+                                                 <spontaneous>
+[67]     0.2    0.02    0.00                 operator<<(std::ostream&, CWedge&) [67]
+-----------------------------------------------
+                0.01    0.00 13100000/13100000     CWheel::FillValidChecksList(std::list<unsigned int, std::allocator<unsigned int> >&) [3]
+[68]     0.1    0.01    0.00 13100000         CWedge::GetStart() [68]
+-----------------------------------------------
+                0.01    0.00 13099995/13099995     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_put_node(std::_List_node<unsigned int>*) [37]
+[69]     0.1    0.01    0.00 13099995         __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::deallocate(std::_List_node<unsigned int>*, unsigned long) [69]
+-----------------------------------------------
+                                                 <spontaneous>
+[70]     0.1    0.01    0.00                 CWedge::GetId() [70]
+-----------------------------------------------
+                0.01    0.00       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::_M_put_node(std::_List_node<CWedge>*) [64]
+[71]     0.1    0.01    0.00       5         __gnu_cxx::new_allocator<std::_List_node<CWedge> >::deallocate(std::_List_node<CWedge>*, unsigned long) [71]
+-----------------------------------------------
+                0.00    0.00   10000/10000       std::list<unsigned int, std::allocator<unsigned int> >::~list() [73]
+[72]     0.0    0.00    0.00   10000         std::_List_base<unsigned int, std::allocator<unsigned int> >::~_List_base() [72]
+                0.00    0.00   10000/2630000     std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_clear() [15]
+                0.00    0.00   10000/10000       std::_List_base<unsigned int, std::allocator<unsigned int> >::_List_impl::~_List_impl() [97]
+-----------------------------------------------
+                0.00    0.00   10000/10000       main [1]
+[73]     0.0    0.00    0.00   10000         std::list<unsigned int, std::allocator<unsigned int> >::~list() [73]
+                0.00    0.00   10000/10000       std::_List_base<unsigned int, std::allocator<unsigned int> >::~_List_base() [72]
+-----------------------------------------------
+                0.00    0.00       5/5           main [1]
+[74]     0.0    0.00    0.00       5         std::list<CWheel, std::allocator<CWheel> >::push_back(CWheel const&) [74]
+                0.00    0.00       5/5           std::list<CWheel, std::allocator<CWheel> >::_M_insert(std::_List_iterator<CWheel>, CWheel const&) [78]
+                0.00    0.00       5/64280005     std::list<CWheel, std::allocator<CWheel> >::end() [14]
+-----------------------------------------------
+                0.00    0.00       5/10          CWheel::AddWedge(CWedge const&) [51]
+                0.00    0.00       5/10          void std::list<CWedge, std::allocator<CWedge> >::_M_initialize_dispatch<std::_List_const_iterator<CWedge> >(std::_List_const_iterator<CWedge>, std::_List_const_iterator<CWedge>, std::__false_type) [80]
+[75]     0.0    0.00    0.00      10         std::list<CWedge, std::allocator<CWedge> >::push_back(CWedge const&) [75]
+                0.00    0.00      10/98300010     std::list<CWedge, std::allocator<CWedge> >::end() [8]
+                0.00    0.00      10/10          std::list<CWedge, std::allocator<CWedge> >::_M_insert(std::_List_iterator<CWedge>, CWedge const&) [84]
+-----------------------------------------------
+                0.00    0.00       5/5           std::list<CWheel, std::allocator<CWheel> >::_M_create_node(CWheel const&) [77]
+[76]     0.0    0.00    0.00       5         __gnu_cxx::new_allocator<CWheel>::construct(CWheel*, CWheel const&) [76]
+                0.00    0.00       5/5           CWheel::CWheel(CWheel const&) [79]
+                0.00    0.00       5/13100016     operator new(unsigned long, void*) [66]
+-----------------------------------------------
+                0.00    0.00       5/5           std::list<CWheel, std::allocator<CWheel> >::_M_insert(std::_List_iterator<CWheel>, CWheel const&) [78]
+[77]     0.0    0.00    0.00       5         std::list<CWheel, std::allocator<CWheel> >::_M_create_node(CWheel const&) [77]
+                0.00    0.00       5/5           __gnu_cxx::new_allocator<CWheel>::construct(CWheel*, CWheel const&) [76]
+                0.00    0.00       5/5           std::_List_base<CWheel, std::allocator<CWheel> >::_M_get_node() [153]
+                0.00    0.00       5/5           std::_List_base<CWheel, std::allocator<CWheel> >::_M_get_Tp_allocator() const [138]
+                0.00    0.00       5/5           std::allocator<CWheel>::~allocator() [144]
+-----------------------------------------------
+                0.00    0.00       5/5           std::list<CWheel, std::allocator<CWheel> >::push_back(CWheel const&) [74]
+[78]     0.0    0.00    0.00       5         std::list<CWheel, std::allocator<CWheel> >::_M_insert(std::_List_iterator<CWheel>, CWheel const&) [78]
+                0.00    0.00       5/5           std::list<CWheel, std::allocator<CWheel> >::_M_create_node(CWheel const&) [77]
+-----------------------------------------------
+                0.00    0.00       5/5           __gnu_cxx::new_allocator<CWheel>::construct(CWheel*, CWheel const&) [76]
+[79]     0.0    0.00    0.00       5         CWheel::CWheel(CWheel const&) [79]
+                0.00    0.00       5/5           std::list<CWedge, std::allocator<CWedge> >::list(std::list<CWedge, std::allocator<CWedge> > const&) [81]
+-----------------------------------------------
+                0.00    0.00       5/5           std::list<CWedge, std::allocator<CWedge> >::list(std::list<CWedge, std::allocator<CWedge> > const&) [81]
+[80]     0.0    0.00    0.00       5         void std::list<CWedge, std::allocator<CWedge> >::_M_initialize_dispatch<std::_List_const_iterator<CWedge> >(std::_List_const_iterator<CWedge>, std::_List_const_iterator<CWedge>, std::__false_type) [80]
+                0.00    0.00       5/10          std::list<CWedge, std::allocator<CWedge> >::push_back(CWedge const&) [75]
+                0.00    0.00      10/10          std::_List_const_iterator<CWedge>::operator!=(std::_List_const_iterator<CWedge> const&) const [112]
+                0.00    0.00       5/5           std::_List_const_iterator<CWedge>::operator*() const [140]
+                0.00    0.00       5/5           std::_List_const_iterator<CWedge>::operator++() [154]
+-----------------------------------------------
+                0.00    0.00       5/5           CWheel::CWheel(CWheel const&) [79]
+[81]     0.0    0.00    0.00       5         std::list<CWedge, std::allocator<CWedge> >::list(std::list<CWedge, std::allocator<CWedge> > const&) [81]
+                0.00    0.00       5/5           void std::list<CWedge, std::allocator<CWedge> >::_M_initialize_dispatch<std::_List_const_iterator<CWedge> >(std::_List_const_iterator<CWedge>, std::_List_const_iterator<CWedge>, std::__false_type) [80]
+                0.00    0.00       5/20          std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_Node_allocator() const [103]
+                0.00    0.00       5/20          std::allocator<CWedge>::allocator<std::_List_node<CWedge> >(std::allocator<std::_List_node<CWedge> > const&) [104]
+                0.00    0.00       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::_List_base(std::allocator<CWedge> const&) [151]
+                0.00    0.00       5/5           std::list<CWedge, std::allocator<CWedge> >::end() const [141]
+                0.00    0.00       5/20          std::allocator<CWedge>::~allocator() [105]
+                0.00    0.00       5/5           std::list<CWedge, std::allocator<CWedge> >::begin() const [142]
+-----------------------------------------------
+                0.00    0.00      10/10          std::list<CWedge, std::allocator<CWedge> >::_M_create_node(CWedge const&) [83]
+[82]     0.0    0.00    0.00      10         __gnu_cxx::new_allocator<CWedge>::construct(CWedge*, CWedge const&) [82]
+                0.00    0.00      10/13100016     operator new(unsigned long, void*) [66]
+-----------------------------------------------
+                0.00    0.00      10/10          std::list<CWedge, std::allocator<CWedge> >::_M_insert(std::_List_iterator<CWedge>, CWedge const&) [84]
+[83]     0.0    0.00    0.00      10         std::list<CWedge, std::allocator<CWedge> >::_M_create_node(CWedge const&) [83]
+                0.00    0.00      10/10          __gnu_cxx::new_allocator<CWedge>::construct(CWedge*, CWedge const&) [82]
+                0.00    0.00      10/10          std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_node() [114]
+                0.00    0.00      10/15          std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_Tp_allocator() const [106]
+                0.00    0.00      10/20          std::allocator<CWedge>::~allocator() [105]
+-----------------------------------------------
+                0.00    0.00      10/10          std::list<CWedge, std::allocator<CWedge> >::push_back(CWedge const&) [75]
+[84]     0.0    0.00    0.00      10         std::list<CWedge, std::allocator<CWedge> >::_M_insert(std::_List_iterator<CWedge>, CWedge const&) [84]
+                0.00    0.00      10/10          std::list<CWedge, std::allocator<CWedge> >::_M_create_node(CWedge const&) [83]
+-----------------------------------------------
+                0.00    0.00       1/1           std::deque<int, std::allocator<int> >::push_back(int const&) [55]
+[85]     0.0    0.00    0.00       1         __gnu_cxx::new_allocator<int>::construct(int*, int const&) [85]
+                0.00    0.00       1/13100016     operator new(unsigned long, void*) [66]
+-----------------------------------------------
+                0.00    0.00   10000/20000       std::list<unsigned int, std::allocator<unsigned int> >::begin() const [95]
+                0.00    0.00   10000/20000       std::list<unsigned int, std::allocator<unsigned int> >::end() const [94]
+[90]     0.0    0.00    0.00   20000         std::_List_const_iterator<unsigned int>::_List_const_iterator(std::_List_node_base const*) [90]
+-----------------------------------------------
+                0.00    0.00   10001/10001       std::allocator<std::_List_node<unsigned int> >::allocator() [59]
+[91]     0.0    0.00    0.00   10001         __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::new_allocator() [91]
+-----------------------------------------------
+                0.00    0.00   10000/10000       std::allocator<std::_List_node<unsigned int> >::~allocator() [96]
+[92]     0.0    0.00    0.00   10000         __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::~new_allocator() [92]
+-----------------------------------------------
+                0.00    0.00   10000/10000       std::list<unsigned int, std::allocator<unsigned int> >::operator=(std::list<unsigned int, std::allocator<unsigned int> > const&) [44]
+[93]     0.0    0.00    0.00   10000         std::_List_const_iterator<unsigned int>::operator==(std::_List_const_iterator<unsigned int> const&) const [93]
+-----------------------------------------------
+                0.00    0.00   10000/10000       std::list<unsigned int, std::allocator<unsigned int> >::operator=(std::list<unsigned int, std::allocator<unsigned int> > const&) [44]
+[94]     0.0    0.00    0.00   10000         std::list<unsigned int, std::allocator<unsigned int> >::end() const [94]
+                0.00    0.00   10000/20000       std::_List_const_iterator<unsigned int>::_List_const_iterator(std::_List_node_base const*) [90]
+-----------------------------------------------
+                0.00    0.00   10000/10000       std::list<unsigned int, std::allocator<unsigned int> >::operator=(std::list<unsigned int, std::allocator<unsigned int> > const&) [44]
+[95]     0.0    0.00    0.00   10000         std::list<unsigned int, std::allocator<unsigned int> >::begin() const [95]
+                0.00    0.00   10000/20000       std::_List_const_iterator<unsigned int>::_List_const_iterator(std::_List_node_base const*) [90]
+-----------------------------------------------
+                0.00    0.00   10000/10000       std::_List_base<unsigned int, std::allocator<unsigned int> >::_List_impl::~_List_impl() [97]
+[96]     0.0    0.00    0.00   10000         std::allocator<std::_List_node<unsigned int> >::~allocator() [96]
+                0.00    0.00   10000/10000       __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::~new_allocator() [92]
+-----------------------------------------------
+                0.00    0.00   10000/10000       std::_List_base<unsigned int, std::allocator<unsigned int> >::~_List_base() [72]
+[97]     0.0    0.00    0.00   10000         std::_List_base<unsigned int, std::allocator<unsigned int> >::_List_impl::~_List_impl() [97]
+                0.00    0.00   10000/10000       std::allocator<std::_List_node<unsigned int> >::~allocator() [96]
+-----------------------------------------------
+                0.00    0.00    9999/9999        std::list<unsigned int, std::allocator<unsigned int> >::operator=(std::list<unsigned int, std::allocator<unsigned int> > const&) [44]
+[98]     0.0    0.00    0.00    9999         std::_List_const_iterator<unsigned int>::operator!=(std::_List_const_iterator<unsigned int> const&) const [98]
+-----------------------------------------------
+                0.00    0.00       2/28          std::deque<int, std::allocator<int> >::deque(std::deque<int, std::allocator<int> > const&) [196]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*> std::__uninitialized_copy_a<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>, int>(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>, std::allocator<int>&) [203]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*> std::uninitialized_copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [202]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*> std::__uninitialized_copy<true>::uninitialized_copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [195]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*> std::copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [204]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*> std::__copy_move_a2<false, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [201]
+                0.00    0.00       2/28          std::_Niter_base<std::_Deque_iterator<int, int&, int*> >::iterator_type std::__niter_base<std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int&, int*>) [199]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*> std::__copy_move_a<false, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [200]
+                0.00    0.00       2/28          std::_Iter_base<std::_Deque_iterator<int, int&, int*>, false>::_S_base(std::_Deque_iterator<int, int&, int*>) [188]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*> std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [193]
+                0.00    0.00       4/28          std::deque<int, std::allocator<int> >::begin() [176]
+                0.00    0.00       4/28          std::deque<int, std::allocator<int> >::end() [175]
+[99]     0.0    0.00    0.00      28         std::_Deque_iterator<int, int&, int*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&) [99]
+-----------------------------------------------
+                0.00    0.00       2/28          std::_Deque_iterator<int, int const&, int const*>::_S_buffer_size() [194]
+                0.00    0.00       4/28          std::_Deque_base<int, std::allocator<int> >::_M_deallocate_node(int*) [171]
+                0.00    0.00       4/28          std::_Deque_base<int, std::allocator<int> >::_M_allocate_node() [167]
+                0.00    0.00       8/28          std::_Deque_base<int, std::allocator<int> >::_M_initialize_map(unsigned long) [170]
+                0.00    0.00      10/28          std::_Deque_iterator<int, int&, int*>::_S_buffer_size() [116]
+[100]    0.0    0.00    0.00      28         std::__deque_buf_size(unsigned long) [100]
+-----------------------------------------------
+                0.00    0.00      20/20          std::allocator<CWedge>::allocator<std::_List_node<CWedge> >(std::allocator<std::_List_node<CWedge> > const&) [104]
+[101]    0.0    0.00    0.00      20         __gnu_cxx::new_allocator<CWedge>::new_allocator() [101]
+-----------------------------------------------
+                0.00    0.00      20/20          std::allocator<CWedge>::~allocator() [105]
+[102]    0.0    0.00    0.00      20         __gnu_cxx::new_allocator<CWedge>::~new_allocator() [102]
+-----------------------------------------------
+                0.00    0.00       5/20          std::list<CWedge, std::allocator<CWedge> >::list(std::list<CWedge, std::allocator<CWedge> > const&) [81]
+                0.00    0.00      15/20          std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_Tp_allocator() const [106]
+[103]    0.0    0.00    0.00      20         std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_Node_allocator() const [103]
+-----------------------------------------------
+                0.00    0.00       5/20          std::list<CWedge, std::allocator<CWedge> >::list(std::list<CWedge, std::allocator<CWedge> > const&) [81]
+                0.00    0.00      15/20          std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_Tp_allocator() const [106]
+[104]    0.0    0.00    0.00      20         std::allocator<CWedge>::allocator<std::_List_node<CWedge> >(std::allocator<std::_List_node<CWedge> > const&) [104]
+                0.00    0.00      20/20          __gnu_cxx::new_allocator<CWedge>::new_allocator() [101]
+-----------------------------------------------
+                0.00    0.00       5/20          std::list<CWedge, std::allocator<CWedge> >::list(std::list<CWedge, std::allocator<CWedge> > const&) [81]
+                0.00    0.00       5/20          std::_List_base<CWedge, std::allocator<CWedge> >::_M_clear() [38]
+                0.00    0.00      10/20          std::list<CWedge, std::allocator<CWedge> >::_M_create_node(CWedge const&) [83]
+[105]    0.0    0.00    0.00      20         std::allocator<CWedge>::~allocator() [105]
+                0.00    0.00      20/20          __gnu_cxx::new_allocator<CWedge>::~new_allocator() [102]
+-----------------------------------------------
+                0.00    0.00       5/15          std::_List_base<CWedge, std::allocator<CWedge> >::_M_clear() [38]
+                0.00    0.00      10/15          std::list<CWedge, std::allocator<CWedge> >::_M_create_node(CWedge const&) [83]
+[106]    0.0    0.00    0.00      15         std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_Tp_allocator() const [106]
+                0.00    0.00      15/20          std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_Node_allocator() const [103]
+                0.00    0.00      15/20          std::allocator<CWedge>::allocator<std::_List_node<CWedge> >(std::allocator<std::_List_node<CWedge> > const&) [104]
+-----------------------------------------------
+                0.00    0.00      10/10          std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_node() [114]
+[107]    0.0    0.00    0.00      10         __gnu_cxx::new_allocator<std::_List_node<CWedge> >::allocate(unsigned long, void const*) [107]
+                0.00    0.00      10/10          __gnu_cxx::new_allocator<std::_List_node<CWedge> >::max_size() const [110]
+-----------------------------------------------
+                0.00    0.00       5/10          std::allocator<std::_List_node<CWedge> >::allocator<CWedge>(std::allocator<CWedge> const&) [145]
+                0.00    0.00       5/10          std::allocator<std::_List_node<CWedge> >::allocator() [147]
+[108]    0.0    0.00    0.00      10         __gnu_cxx::new_allocator<std::_List_node<CWedge> >::new_allocator() [108]
+-----------------------------------------------
+                0.00    0.00      10/10          std::allocator<std::_List_node<CWedge> >::~allocator() [113]
+[109]    0.0    0.00    0.00      10         __gnu_cxx::new_allocator<std::_List_node<CWedge> >::~new_allocator() [109]
+-----------------------------------------------
+                0.00    0.00      10/10          __gnu_cxx::new_allocator<std::_List_node<CWedge> >::allocate(unsigned long, void const*) [107]
+[110]    0.0    0.00    0.00      10         __gnu_cxx::new_allocator<std::_List_node<CWedge> >::max_size() const [110]
+-----------------------------------------------
+                0.00    0.00       2/10          std::deque<int, std::allocator<int> >::deque(std::deque<int, std::allocator<int> > const&) [196]
+                0.00    0.00       8/10          std::_Deque_base<int, std::allocator<int> >::_M_get_map_allocator() const [120]
+[111]    0.0    0.00    0.00      10         std::_Deque_base<int, std::allocator<int> >::_M_get_Tp_allocator() const [111]
+-----------------------------------------------
+                0.00    0.00      10/10          void std::list<CWedge, std::allocator<CWedge> >::_M_initialize_dispatch<std::_List_const_iterator<CWedge> >(std::_List_const_iterator<CWedge>, std::_List_const_iterator<CWedge>, std::__false_type) [80]
+[112]    0.0    0.00    0.00      10         std::_List_const_iterator<CWedge>::operator!=(std::_List_const_iterator<CWedge> const&) const [112]
+-----------------------------------------------
+                0.00    0.00       5/10          std::_List_base<CWedge, std::allocator<CWedge> >::_List_impl::~_List_impl() [150]
+                0.00    0.00       5/10          std::_List_base<CWedge, std::allocator<CWedge> >::_List_base(std::allocator<CWedge> const&) [151]
+[113]    0.0    0.00    0.00      10         std::allocator<std::_List_node<CWedge> >::~allocator() [113]
+                0.00    0.00      10/10          __gnu_cxx::new_allocator<std::_List_node<CWedge> >::~new_allocator() [109]
+-----------------------------------------------
+                0.00    0.00      10/10          std::list<CWedge, std::allocator<CWedge> >::_M_create_node(CWedge const&) [83]
+[114]    0.0    0.00    0.00      10         std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_node() [114]
+                0.00    0.00      10/10          __gnu_cxx::new_allocator<std::_List_node<CWedge> >::allocate(unsigned long, void const*) [107]
+-----------------------------------------------
+                0.00    0.00       5/10          std::_List_base<CWedge, std::allocator<CWedge> >::_List_base() [152]
+                0.00    0.00       5/10          std::_List_base<CWedge, std::allocator<CWedge> >::_List_base(std::allocator<CWedge> const&) [151]
+[115]    0.0    0.00    0.00      10         std::_List_base<CWedge, std::allocator<CWedge> >::_M_init() [115]
+-----------------------------------------------
+                0.00    0.00       2/10          std::_Deque_iterator<int, int&, int*>::difference_type std::operator-<int, int&, int*>(std::_Deque_iterator<int, int&, int*> const&, std::_Deque_iterator<int, int&, int*> const&) [206]
+                0.00    0.00       8/10          std::_Deque_iterator<int, int&, int*>::_M_set_node(int**) [124]
+[116]    0.0    0.00    0.00      10         std::_Deque_iterator<int, int&, int*>::_S_buffer_size() [116]
+                0.00    0.00      10/28          std::__deque_buf_size(unsigned long) [100]
+-----------------------------------------------
+                0.00    0.00       5/10          std::list<CWedge, std::allocator<CWedge> >::begin() const [142]
+                0.00    0.00       5/10          std::list<CWedge, std::allocator<CWedge> >::end() const [141]
+[117]    0.0    0.00    0.00      10         std::_List_const_iterator<CWedge>::_List_const_iterator(std::_List_node_base const*) [117]
+-----------------------------------------------
+                0.00    0.00       8/8           std::allocator<int*>::allocator<int>(std::allocator<int> const&) [121]
+[118]    0.0    0.00    0.00       8         __gnu_cxx::new_allocator<int*>::new_allocator() [118]
+-----------------------------------------------
+                0.00    0.00       8/8           std::allocator<int*>::~allocator() [122]
+[119]    0.0    0.00    0.00       8         __gnu_cxx::new_allocator<int*>::~new_allocator() [119]
+-----------------------------------------------
+                0.00    0.00       4/8           std::_Deque_base<int, std::allocator<int> >::_M_deallocate_map(int**, unsigned long) [169]
+                0.00    0.00       4/8           std::_Deque_base<int, std::allocator<int> >::_M_allocate_map(unsigned long) [165]
+[120]    0.0    0.00    0.00       8         std::_Deque_base<int, std::allocator<int> >::_M_get_map_allocator() const [120]
+                0.00    0.00       8/10          std::_Deque_base<int, std::allocator<int> >::_M_get_Tp_allocator() const [111]
+                0.00    0.00       8/8           std::allocator<int*>::allocator<int>(std::allocator<int> const&) [121]
+-----------------------------------------------
+                0.00    0.00       8/8           std::_Deque_base<int, std::allocator<int> >::_M_get_map_allocator() const [120]
+[121]    0.0    0.00    0.00       8         std::allocator<int*>::allocator<int>(std::allocator<int> const&) [121]
+                0.00    0.00       8/8           __gnu_cxx::new_allocator<int*>::new_allocator() [118]
+-----------------------------------------------
+                0.00    0.00       4/8           std::_Deque_base<int, std::allocator<int> >::_M_deallocate_map(int**, unsigned long) [169]
+                0.00    0.00       4/8           std::_Deque_base<int, std::allocator<int> >::_M_allocate_map(unsigned long) [165]
+[122]    0.0    0.00    0.00       8         std::allocator<int*>::~allocator() [122]
+                0.00    0.00       8/8           __gnu_cxx::new_allocator<int*>::~new_allocator() [119]
+-----------------------------------------------
+                0.00    0.00       4/8           std::_Miter_base<std::_Deque_iterator<int, int const&, int const*> >::iterator_type std::__miter_base<std::_Deque_iterator<int, int const&, int const*> >(std::_Deque_iterator<int, int const&, int const*>) [178]
+                0.00    0.00       4/8           std::_Niter_base<std::_Deque_iterator<int, int const&, int const*> >::iterator_type std::__niter_base<std::_Deque_iterator<int, int const&, int const*> >(std::_Deque_iterator<int, int const&, int const*>) [179]
+[123]    0.0    0.00    0.00       8         std::_Iter_base<std::_Deque_iterator<int, int const&, int const*>, false>::_S_base(std::_Deque_iterator<int, int const&, int const*>) [123]
+-----------------------------------------------
+                0.00    0.00       8/8           std::_Deque_base<int, std::allocator<int> >::_M_initialize_map(unsigned long) [170]
+[124]    0.0    0.00    0.00       8         std::_Deque_iterator<int, int&, int*>::_M_set_node(int**) [124]
+                0.00    0.00       8/10          std::_Deque_iterator<int, int&, int*>::_S_buffer_size() [116]
+-----------------------------------------------
+                0.00    0.00       4/8           std::_Deque_base<int, std::allocator<int> >::_Deque_impl::_Deque_impl() [189]
+                0.00    0.00       4/8           std::_Deque_base<int, std::allocator<int> >::_Deque_impl::_Deque_impl(std::allocator<int> const&) [190]
+[125]    0.0    0.00    0.00       8         std::_Deque_iterator<int, int&, int*>::_Deque_iterator() [125]
+-----------------------------------------------
+                0.00    0.00       2/6           std::deque<int, std::allocator<int> >::deque(std::deque<int, std::allocator<int> > const&) [196]
+                0.00    0.00       4/6           std::deque<int, std::allocator<int> >::~deque() [177]
+[126]    0.0    0.00    0.00       6         std::_Deque_base<int, std::allocator<int> >::_M_get_Tp_allocator() [126]
+-----------------------------------------------
+                0.00    0.00       5/5           LCM(int const&, int const&) [128]
+[127]    0.0    0.00    0.00       5         GCD(int const&, int const&) [127]
+-----------------------------------------------
+                0.00    0.00       5/5           CWheel::CWheel(unsigned int) [62]
+[128]    0.0    0.00    0.00       5         LCM(int const&, int const&) [128]
+                0.00    0.00       5/5           GCD(int const&, int const&) [127]
+-----------------------------------------------
+                0.00    0.00       5/5           CWedge::CWedge(unsigned int, unsigned int) [130]
+[129]    0.0    0.00    0.00       5         CWedge::Validate() [129]
+-----------------------------------------------
+                0.00    0.00       5/5           CWedge::CWedgeFromExtant(unsigned int, unsigned int) [61]
+[130]    0.0    0.00    0.00       5         CWedge::CWedge(unsigned int, unsigned int) [130]
+                0.00    0.00       5/5           CWedge::Validate() [129]
+-----------------------------------------------
+                0.00    0.00       5/5           __gnu_cxx::new_allocator<CWedge>::destroy(CWedge*) [132]
+[131]    0.0    0.00    0.00       5         CWedge::~CWedge() [131]
+-----------------------------------------------
+                0.00    0.00       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::_M_clear() [38]
+[132]    0.0    0.00    0.00       5         __gnu_cxx::new_allocator<CWedge>::destroy(CWedge*) [132]
+                0.00    0.00       5/5           CWedge::~CWedge() [131]
+-----------------------------------------------
+                0.00    0.00       5/5           std::allocator<CWheel>::allocator<std::_List_node<CWheel> >(std::allocator<std::_List_node<CWheel> > const&) [143]
+[133]    0.0    0.00    0.00       5         __gnu_cxx::new_allocator<CWheel>::new_allocator() [133]
+-----------------------------------------------
+                0.00    0.00       5/5           std::allocator<CWheel>::~allocator() [144]
+[134]    0.0    0.00    0.00       5         __gnu_cxx::new_allocator<CWheel>::~new_allocator() [134]
+-----------------------------------------------
+                0.00    0.00       5/5           std::allocator<std::_List_node<CWedge> >::allocator(std::allocator<std::_List_node<CWedge> > const&) [146]
+[135]    0.0    0.00    0.00       5         __gnu_cxx::new_allocator<std::_List_node<CWedge> >::new_allocator(__gnu_cxx::new_allocator<std::_List_node<CWedge> > const&) [135]
+-----------------------------------------------
+                0.00    0.00       5/5           std::_List_base<CWheel, std::allocator<CWheel> >::_M_get_node() [153]
+[136]    0.0    0.00    0.00       5         __gnu_cxx::new_allocator<std::_List_node<CWheel> >::allocate(unsigned long, void const*) [136]
+                0.00    0.00       5/5           __gnu_cxx::new_allocator<std::_List_node<CWheel> >::max_size() const [137]
+-----------------------------------------------
+                0.00    0.00       5/5           __gnu_cxx::new_allocator<std::_List_node<CWheel> >::allocate(unsigned long, void const*) [136]
+[137]    0.0    0.00    0.00       5         __gnu_cxx::new_allocator<std::_List_node<CWheel> >::max_size() const [137]
+-----------------------------------------------
+                0.00    0.00       5/5           std::list<CWheel, std::allocator<CWheel> >::_M_create_node(CWheel const&) [77]
+[138]    0.0    0.00    0.00       5         std::_List_base<CWheel, std::allocator<CWheel> >::_M_get_Tp_allocator() const [138]
+                0.00    0.00       5/5           std::allocator<CWheel>::allocator<std::_List_node<CWheel> >(std::allocator<std::_List_node<CWheel> > const&) [143]
+                0.00    0.00       5/5           std::_List_base<CWheel, std::allocator<CWheel> >::_M_get_Node_allocator() const [139]
+-----------------------------------------------
+                0.00    0.00       5/5           std::_List_base<CWheel, std::allocator<CWheel> >::_M_get_Tp_allocator() const [138]
+[139]    0.0    0.00    0.00       5         std::_List_base<CWheel, std::allocator<CWheel> >::_M_get_Node_allocator() const [139]
+-----------------------------------------------
+                0.00    0.00       5/5           void std::list<CWedge, std::allocator<CWedge> >::_M_initialize_dispatch<std::_List_const_iterator<CWedge> >(std::_List_const_iterator<CWedge>, std::_List_const_iterator<CWedge>, std::__false_type) [80]
+[140]    0.0    0.00    0.00       5         std::_List_const_iterator<CWedge>::operator*() const [140]
+-----------------------------------------------
+                0.00    0.00       5/5           std::list<CWedge, std::allocator<CWedge> >::list(std::list<CWedge, std::allocator<CWedge> > const&) [81]
+[141]    0.0    0.00    0.00       5         std::list<CWedge, std::allocator<CWedge> >::end() const [141]
+                0.00    0.00       5/10          std::_List_const_iterator<CWedge>::_List_const_iterator(std::_List_node_base const*) [117]
+-----------------------------------------------
+                0.00    0.00       5/5           std::list<CWedge, std::allocator<CWedge> >::list(std::list<CWedge, std::allocator<CWedge> > const&) [81]
+[142]    0.0    0.00    0.00       5         std::list<CWedge, std::allocator<CWedge> >::begin() const [142]
+                0.00    0.00       5/10          std::_List_const_iterator<CWedge>::_List_const_iterator(std::_List_node_base const*) [117]
+-----------------------------------------------
+                0.00    0.00       5/5           std::_List_base<CWheel, std::allocator<CWheel> >::_M_get_Tp_allocator() const [138]
+[143]    0.0    0.00    0.00       5         std::allocator<CWheel>::allocator<std::_List_node<CWheel> >(std::allocator<std::_List_node<CWheel> > const&) [143]
+                0.00    0.00       5/5           __gnu_cxx::new_allocator<CWheel>::new_allocator() [133]
+-----------------------------------------------
+                0.00    0.00       5/5           std::list<CWheel, std::allocator<CWheel> >::_M_create_node(CWheel const&) [77]
+[144]    0.0    0.00    0.00       5         std::allocator<CWheel>::~allocator() [144]
+                0.00    0.00       5/5           __gnu_cxx::new_allocator<CWheel>::~new_allocator() [134]
+-----------------------------------------------
+                0.00    0.00       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::_List_base(std::allocator<CWedge> const&) [151]
+[145]    0.0    0.00    0.00       5         std::allocator<std::_List_node<CWedge> >::allocator<CWedge>(std::allocator<CWedge> const&) [145]
+                0.00    0.00       5/10          __gnu_cxx::new_allocator<std::_List_node<CWedge> >::new_allocator() [108]
+-----------------------------------------------
+                0.00    0.00       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::_List_impl::_List_impl(std::allocator<std::_List_node<CWedge> > const&) [148]
+[146]    0.0    0.00    0.00       5         std::allocator<std::_List_node<CWedge> >::allocator(std::allocator<std::_List_node<CWedge> > const&) [146]
+                0.00    0.00       5/5           __gnu_cxx::new_allocator<std::_List_node<CWedge> >::new_allocator(__gnu_cxx::new_allocator<std::_List_node<CWedge> > const&) [135]
+-----------------------------------------------
+                0.00    0.00       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::_List_impl::_List_impl() [149]
+[147]    0.0    0.00    0.00       5         std::allocator<std::_List_node<CWedge> >::allocator() [147]
+                0.00    0.00       5/10          __gnu_cxx::new_allocator<std::_List_node<CWedge> >::new_allocator() [108]
+-----------------------------------------------
+                0.00    0.00       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::_List_base(std::allocator<CWedge> const&) [151]
+[148]    0.0    0.00    0.00       5         std::_List_base<CWedge, std::allocator<CWedge> >::_List_impl::_List_impl(std::allocator<std::_List_node<CWedge> > const&) [148]
+                0.00    0.00       5/5           std::allocator<std::_List_node<CWedge> >::allocator(std::allocator<std::_List_node<CWedge> > const&) [146]
+-----------------------------------------------
+                0.00    0.00       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::_List_base() [152]
+[149]    0.0    0.00    0.00       5         std::_List_base<CWedge, std::allocator<CWedge> >::_List_impl::_List_impl() [149]
+                0.00    0.00       5/5           std::allocator<std::_List_node<CWedge> >::allocator() [147]
+-----------------------------------------------
+                0.00    0.00       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::~_List_base() [29]
+[150]    0.0    0.00    0.00       5         std::_List_base<CWedge, std::allocator<CWedge> >::_List_impl::~_List_impl() [150]
+                0.00    0.00       5/10          std::allocator<std::_List_node<CWedge> >::~allocator() [113]
+-----------------------------------------------
+                0.00    0.00       5/5           std::list<CWedge, std::allocator<CWedge> >::list(std::list<CWedge, std::allocator<CWedge> > const&) [81]
+[151]    0.0    0.00    0.00       5         std::_List_base<CWedge, std::allocator<CWedge> >::_List_base(std::allocator<CWedge> const&) [151]
+                0.00    0.00       5/5           std::allocator<std::_List_node<CWedge> >::allocator<CWedge>(std::allocator<CWedge> const&) [145]
+                0.00    0.00       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::_List_impl::_List_impl(std::allocator<std::_List_node<CWedge> > const&) [148]
+                0.00    0.00       5/10          std::_List_base<CWedge, std::allocator<CWedge> >::_M_init() [115]
+                0.00    0.00       5/10          std::allocator<std::_List_node<CWedge> >::~allocator() [113]
+-----------------------------------------------
+                0.00    0.00       5/5           std::list<CWedge, std::allocator<CWedge> >::list() [155]
+[152]    0.0    0.00    0.00       5         std::_List_base<CWedge, std::allocator<CWedge> >::_List_base() [152]
+                0.00    0.00       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::_List_impl::_List_impl() [149]
+                0.00    0.00       5/10          std::_List_base<CWedge, std::allocator<CWedge> >::_M_init() [115]
+-----------------------------------------------
+                0.00    0.00       5/5           std::list<CWheel, std::allocator<CWheel> >::_M_create_node(CWheel const&) [77]
+[153]    0.0    0.00    0.00       5         std::_List_base<CWheel, std::allocator<CWheel> >::_M_get_node() [153]
+                0.00    0.00       5/5           __gnu_cxx::new_allocator<std::_List_node<CWheel> >::allocate(unsigned long, void const*) [136]
+-----------------------------------------------
+                0.00    0.00       5/5           void std::list<CWedge, std::allocator<CWedge> >::_M_initialize_dispatch<std::_List_const_iterator<CWedge> >(std::_List_const_iterator<CWedge>, std::_List_const_iterator<CWedge>, std::__false_type) [80]
+[154]    0.0    0.00    0.00       5         std::_List_const_iterator<CWedge>::operator++() [154]
+-----------------------------------------------
+                0.00    0.00       5/5           CWheel::CWheel(unsigned int) [62]
+[155]    0.0    0.00    0.00       5         std::list<CWedge, std::allocator<CWedge> >::list() [155]
+                0.00    0.00       5/5           std::_List_base<CWedge, std::allocator<CWedge> >::_List_base() [152]
+-----------------------------------------------
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_M_deallocate_map(int**, unsigned long) [169]
+[156]    0.0    0.00    0.00       4         __gnu_cxx::new_allocator<int*>::deallocate(int**, unsigned long) [156]
+-----------------------------------------------
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_M_allocate_map(unsigned long) [165]
+[157]    0.0    0.00    0.00       4         __gnu_cxx::new_allocator<int*>::allocate(unsigned long, void const*) [157]
+                0.00    0.00       4/4           __gnu_cxx::new_allocator<int*>::max_size() const [161]
+-----------------------------------------------
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_M_deallocate_node(int*) [171]
+[158]    0.0    0.00    0.00       4         __gnu_cxx::new_allocator<int>::deallocate(int*, unsigned long) [158]
+-----------------------------------------------
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_M_allocate_node() [167]
+[159]    0.0    0.00    0.00       4         __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) [159]
+                0.00    0.00       4/4           __gnu_cxx::new_allocator<int>::max_size() const [162]
+-----------------------------------------------
+                0.00    0.00       4/4           std::allocator<int>::~allocator() [163]
+[160]    0.0    0.00    0.00       4         __gnu_cxx::new_allocator<int>::~new_allocator() [160]
+-----------------------------------------------
+                0.00    0.00       4/4           __gnu_cxx::new_allocator<int*>::allocate(unsigned long, void const*) [157]
+[161]    0.0    0.00    0.00       4         __gnu_cxx::new_allocator<int*>::max_size() const [161]
+-----------------------------------------------
+                0.00    0.00       4/4           __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) [159]
+[162]    0.0    0.00    0.00       4         __gnu_cxx::new_allocator<int>::max_size() const [162]
+-----------------------------------------------
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_Deque_impl::~_Deque_impl() [164]
+[163]    0.0    0.00    0.00       4         std::allocator<int>::~allocator() [163]
+                0.00    0.00       4/4           __gnu_cxx::new_allocator<int>::~new_allocator() [160]
+-----------------------------------------------
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::~_Deque_base() [172]
+[164]    0.0    0.00    0.00       4         std::_Deque_base<int, std::allocator<int> >::_Deque_impl::~_Deque_impl() [164]
+                0.00    0.00       4/4           std::allocator<int>::~allocator() [163]
+-----------------------------------------------
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_M_initialize_map(unsigned long) [170]
+[165]    0.0    0.00    0.00       4         std::_Deque_base<int, std::allocator<int> >::_M_allocate_map(unsigned long) [165]
+                0.00    0.00       4/8           std::_Deque_base<int, std::allocator<int> >::_M_get_map_allocator() const [120]
+                0.00    0.00       4/4           __gnu_cxx::new_allocator<int*>::allocate(unsigned long, void const*) [157]
+                0.00    0.00       4/8           std::allocator<int*>::~allocator() [122]
+-----------------------------------------------
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_M_initialize_map(unsigned long) [170]
+[166]    0.0    0.00    0.00       4         std::_Deque_base<int, std::allocator<int> >::_M_create_nodes(int**, int**) [166]
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_M_allocate_node() [167]
+-----------------------------------------------
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_M_create_nodes(int**, int**) [166]
+[167]    0.0    0.00    0.00       4         std::_Deque_base<int, std::allocator<int> >::_M_allocate_node() [167]
+                0.00    0.00       4/28          std::__deque_buf_size(unsigned long) [100]
+                0.00    0.00       4/4           __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) [159]
+-----------------------------------------------
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::~_Deque_base() [172]
+[168]    0.0    0.00    0.00       4         std::_Deque_base<int, std::allocator<int> >::_M_destroy_nodes(int**, int**) [168]
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_M_deallocate_node(int*) [171]
+-----------------------------------------------
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::~_Deque_base() [172]
+[169]    0.0    0.00    0.00       4         std::_Deque_base<int, std::allocator<int> >::_M_deallocate_map(int**, unsigned long) [169]
+                0.00    0.00       4/8           std::_Deque_base<int, std::allocator<int> >::_M_get_map_allocator() const [120]
+                0.00    0.00       4/4           __gnu_cxx::new_allocator<int*>::deallocate(int**, unsigned long) [156]
+                0.00    0.00       4/8           std::allocator<int*>::~allocator() [122]
+-----------------------------------------------
+                0.00    0.00       2/4           std::_Deque_base<int, std::allocator<int> >::_Deque_base() [192]
+                0.00    0.00       2/4           std::_Deque_base<int, std::allocator<int> >::_Deque_base(std::allocator<int> const&, unsigned long) [191]
+[170]    0.0    0.00    0.00       4         std::_Deque_base<int, std::allocator<int> >::_M_initialize_map(unsigned long) [170]
+                0.00    0.00       8/28          std::__deque_buf_size(unsigned long) [100]
+                0.00    0.00       8/8           std::_Deque_iterator<int, int&, int*>::_M_set_node(int**) [124]
+                0.00    0.00       4/4           unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&) [180]
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_M_allocate_map(unsigned long) [165]
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_M_create_nodes(int**, int**) [166]
+-----------------------------------------------
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_M_destroy_nodes(int**, int**) [168]
+[171]    0.0    0.00    0.00       4         std::_Deque_base<int, std::allocator<int> >::_M_deallocate_node(int*) [171]
+                0.00    0.00       4/28          std::__deque_buf_size(unsigned long) [100]
+                0.00    0.00       4/4           __gnu_cxx::new_allocator<int>::deallocate(int*, unsigned long) [158]
+-----------------------------------------------
+                0.00    0.00       4/4           std::deque<int, std::allocator<int> >::~deque() [177]
+[172]    0.0    0.00    0.00       4         std::_Deque_base<int, std::allocator<int> >::~_Deque_base() [172]
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_M_destroy_nodes(int**, int**) [168]
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_M_deallocate_map(int**, unsigned long) [169]
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_Deque_impl::~_Deque_impl() [164]
+-----------------------------------------------
+                0.00    0.00       2/4           std::deque<int, std::allocator<int> >::begin() const [185]
+                0.00    0.00       2/4           std::deque<int, std::allocator<int> >::end() const [183]
+[173]    0.0    0.00    0.00       4         std::_Deque_iterator<int, int const&, int const*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&) [173]
+-----------------------------------------------
+                0.00    0.00       4/4           std::deque<int, std::allocator<int> >::~deque() [177]
+[174]    0.0    0.00    0.00       4         std::deque<int, std::allocator<int> >::_M_destroy_data(std::_Deque_iterator<int, int&, int*>, std::_Deque_iterator<int, int&, int*>, std::allocator<int> const&) [174]
+-----------------------------------------------
+                0.00    0.00       4/4           std::deque<int, std::allocator<int> >::~deque() [177]
+[175]    0.0    0.00    0.00       4         std::deque<int, std::allocator<int> >::end() [175]
+                0.00    0.00       4/28          std::_Deque_iterator<int, int&, int*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&) [99]
+-----------------------------------------------
+                0.00    0.00       4/4           std::deque<int, std::allocator<int> >::~deque() [177]
+[176]    0.0    0.00    0.00       4         std::deque<int, std::allocator<int> >::begin() [176]
+                0.00    0.00       4/28          std::_Deque_iterator<int, int&, int*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&) [99]
+-----------------------------------------------
+                0.00    0.00       2/4           __static_initialization_and_destruction_0(int, int) [207]
+                0.00    0.00       2/4           std::queue<int, std::deque<int, std::allocator<int> > >::~queue() [270]
+[177]    0.0    0.00    0.00       4         std::deque<int, std::allocator<int> >::~deque() [177]
+                0.00    0.00       4/6           std::_Deque_base<int, std::allocator<int> >::_M_get_Tp_allocator() [126]
+                0.00    0.00       4/4           std::deque<int, std::allocator<int> >::end() [175]
+                0.00    0.00       4/4           std::deque<int, std::allocator<int> >::begin() [176]
+                0.00    0.00       4/4           std::deque<int, std::allocator<int> >::_M_destroy_data(std::_Deque_iterator<int, int&, int*>, std::_Deque_iterator<int, int&, int*>, std::allocator<int> const&) [174]
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::~_Deque_base() [172]
+-----------------------------------------------
+                0.00    0.00       4/4           std::_Deque_iterator<int, int&, int*> std::copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [204]
+[178]    0.0    0.00    0.00       4         std::_Miter_base<std::_Deque_iterator<int, int const&, int const*> >::iterator_type std::__miter_base<std::_Deque_iterator<int, int const&, int const*> >(std::_Deque_iterator<int, int const&, int const*>) [178]
+                0.00    0.00       4/8           std::_Iter_base<std::_Deque_iterator<int, int const&, int const*>, false>::_S_base(std::_Deque_iterator<int, int const&, int const*>) [123]
+-----------------------------------------------
+                0.00    0.00       4/4           std::_Deque_iterator<int, int&, int*> std::__copy_move_a2<false, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [201]
+[179]    0.0    0.00    0.00       4         std::_Niter_base<std::_Deque_iterator<int, int const&, int const*> >::iterator_type std::__niter_base<std::_Deque_iterator<int, int const&, int const*> >(std::_Deque_iterator<int, int const&, int const*>) [179]
+                0.00    0.00       4/8           std::_Iter_base<std::_Deque_iterator<int, int const&, int const*>, false>::_S_base(std::_Deque_iterator<int, int const&, int const*>) [123]
+-----------------------------------------------
+                0.00    0.00       4/4           std::_Deque_base<int, std::allocator<int> >::_M_initialize_map(unsigned long) [170]
+[180]    0.0    0.00    0.00       4         unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&) [180]
+-----------------------------------------------
+                0.00    0.00       2/2           std::allocator<int>::allocator(std::allocator<int> const&) [186]
+[181]    0.0    0.00    0.00       2         __gnu_cxx::new_allocator<int>::new_allocator(__gnu_cxx::new_allocator<int> const&) [181]
+-----------------------------------------------
+                0.00    0.00       2/2           std::allocator<int>::allocator() [187]
+[182]    0.0    0.00    0.00       2         __gnu_cxx::new_allocator<int>::new_allocator() [182]
+-----------------------------------------------
+                0.00    0.00       2/2           std::deque<int, std::allocator<int> >::deque(std::deque<int, std::allocator<int> > const&) [196]
+[183]    0.0    0.00    0.00       2         std::deque<int, std::allocator<int> >::end() const [183]
+                0.00    0.00       2/4           std::_Deque_iterator<int, int const&, int const*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&) [173]
+-----------------------------------------------
+                0.00    0.00       2/2           std::deque<int, std::allocator<int> >::deque(std::deque<int, std::allocator<int> > const&) [196]
+[184]    0.0    0.00    0.00       2         std::deque<int, std::allocator<int> >::size() const [184]
+                0.00    0.00       2/2           std::_Deque_iterator<int, int&, int*>::difference_type std::operator-<int, int&, int*>(std::_Deque_iterator<int, int&, int*> const&, std::_Deque_iterator<int, int&, int*> const&) [206]
+-----------------------------------------------
+                0.00    0.00       2/2           std::deque<int, std::allocator<int> >::deque(std::deque<int, std::allocator<int> > const&) [196]
+[185]    0.0    0.00    0.00       2         std::deque<int, std::allocator<int> >::begin() const [185]
+                0.00    0.00       2/4           std::_Deque_iterator<int, int const&, int const*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&) [173]
+-----------------------------------------------
+                0.00    0.00       2/2           std::_Deque_base<int, std::allocator<int> >::_Deque_impl::_Deque_impl(std::allocator<int> const&) [190]
+[186]    0.0    0.00    0.00       2         std::allocator<int>::allocator(std::allocator<int> const&) [186]
+                0.00    0.00       2/2           __gnu_cxx::new_allocator<int>::new_allocator(__gnu_cxx::new_allocator<int> const&) [181]
+-----------------------------------------------
+                0.00    0.00       2/2           std::_Deque_base<int, std::allocator<int> >::_Deque_impl::_Deque_impl() [189]
+[187]    0.0    0.00    0.00       2         std::allocator<int>::allocator() [187]
+                0.00    0.00       2/2           __gnu_cxx::new_allocator<int>::new_allocator() [182]
+-----------------------------------------------
+                0.00    0.00       2/2           std::_Niter_base<std::_Deque_iterator<int, int&, int*> >::iterator_type std::__niter_base<std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int&, int*>) [199]
+[188]    0.0    0.00    0.00       2         std::_Iter_base<std::_Deque_iterator<int, int&, int*>, false>::_S_base(std::_Deque_iterator<int, int&, int*>) [188]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&) [99]
+-----------------------------------------------
+                0.00    0.00       2/2           std::_Deque_base<int, std::allocator<int> >::_Deque_base() [192]
+[189]    0.0    0.00    0.00       2         std::_Deque_base<int, std::allocator<int> >::_Deque_impl::_Deque_impl() [189]
+                0.00    0.00       4/8           std::_Deque_iterator<int, int&, int*>::_Deque_iterator() [125]
+                0.00    0.00       2/2           std::allocator<int>::allocator() [187]
+-----------------------------------------------
+                0.00    0.00       2/2           std::_Deque_base<int, std::allocator<int> >::_Deque_base(std::allocator<int> const&, unsigned long) [191]
+[190]    0.0    0.00    0.00       2         std::_Deque_base<int, std::allocator<int> >::_Deque_impl::_Deque_impl(std::allocator<int> const&) [190]
+                0.00    0.00       4/8           std::_Deque_iterator<int, int&, int*>::_Deque_iterator() [125]
+                0.00    0.00       2/2           std::allocator<int>::allocator(std::allocator<int> const&) [186]
+-----------------------------------------------
+                0.00    0.00       2/2           std::deque<int, std::allocator<int> >::deque(std::deque<int, std::allocator<int> > const&) [196]
+[191]    0.0    0.00    0.00       2         std::_Deque_base<int, std::allocator<int> >::_Deque_base(std::allocator<int> const&, unsigned long) [191]
+                0.00    0.00       2/2           std::_Deque_base<int, std::allocator<int> >::_Deque_impl::_Deque_impl(std::allocator<int> const&) [190]
+                0.00    0.00       2/4           std::_Deque_base<int, std::allocator<int> >::_M_initialize_map(unsigned long) [170]
+-----------------------------------------------
+                0.00    0.00       2/2           std::deque<int, std::allocator<int> >::deque() [197]
+[192]    0.0    0.00    0.00       2         std::_Deque_base<int, std::allocator<int> >::_Deque_base() [192]
+                0.00    0.00       2/2           std::_Deque_base<int, std::allocator<int> >::_Deque_impl::_Deque_impl() [189]
+                0.00    0.00       2/4           std::_Deque_base<int, std::allocator<int> >::_M_initialize_map(unsigned long) [170]
+-----------------------------------------------
+                0.00    0.00       2/2           std::_Deque_iterator<int, int&, int*> std::__copy_move_a<false, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [200]
+[193]    0.0    0.00    0.00       2         std::_Deque_iterator<int, int&, int*> std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [193]
+                0.00    0.00       2/2           std::_Deque_iterator<int, int const&, int const*>::difference_type std::operator-<int, int const&, int const*>(std::_Deque_iterator<int, int const&, int const*> const&, std::_Deque_iterator<int, int const&, int const*> const&) [205]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&) [99]
+-----------------------------------------------
+                0.00    0.00       2/2           std::_Deque_iterator<int, int const&, int const*>::difference_type std::operator-<int, int const&, int const*>(std::_Deque_iterator<int, int const&, int const*> const&, std::_Deque_iterator<int, int const&, int const*> const&) [205]
+[194]    0.0    0.00    0.00       2         std::_Deque_iterator<int, int const&, int const*>::_S_buffer_size() [194]
+                0.00    0.00       2/28          std::__deque_buf_size(unsigned long) [100]
+-----------------------------------------------
+                0.00    0.00       2/2           std::_Deque_iterator<int, int&, int*> std::uninitialized_copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [202]
+[195]    0.0    0.00    0.00       2         std::_Deque_iterator<int, int&, int*> std::__uninitialized_copy<true>::uninitialized_copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [195]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&) [99]
+                0.00    0.00       2/2           std::_Deque_iterator<int, int&, int*> std::copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [204]
+-----------------------------------------------
+                0.00    0.00       2/2           std::queue<int, std::deque<int, std::allocator<int> > >::queue(std::deque<int, std::allocator<int> > const&) [198]
+[196]    0.0    0.00    0.00       2         std::deque<int, std::allocator<int> >::deque(std::deque<int, std::allocator<int> > const&) [196]
+                0.00    0.00       2/2           std::deque<int, std::allocator<int> >::size() const [184]
+                0.00    0.00       2/10          std::_Deque_base<int, std::allocator<int> >::_M_get_Tp_allocator() const [111]
+                0.00    0.00       2/2           std::_Deque_base<int, std::allocator<int> >::_Deque_base(std::allocator<int> const&, unsigned long) [191]
+                0.00    0.00       2/6           std::_Deque_base<int, std::allocator<int> >::_M_get_Tp_allocator() [126]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&) [99]
+                0.00    0.00       2/2           std::deque<int, std::allocator<int> >::end() const [183]
+                0.00    0.00       2/2           std::deque<int, std::allocator<int> >::begin() const [185]
+                0.00    0.00       2/2           std::_Deque_iterator<int, int&, int*> std::__uninitialized_copy_a<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>, int>(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>, std::allocator<int>&) [203]
+-----------------------------------------------
+                0.00    0.00       2/2           __static_initialization_and_destruction_0(int, int) [207]
+[197]    0.0    0.00    0.00       2         std::deque<int, std::allocator<int> >::deque() [197]
+                0.00    0.00       2/2           std::_Deque_base<int, std::allocator<int> >::_Deque_base() [192]
+-----------------------------------------------
+                0.00    0.00       2/2           __static_initialization_and_destruction_0(int, int) [207]
+[198]    0.0    0.00    0.00       2         std::queue<int, std::deque<int, std::allocator<int> > >::queue(std::deque<int, std::allocator<int> > const&) [198]
+                0.00    0.00       2/2           std::deque<int, std::allocator<int> >::deque(std::deque<int, std::allocator<int> > const&) [196]
+-----------------------------------------------
+                0.00    0.00       2/2           std::_Deque_iterator<int, int&, int*> std::__copy_move_a2<false, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [201]
+[199]    0.0    0.00    0.00       2         std::_Niter_base<std::_Deque_iterator<int, int&, int*> >::iterator_type std::__niter_base<std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int&, int*>) [199]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&) [99]
+                0.00    0.00       2/2           std::_Iter_base<std::_Deque_iterator<int, int&, int*>, false>::_S_base(std::_Deque_iterator<int, int&, int*>) [188]
+-----------------------------------------------
+                0.00    0.00       2/2           std::_Deque_iterator<int, int&, int*> std::__copy_move_a2<false, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [201]
+[200]    0.0    0.00    0.00       2         std::_Deque_iterator<int, int&, int*> std::__copy_move_a<false, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [200]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&) [99]
+                0.00    0.00       2/2           std::_Deque_iterator<int, int&, int*> std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [193]
+-----------------------------------------------
+                0.00    0.00       2/2           std::_Deque_iterator<int, int&, int*> std::copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [204]
+[201]    0.0    0.00    0.00       2         std::_Deque_iterator<int, int&, int*> std::__copy_move_a2<false, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [201]
+                0.00    0.00       4/4           std::_Niter_base<std::_Deque_iterator<int, int const&, int const*> >::iterator_type std::__niter_base<std::_Deque_iterator<int, int const&, int const*> >(std::_Deque_iterator<int, int const&, int const*>) [179]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&) [99]
+                0.00    0.00       2/2           std::_Niter_base<std::_Deque_iterator<int, int&, int*> >::iterator_type std::__niter_base<std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int&, int*>) [199]
+                0.00    0.00       2/2           std::_Deque_iterator<int, int&, int*> std::__copy_move_a<false, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [200]
+-----------------------------------------------
+                0.00    0.00       2/2           std::_Deque_iterator<int, int&, int*> std::__uninitialized_copy_a<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>, int>(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>, std::allocator<int>&) [203]
+[202]    0.0    0.00    0.00       2         std::_Deque_iterator<int, int&, int*> std::uninitialized_copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [202]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&) [99]
+                0.00    0.00       2/2           std::_Deque_iterator<int, int&, int*> std::__uninitialized_copy<true>::uninitialized_copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [195]
+-----------------------------------------------
+                0.00    0.00       2/2           std::deque<int, std::allocator<int> >::deque(std::deque<int, std::allocator<int> > const&) [196]
+[203]    0.0    0.00    0.00       2         std::_Deque_iterator<int, int&, int*> std::__uninitialized_copy_a<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>, int>(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>, std::allocator<int>&) [203]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&) [99]
+                0.00    0.00       2/2           std::_Deque_iterator<int, int&, int*> std::uninitialized_copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [202]
+-----------------------------------------------
+                0.00    0.00       2/2           std::_Deque_iterator<int, int&, int*> std::__uninitialized_copy<true>::uninitialized_copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [195]
+[204]    0.0    0.00    0.00       2         std::_Deque_iterator<int, int&, int*> std::copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [204]
+                0.00    0.00       4/4           std::_Miter_base<std::_Deque_iterator<int, int const&, int const*> >::iterator_type std::__miter_base<std::_Deque_iterator<int, int const&, int const*> >(std::_Deque_iterator<int, int const&, int const*>) [178]
+                0.00    0.00       2/28          std::_Deque_iterator<int, int&, int*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&) [99]
+                0.00    0.00       2/2           std::_Deque_iterator<int, int&, int*> std::__copy_move_a2<false, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [201]
+-----------------------------------------------
+                0.00    0.00       2/2           std::_Deque_iterator<int, int&, int*> std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>) [193]
+[205]    0.0    0.00    0.00       2         std::_Deque_iterator<int, int const&, int const*>::difference_type std::operator-<int, int const&, int const*>(std::_Deque_iterator<int, int const&, int const*> const&, std::_Deque_iterator<int, int const&, int const*> const&) [205]
+                0.00    0.00       2/2           std::_Deque_iterator<int, int const&, int const*>::_S_buffer_size() [194]
+-----------------------------------------------
+                0.00    0.00       2/2           std::deque<int, std::allocator<int> >::size() const [184]
+[206]    0.0    0.00    0.00       2         std::_Deque_iterator<int, int&, int*>::difference_type std::operator-<int, int&, int*>(std::_Deque_iterator<int, int&, int*> const&, std::_Deque_iterator<int, int&, int*> const&) [206]
+                0.00    0.00       2/10          std::_Deque_iterator<int, int&, int*>::_S_buffer_size() [116]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to g_newValidTimes [53]
+[207]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [207]
+                0.00    0.00       2/2           std::deque<int, std::allocator<int> >::deque() [197]
+                0.00    0.00       2/2           std::queue<int, std::deque<int, std::allocator<int> > >::queue(std::deque<int, std::allocator<int> > const&) [198]
+                0.00    0.00       2/4           std::deque<int, std::allocator<int> >::~deque() [177]
+-----------------------------------------------
+                0.00    0.00       1/1           std::allocator<std::_List_node<CWheel> >::allocator() [209]
+[208]    0.0    0.00    0.00       1         __gnu_cxx::new_allocator<std::_List_node<CWheel> >::new_allocator() [208]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_List_base<CWheel, std::allocator<CWheel> >::_List_impl::_List_impl() [210]
+[209]    0.0    0.00    0.00       1         std::allocator<std::_List_node<CWheel> >::allocator() [209]
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<std::_List_node<CWheel> >::new_allocator() [208]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_List_base<CWheel, std::allocator<CWheel> >::_List_base() [212]
+[210]    0.0    0.00    0.00       1         std::_List_base<CWheel, std::allocator<CWheel> >::_List_impl::_List_impl() [210]
+                0.00    0.00       1/1           std::allocator<std::_List_node<CWheel> >::allocator() [209]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_List_base<CWheel, std::allocator<CWheel> >::_List_base() [212]
+[211]    0.0    0.00    0.00       1         std::_List_base<CWheel, std::allocator<CWheel> >::_M_init() [211]
+-----------------------------------------------
+                0.00    0.00       1/1           std::list<CWheel, std::allocator<CWheel> >::list() [213]
+[212]    0.0    0.00    0.00       1         std::_List_base<CWheel, std::allocator<CWheel> >::_List_base() [212]
+                0.00    0.00       1/1           std::_List_base<CWheel, std::allocator<CWheel> >::_List_impl::_List_impl() [210]
+                0.00    0.00       1/1           std::_List_base<CWheel, std::allocator<CWheel> >::_M_init() [211]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[213]    0.0    0.00    0.00       1         std::list<CWheel, std::allocator<CWheel> >::list() [213]
+                0.00    0.00       1/1           std::_List_base<CWheel, std::allocator<CWheel> >::_List_base() [212]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[214]    0.0    0.00    0.00       1         std::operator|(std::_Ios_Openmode, std::_Ios_Openmode) [214]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+  [53] global constructors keyed to g_newValidTimes (spin.cpp) [58] std::_List_iterator<unsigned int>::operator*() const [193] std::_Deque_iterator<int, int&, int*> std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>)
+  [33] WheelFactory(std::istream&, unsigned int) [35] std::_List_iterator<unsigned int>::operator!=(std::_List_iterator<unsigned int> const&) const [7] std::_List_iterator<CWedge>::_List_iterator(std::_List_node_base*)
+ [127] GCD(int const&, int const&) [140] std::_List_const_iterator<CWedge>::operator*() const [23] std::_List_iterator<CWedge>::operator++(int)
+ [128] LCM(int const&, int const&) [112] std::_List_const_iterator<CWedge>::operator!=(std::_List_const_iterator<CWedge> const&) const [22] std::_List_iterator<CWheel>::_List_iterator(std::_List_node_base*)
+ [207] __static_initialization_and_destruction_0(int, int) (spin.cpp) [93] std::_List_const_iterator<unsigned int>::operator==(std::_List_const_iterator<unsigned int> const&) const [16] std::_List_iterator<CWheel>::operator++(int)
+  [61] CWedge::CWedgeFromExtant(unsigned int, unsigned int) [98] std::_List_const_iterator<unsigned int>::operator!=(std::_List_const_iterator<unsigned int> const&) const [36] std::_List_iterator<unsigned int>::_List_iterator(std::_List_node_base*)
+  [70] CWedge::GetId()       [141] std::list<CWedge, std::allocator<CWedge> >::end() const [32] std::_List_iterator<unsigned int>::operator++(int)
+  [13] CWedge::Contains(unsigned int) [142] std::list<CWedge, std::allocator<CWedge> >::begin() const [194] std::_Deque_iterator<int, int const&, int const*>::_S_buffer_size()
+  [68] CWedge::GetStart()     [94] std::list<unsigned int, std::allocator<unsigned int> >::end() const [173] std::_Deque_iterator<int, int const&, int const*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&)
+ [129] CWedge::Validate()     [95] std::list<unsigned int, std::allocator<unsigned int> >::begin() const [124] std::_Deque_iterator<int, int&, int*>::_M_set_node(int**)
+ [130] CWedge::CWedge(unsigned int, unsigned int) [183] std::deque<int, std::allocator<int> >::end() const [116] std::_Deque_iterator<int, int&, int*>::_S_buffer_size()
+ [131] CWedge::~CWedge()     [184] std::deque<int, std::allocator<int> >::size() const [99] std::_Deque_iterator<int, int&, int*>::_Deque_iterator(std::_Deque_iterator<int, int&, int*> const&)
+  [18] CWedge::operator+=(int) [185] std::deque<int, std::allocator<int> >::begin() const [125] std::_Deque_iterator<int, int&, int*>::_Deque_iterator()
+   [2] CWheel::AllowsLightThrough(int const&) [104] std::allocator<CWedge>::allocator<std::_List_node<CWedge> >(std::allocator<std::_List_node<CWedge> > const&) [117] std::_List_const_iterator<CWedge>::_List_const_iterator(std::_List_node_base const*)
+   [3] CWheel::FillValidChecksList(std::list<unsigned int, std::allocator<unsigned int> >&) [105] std::allocator<CWedge>::~allocator() [154] std::_List_const_iterator<CWedge>::operator++()
+   [4] CWheel::step(int)     [143] std::allocator<CWheel>::allocator<std::_List_node<CWheel> >(std::allocator<std::_List_node<CWheel> > const&) [90] std::_List_const_iterator<unsigned int>::_List_const_iterator(std::_List_node_base const*)
+  [51] CWheel::AddWedge(CWedge const&) [144] std::allocator<CWheel>::~allocator() [195] std::_Deque_iterator<int, int&, int*> std::__uninitialized_copy<true>::uninitialized_copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>)
+  [79] CWheel::CWheel(CWheel const&) [121] std::allocator<int*>::allocator<int>(std::allocator<int> const&) [83] std::list<CWedge, std::allocator<CWedge> >::_M_create_node(CWedge const&)
+  [62] CWheel::CWheel(unsigned int) [122] std::allocator<int*>::~allocator() [80] void std::list<CWedge, std::allocator<CWedge> >::_M_initialize_dispatch<std::_List_const_iterator<CWedge> >(std::_List_const_iterator<CWedge>, std::_List_const_iterator<CWedge>, std::__false_type)
+  [28] CWheel::~CWheel()     [145] std::allocator<std::_List_node<CWedge> >::allocator<CWedge>(std::allocator<CWedge> const&) [8] std::list<CWedge, std::allocator<CWedge> >::end()
+ [132] __gnu_cxx::new_allocator<CWedge>::destroy(CWedge*) [146] std::allocator<std::_List_node<CWedge> >::allocator(std::allocator<std::_List_node<CWedge> > const&) [12] std::list<CWedge, std::allocator<CWedge> >::begin()
+  [82] __gnu_cxx::new_allocator<CWedge>::construct(CWedge*, CWedge const&) [147] std::allocator<std::_List_node<CWedge> >::allocator() [84] std::list<CWedge, std::allocator<CWedge> >::_M_insert(std::_List_iterator<CWedge>, CWedge const&)
+ [101] __gnu_cxx::new_allocator<CWedge>::new_allocator() [113] std::allocator<std::_List_node<CWedge> >::~allocator() [75] std::list<CWedge, std::allocator<CWedge> >::push_back(CWedge const&)
+ [102] __gnu_cxx::new_allocator<CWedge>::~new_allocator() [209] std::allocator<std::_List_node<CWheel> >::allocator() [81] std::list<CWedge, std::allocator<CWedge> >::list(std::list<CWedge, std::allocator<CWedge> > const&)
+  [76] __gnu_cxx::new_allocator<CWheel>::construct(CWheel*, CWheel const&) [59] std::allocator<std::_List_node<unsigned int> >::allocator() [155] std::list<CWedge, std::allocator<CWedge> >::list()
+ [133] __gnu_cxx::new_allocator<CWheel>::new_allocator() [96] std::allocator<std::_List_node<unsigned int> >::~allocator() [30] std::list<CWedge, std::allocator<CWedge> >::~list()
+ [134] __gnu_cxx::new_allocator<CWheel>::~new_allocator() [186] std::allocator<int>::allocator(std::allocator<int> const&) [77] std::list<CWheel, std::allocator<CWheel> >::_M_create_node(CWheel const&)
+ [156] __gnu_cxx::new_allocator<int*>::deallocate(int**, unsigned long) [187] std::allocator<int>::allocator() [14] std::list<CWheel, std::allocator<CWheel> >::end()
+ [157] __gnu_cxx::new_allocator<int*>::allocate(unsigned long, void const*) [163] std::allocator<int>::~allocator() [25] std::list<CWheel, std::allocator<CWheel> >::begin()
+ [118] __gnu_cxx::new_allocator<int*>::new_allocator() [31] std::allocator<unsigned int>::allocator<std::_List_node<unsigned int> >(std::allocator<std::_List_node<unsigned int> > const&) [78] std::list<CWheel, std::allocator<CWheel> >::_M_insert(std::_List_iterator<CWheel>, CWheel const&)
+ [119] __gnu_cxx::new_allocator<int*>::~new_allocator() [34] std::allocator<unsigned int>::~allocator() [74] std::list<CWheel, std::allocator<CWheel> >::push_back(CWheel const&)
+  [71] __gnu_cxx::new_allocator<std::_List_node<CWedge> >::deallocate(std::_List_node<CWedge>*, unsigned long) [123] std::_Iter_base<std::_Deque_iterator<int, int const&, int const*>, false>::_S_base(std::_Deque_iterator<int, int const&, int const*>) [213] std::list<CWheel, std::allocator<CWheel> >::list()
+ [107] __gnu_cxx::new_allocator<std::_List_node<CWedge> >::allocate(unsigned long, void const*) [188] std::_Iter_base<std::_Deque_iterator<int, int&, int*>, false>::_S_base(std::_Deque_iterator<int, int&, int*>) [9] std::list<unsigned int, std::allocator<unsigned int> >::_M_create_node(unsigned int const&)
+ [135] __gnu_cxx::new_allocator<std::_List_node<CWedge> >::new_allocator(__gnu_cxx::new_allocator<std::_List_node<CWedge> > const&) [148] std::_List_base<CWedge, std::allocator<CWedge> >::_List_impl::_List_impl(std::allocator<std::_List_node<CWedge> > const&) [27] std::list<unsigned int, std::allocator<unsigned int> >::end()
+ [108] __gnu_cxx::new_allocator<std::_List_node<CWedge> >::new_allocator() [149] std::_List_base<CWedge, std::allocator<CWedge> >::_List_impl::_List_impl() [39] std::list<unsigned int, std::allocator<unsigned int> >::begin()
+ [109] __gnu_cxx::new_allocator<std::_List_node<CWedge> >::~new_allocator() [150] std::_List_base<CWedge, std::allocator<CWedge> >::_List_impl::~_List_impl() [10] std::list<unsigned int, std::allocator<unsigned int> >::clear()
+ [136] __gnu_cxx::new_allocator<std::_List_node<CWheel> >::allocate(unsigned long, void const*) [114] std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_node() [46] std::list<unsigned int, std::allocator<unsigned int> >::erase(std::_List_iterator<unsigned int>)
+ [208] __gnu_cxx::new_allocator<std::_List_node<CWheel> >::new_allocator() [64] std::_List_base<CWedge, std::allocator<CWedge> >::_M_put_node(std::_List_node<CWedge>*) [45] std::list<unsigned int, std::allocator<unsigned int> >::erase(std::_List_iterator<unsigned int>, std::_List_iterator<unsigned int>)
+  [69] __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::deallocate(std::_List_node<unsigned int>*, unsigned long) [115] std::_List_base<CWedge, std::allocator<CWedge> >::_M_init() [47] std::list<unsigned int, std::allocator<unsigned int> >::_M_erase(std::_List_iterator<unsigned int>)
+  [24] __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::allocate(unsigned long, void const*) [38] std::_List_base<CWedge, std::allocator<CWedge> >::_M_clear() [6] std::list<unsigned int, std::allocator<unsigned int> >::_M_insert(std::_List_iterator<unsigned int>, unsigned int const&)
+  [91] __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::new_allocator() [151] std::_List_base<CWedge, std::allocator<CWedge> >::_List_base(std::allocator<CWedge> const&) [5] std::list<unsigned int, std::allocator<unsigned int> >::push_back(unsigned int const&)
+  [92] __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::~new_allocator() [152] std::_List_base<CWedge, std::allocator<CWedge> >::_List_base() [57] std::list<unsigned int, std::allocator<unsigned int> >::list()
+ [158] __gnu_cxx::new_allocator<int>::deallocate(int*, unsigned long) [29] std::_List_base<CWedge, std::allocator<CWedge> >::~_List_base() [73] std::list<unsigned int, std::allocator<unsigned int> >::~list()
+ [159] __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) [210] std::_List_base<CWheel, std::allocator<CWheel> >::_List_impl::_List_impl() [44] std::list<unsigned int, std::allocator<unsigned int> >::operator=(std::list<unsigned int, std::allocator<unsigned int> > const&)
+  [85] __gnu_cxx::new_allocator<int>::construct(int*, int const&) [153] std::_List_base<CWheel, std::allocator<CWheel> >::_M_get_node() [174] std::deque<int, std::allocator<int> >::_M_destroy_data(std::_Deque_iterator<int, int&, int*>, std::_Deque_iterator<int, int&, int*>, std::allocator<int> const&)
+ [181] __gnu_cxx::new_allocator<int>::new_allocator(__gnu_cxx::new_allocator<int> const&) [211] std::_List_base<CWheel, std::allocator<CWheel> >::_M_init() [175] std::deque<int, std::allocator<int> >::end()
+ [182] __gnu_cxx::new_allocator<int>::new_allocator() [212] std::_List_base<CWheel, std::allocator<CWheel> >::_List_base() [176] std::deque<int, std::allocator<int> >::begin()
+ [160] __gnu_cxx::new_allocator<int>::~new_allocator() [60] std::_List_base<unsigned int, std::allocator<unsigned int> >::_List_impl::_List_impl() [55] std::deque<int, std::allocator<int> >::push_back(int const&)
+  [63] __gnu_cxx::new_allocator<unsigned int>::destroy(unsigned int*) [97] std::_List_base<unsigned int, std::allocator<unsigned int> >::_List_impl::~_List_impl() [196] std::deque<int, std::allocator<int> >::deque(std::deque<int, std::allocator<int> > const&)
+  [50] __gnu_cxx::new_allocator<unsigned int>::construct(unsigned int*, unsigned int const&) [19] std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_node() [197] std::deque<int, std::allocator<int> >::deque()
+  [52] __gnu_cxx::new_allocator<unsigned int>::new_allocator() [37] std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_put_node(std::_List_node<unsigned int>*) [177] std::deque<int, std::allocator<int> >::~deque()
+  [48] __gnu_cxx::new_allocator<unsigned int>::~new_allocator() [65] std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_Node_allocator() [43] std::queue<int, std::deque<int, std::allocator<int> > >::push(int const&)
+ [161] __gnu_cxx::new_allocator<int*>::max_size() const [40] std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_init() [198] std::queue<int, std::deque<int, std::allocator<int> > >::queue(std::deque<int, std::allocator<int> > const&)
+ [110] __gnu_cxx::new_allocator<std::_List_node<CWedge> >::max_size() const [15] std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_clear() [178] std::_Miter_base<std::_Deque_iterator<int, int const&, int const*> >::iterator_type std::__miter_base<std::_Deque_iterator<int, int const&, int const*> >(std::_Deque_iterator<int, int const&, int const*>)
+ [137] __gnu_cxx::new_allocator<std::_List_node<CWheel> >::max_size() const [56] std::_List_base<unsigned int, std::allocator<unsigned int> >::_List_base() [179] std::_Niter_base<std::_Deque_iterator<int, int const&, int const*> >::iterator_type std::__niter_base<std::_Deque_iterator<int, int const&, int const*> >(std::_Deque_iterator<int, int const&, int const*>)
+  [49] __gnu_cxx::new_allocator<std::_List_node<unsigned int> >::max_size() const [72] std::_List_base<unsigned int, std::allocator<unsigned int> >::~_List_base() [199] std::_Niter_base<std::_Deque_iterator<int, int&, int*> >::iterator_type std::__niter_base<std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int&, int*>)
+ [162] __gnu_cxx::new_allocator<int>::max_size() const [189] std::_Deque_base<int, std::allocator<int> >::_Deque_impl::_Deque_impl() [200] std::_Deque_iterator<int, int&, int*> std::__copy_move_a<false, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>)
+ [106] std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_Tp_allocator() const [190] std::_Deque_base<int, std::allocator<int> >::_Deque_impl::_Deque_impl(std::allocator<int> const&) [201] std::_Deque_iterator<int, int&, int*> std::__copy_move_a2<false, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>)
+ [103] std::_List_base<CWedge, std::allocator<CWedge> >::_M_get_Node_allocator() const [164] std::_Deque_base<int, std::allocator<int> >::_Deque_impl::~_Deque_impl() [100] std::__deque_buf_size(unsigned long)
+ [138] std::_List_base<CWheel, std::allocator<CWheel> >::_M_get_Tp_allocator() const [165] std::_Deque_base<int, std::allocator<int> >::_M_allocate_map(unsigned long) [202] std::_Deque_iterator<int, int&, int*> std::uninitialized_copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>)
+ [139] std::_List_base<CWheel, std::allocator<CWheel> >::_M_get_Node_allocator() const [166] std::_Deque_base<int, std::allocator<int> >::_M_create_nodes(int**, int**) [203] std::_Deque_iterator<int, int&, int*> std::__uninitialized_copy_a<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>, int>(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>, std::allocator<int>&)
+  [17] std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_Tp_allocator() const [167] std::_Deque_base<int, std::allocator<int> >::_M_allocate_node() [180] unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&)
+  [41] std::_List_base<unsigned int, std::allocator<unsigned int> >::_M_get_Node_allocator() const [168] std::_Deque_base<int, std::allocator<int> >::_M_destroy_nodes(int**, int**) [204] std::_Deque_iterator<int, int&, int*> std::copy<std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*> >(std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int const&, int const*>, std::_Deque_iterator<int, int&, int*>)
+ [111] std::_Deque_base<int, std::allocator<int> >::_M_get_Tp_allocator() const [169] std::_Deque_base<int, std::allocator<int> >::_M_deallocate_map(int**, unsigned long) [205] std::_Deque_iterator<int, int const&, int const*>::difference_type std::operator-<int, int const&, int const*>(std::_Deque_iterator<int, int const&, int const*> const&, std::_Deque_iterator<int, int const&, int const*> const&)
+ [120] std::_Deque_base<int, std::allocator<int> >::_M_get_map_allocator() const [170] std::_Deque_base<int, std::allocator<int> >::_M_initialize_map(unsigned long) [206] std::_Deque_iterator<int, int&, int*>::difference_type std::operator-<int, int&, int*>(std::_Deque_iterator<int, int&, int*> const&, std::_Deque_iterator<int, int&, int*> const&)
+  [42] std::_List_iterator<CWedge>::operator*() const [171] std::_Deque_base<int, std::allocator<int> >::_M_deallocate_node(int*) [214] std::operator|(std::_Ios_Openmode, std::_Ios_Openmode)
+  [11] std::_List_iterator<CWedge>::operator!=(std::_List_iterator<CWedge> const&) const [126] std::_Deque_base<int, std::allocator<int> >::_M_get_Tp_allocator() [67] operator<<(std::ostream&, CWedge&)
+  [26] std::_List_iterator<CWedge>::operator->() const [191] std::_Deque_base<int, std::allocator<int> >::_Deque_base(std::allocator<int> const&, unsigned long) [66] operator new(unsigned long, void*)
+  [21] std::_List_iterator<CWheel>::operator!=(std::_List_iterator<CWheel> const&) const [192] std::_Deque_base<int, std::allocator<int> >::_Deque_base() [1] main
+  [20] std::_List_iterator<CWheel>::operator->() const [172] std::_Deque_base<int, std::allocator<int> >::~_Deque_base()

@@ -1,0 +1,15 @@
+/*
+ID:  ysimidjiy1
+LANG: C++
+TASK: humble
+*/
+
+#include <cstdio>
+#include <cstdlib>
+#include <cassert>
+
+int main(){
+
+  exit(0);
+
+}

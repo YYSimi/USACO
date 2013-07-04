@@ -1,0 +1,24 @@
+make pretty: clear all
+
+ugly: all
+
+all: 
+	gcc -g -pg -lm rect1.cpp
+
+clear:
+	clear
+
+test: pretty
+	./a.out rect1.in
+	cat rect1.out
+
+longtest: pretty
+	./a.out rect1.in > longtest.out
+	cat rect1.out
+
+clean:
+	rm *~
+
+totalclean:
+	rm *~
+	rm \#*\#

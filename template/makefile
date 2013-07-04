@@ -3,18 +3,18 @@ make pretty: clear all
 ugly: all
 
 all: 
-	gcc -g -pg -lm cur.c
+	g++ -g -pg -lm PROGNAME.cpp
 
 clear:
 	clear
 
 test: pretty
-	./a.out test.in
-	cat test.out
+	./a.out PROGNAME.in
+	cat PROGNAME.out
 
 longtest: pretty
-	./a.out test.in > longtest.out
-	cat test.out
+	./a.out PROGNAME.in > longtest.out
+	cat PROGNAME.out
 
 clean:
 	rm *~

@@ -1,0 +1,74 @@
+/*
+ID:  ysimidjiy1
+LANG: C++
+TASK: kimbits
+*/
+
+#ifndef NDEBUG
+#define DEBUG
+#endif
+
+#ifdef DEBUG
+#define DBGRUN(x) x
+#else
+#define DBGRUN(x) 
+#endif
+
+#define TASKNAME kimbits
+
+#include <cstdio>
+#include <cstdlib>
+#include <cassert>
+#include <string>
+#include <iostream>
+#include <fstream>
+
+class IUnitTests{
+public:
+    void Execute();
+    IUnitTests(std::string _strTestName): strTestName(_strTestName) {};
+    virtual ~IUnitTests() {};
+protected:
+    const std::string strTestName;
+private: //Virtual/template methods and hooks
+    virtual void TestFunction() = 0;
+    virtual void PrintParametersHook() {}
+};
+
+class CSampleTest: public IUnitTests {
+public:
+    CSampleTest(int a, int b): IUnitTests(std::string("SampleTest")), nArgA(a), nArgB(b) {};
+
+private:
+    int nArgA;
+    int nArgB;
+    void PrintParametersHook() {std::cout << "nArgA: " << nArgA << ", nArgB: " << nArgB << std::endl;}
+    void TestFunction() {return;}
+};
+
+void IUnitTests::Execute(){
+    std::cout << std::endl;
+    std::cout << "Executing " << strTestName << " unit tests." << std::endl;
+    PrintParametersHook();
+    TestFunction();
+    std::cout << strTestName << " unit tests finished executing." << std::endl;
+    std::cout << std::endl;
+}
+
+int choose(int n, int k) {
+    
+}
+
+int Factorial(n)
+
+//int tot(i) = 
+
+int main(){
+
+#ifdef DEBUG
+    CSampleTest SampleTest(3, 5);
+    SampleTest.Execute();
+#endif
+  exit(0);
+
+}

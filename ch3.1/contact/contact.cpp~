@@ -1,0 +1,250 @@
+/*
+ID:  ysimidjiy1
+LANG: C++
+TASK: contact
+*/
+
+#include <cstdio>
+#include <cstdlib>
+#include <cassert>
+#include <cstring>
+#include <queue>
+#include <vector>
+
+#define TASKNAME contact
+//#define DEBUG
+
+#ifdef DEBUG
+#define dprintf(x) printf x
+#else 
+#define dprintf(x) if(0) {}
+#endif
+
+#define TABLE_SIZE 101010 //~100K elements * sizeof(HashTableEntry *) yields a 400KB table.
+#define MAX_HEAP_SIZE 500000 //500K entries * sizeof(HashTableEntry) yields a 8MB heap.  Note that by "heap", we mean memory region here, not the heap data structure.
+#define MAX_INPUT_BITS 200000 //200k elements stored as chars yields a 200KB table.
+#define MAX_STRING_LENGTH 50
+
+struct HashTableEntry {
+    int nFrequency;
+    char *pStart;
+    int nLength;
+    HashTableEntry *pNext;
+};
+
+char g_InputArray[MAX_INPUT_BITS] = {0}; //Initialize to -1 before using.
+HashTableEntry *g_HashTable[TABLE_SIZE];
+HashTableEntry g_HashTableEntries[MAX_HEAP_SIZE]; //Avoiding dynamic allocation.
+HashTableEntry *g_pNextFreeEntry = g_HashTableEntries;
+int g_nHeapSize = 0; //Number of HashTableEntry elements in our heap.
+int g_nInputSize = 0;
+
+int CompareHashTableEntries(const void *hte1, const void*hte2){
+
+    HashTableEntry *Entry1 = (HashTableEntry *)hte1;
+    HashTableEntry *Entry2 = (HashTableEntry *)hte2;
+    
+    if (Entry1->nFrequency != Entry2->nFrequency){
+        return Entry1->nFrequency < Entry2->nFrequency;
+    }
+    else if (Entry1->nLength != Entry2->nLength){
+        return Entry1->nLength > Entry2->nLength;
+    } else {
+        return memcmp(Entry1->pStart, Entry2->pStart, Entry1->nLength);
+    }
+
+}
+
+int PrintHashTableString(HashTableEntry *hteEntry, FILE *fout = stdout) {
+    char *pcCurrent = hteEntry->pStart;
+    for (int i = 0; i < hteEntry->nLength; i++){
+        if (*pcCurrent == 0){
+            fprintf(fout, "0");
+        }
+        else {
+            fprintf(fout, "1");
+        }
+        pcCurrent++;
+    }
+    //fprintf(fout, " ");
+}
+
+//Takes a hashed value, a start location, and a length.
+//Returns a pointer to the desired entry if available, NULL otherwise. 
+HashTableEntry *FindEntry(int hashValue, char *pStart, int nLength){
+    HashTableEntry *pRetval = NULL;
+    HashTableEntry *pCurrent = g_HashTable[hashValue];
+
+    while (pCurrent != NULL) {
+        //If they match, we've got our entry
+        if (!memcmp(pStart, pCurrent->pStart, nLength)) {
+            dprintf(("Found a match in our hash table entries!\n"));
+            //dprintf(("Memcmp(%d %d %d) = %d\n", pStart, pCurrent->pStart, nLength, memcmp(pStart, pCurrent->pStart, nLength)));
+            pRetval = pCurrent;
+            break;
+        }
+        //Otherwise, try the next entry.
+        pCurrent = pCurrent->pNext;
+    }
+    return pRetval;
+}
+
+int HashIt(char *pBegin, int nLength) {
+    int nHashValue = 0;
+    
+    for (int i = 0; i < nLength; i++){
+        assert(*pBegin != -1);
+        nHashValue = (nHashValue*2 + *pBegin) % TABLE_SIZE;
+        pBegin++;
+    }
+
+    return nHashValue;
+}
+
+int main(){
+    FILE *fin = fopen("contact.in", "r");
+    assert(fin);
+    FILE *fout = fopen("contact.out", "w");
+
+    int nMinLength = 0;
+    int nMaxLength = 0;
+    int nNumFrequencies = 0;
+
+    for (int i=0; i < MAX_INPUT_BITS; i++){
+        g_InputArray[i] = -1;
+    }
+
+    fscanf(fin, "%d %d %d\n", &nMinLength, &nMaxLength, &nNumFrequencies);
+    dprintf(("Frequencies: %d %d %d\n", nMinLength, nMaxLength, nNumFrequencies));
+
+    char *pCurrentLocation = g_InputArray;
+    char cCurrent = 0;
+    while(EOF != (cCurrent = fgetc(fin)) ) {
+        switch (cCurrent) {
+        case '\n':
+            continue;
+        case '0':
+            *pCurrentLocation = 0;
+            pCurrentLocation++;
+            g_nInputSize++;
+            break;
+        case '1':
+            *pCurrentLocation=1;
+            pCurrentLocation++;
+            g_nInputSize++;
+            break;
+        default:
+            dprintf(("Hit unexpected cCurrent.  Value is", cCurrent));
+        }
+    }
+
+    int nCurrentLocation = 0;
+    int nHashValue = 0;
+    HashTableEntry *hteEntry;
+    
+    //Build up our Hash Table Entries
+    for (int i = nMinLength; i <= nMaxLength; i++){
+        //Add every string of the given length to our array.
+        ////So long as there's enough of our string left to fit the given length...
+        for (int j = 0; j+i <= g_nInputSize; j++) {
+            //Calculate the hash from here
+            nHashValue = HashIt(&g_InputArray[j], i);
+            //Check if we already have an entry
+            hteEntry = FindEntry(nHashValue, &g_InputArray[j], i);
+            //dprintf(("Hash value:  %d\n", nHashValue));
+            if (hteEntry){ //If we already have an entry, update the frequency.
+                hteEntry->nFrequency++;
+                dprintf(("Frequency Updated to %d\n", hteEntry->nFrequency));
+            } else { //Otherwise, create a new entry and add it to the front of our list.
+                dprintf(("New entry.  i = %d, j = %d, g_nInputSize = %d\n", i, j, g_nInputSize));
+                hteEntry = g_pNextFreeEntry;
+                g_pNextFreeEntry++;
+                g_nHeapSize++;
+                hteEntry->nFrequency = 1;
+                hteEntry->pStart = &g_InputArray[j];
+                hteEntry->nLength = i;
+                hteEntry->pNext = g_HashTable[nHashValue];
+                g_HashTable[nHashValue] = hteEntry;
+            }
+        }
+    }
+
+    //Sort our HashTableEntry array.
+    qsort(g_HashTableEntries, g_nHeapSize, sizeof(HashTableEntry), CompareHashTableEntries);
+
+    //Print our entries!
+    int DistinctFrequencies = 0;
+    int LastFrequency = -1;
+    int fHasTrailingNewline = 0;
+    int fNumberOfFrequenciesSoFar = 0;
+    for (int i = 0; i < g_nHeapSize; i++){
+        //Is this a new frequency?  If so, print it on its own line.
+        if (LastFrequency != g_HashTableEntries[i].nFrequency) {
+            if (DistinctFrequencies != 0) {fHasTrailingNewline = 1; fprintf(fout, "\n");}
+            DistinctFrequencies++;
+            if (DistinctFrequencies > nNumFrequencies) {break; }
+            LastFrequency = g_HashTableEntries[i].nFrequency;
+            fprintf(fout, "%d\n", g_HashTableEntries[i].nFrequency);
+            fHasTrailingNewline = 1;
+            fNumberOfFrequenciesSoFar = 0;
+        }
+        
+        if (fNumberOfFrequenciesSoFar > 0) {
+            fprintf(fout, " ");
+            fNumberOfFrequenciesSoFar++;
+        }
+        PrintHashTableString(&g_HashTableEntries[i], fout);
+        fHasTrailingNewline = 0;
+        fNumberOfFrequenciesSoFar++;
+        if (fNumberOfFrequenciesSoFar > 6){
+            fprintf(fout, "\n");
+            fNumberOfFrequenciesSoFar = 0;
+            fHasTrailingNewline = 1;
+        }
+        
+    }
+
+    if (!fHasTrailingNewline) {
+        fprintf(fout, "\n");
+    }
+    
+    /*
+    //Find the nNumFrequencies top frequencies.
+    std::priority_queue<int, std::vector<int>, std::greater<int> > heapBestFrequencies;
+    std::priority_queue<int, std::vector<int>, std::greater<int> >::iterator heapIter; 
+    HashTableEntry *pCurrentEntry = NULL;
+    dprintf(("g_nHeapSize = %d\n", g_nHeapSize));
+    for (int i = 0; i < g_nHeapSize; i++){
+        dprintf(("Looping:  i = %d, g_nHeapSize = %d\n", i, g_nHeapSize));
+        pCurrentEntry = &g_HashTableEntries[i];
+        if (heapBestFrequencies.size() < nNumFrequencies) {
+            dprintf(("Inserting %d into heap, since the heap is small.\n", pCurrentEntry->nFrequency));
+            heapBestFrequencies.push(pCurrentEntry->nFrequency);
+            continue;
+        }
+        else if (heapBestFrequencies.top() < pCurrentEntry->nFrequency) {
+            for (heapIter = heapBestFrequencies.begin(), heapIter!= heapBestFrequencies.end, heapIter++) {
+                if (*heapIter == pCurrentEntry->nFrequency) {continue;}
+            }
+            dprintf(("Inserting %d into heap, since we beat the top element.\n", pCurrentEntry->nFrequency));
+            heapBestFrequencies.pop();
+            heapBestFrequencies.push(pCurrentEntry->nFrequency);
+        }
+        else {
+            dprintf(("Not inserting %d into our heap.\n", pCurrentEntry->nFrequency));
+        }
+    }
+
+    //Print out our heap
+    printf("Heap Size: %d\n", heapBestFrequencies.size());
+    int nInitialHeapBestFrequenciesSize = heapBestFrequencies.size();
+    for (int i = 0; i < nInitialHeapBestFrequenciesSize; i++) {
+        printf("%d ", heapBestFrequencies.top());
+        heapBestFrequencies.pop();
+    }
+    printf("\n");
+    */
+
+    exit(0);
+
+}

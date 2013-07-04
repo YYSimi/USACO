@@ -1,0 +1,273 @@
+/*
+ID:  ysimidjiy1
+LANG: C++
+TASK: rect1
+*/
+
+#include <cstdio>
+#include <cstdlib>
+#include <cassert>
+#include <list>
+
+#define MAX_WIDTH 10000
+#define MAX_HEIGHT 10000
+#define MAX_COLORS 2500
+
+#define DEBUG
+#ifdef DEBUG
+#define dprintf(x) printf x
+#else 
+#define dprintf(x) if (0) {}
+#endif
+
+struct Point{
+    int x;
+    int y;
+    Point(int inX, int inY): x(inX), y(inY) {};
+    Point(): x(0), y(0) {};
+};
+
+struct rectangle {
+    Point PtLl;
+    Point PtUr;
+    int color;
+};
+
+struct line{
+    Point PtStart;
+    Point PtEnd;
+    line(Point inStart, Point inEnd): PtStart(inStart), PtEnd(inEnd) {};
+    line(): PtStart(0, 0), PtEnd(0, 0) {};
+};
+
+enum location {
+    LEFT = 0,
+    TOP,
+    RIGHT,
+    BOTTOM
+};
+
+int g_nWidth = 0;
+int g_nHeight = 0;
+int g_nRectangles = 0;
+int g_ColorAreas[MAX_COLORS];
+std::list<rectangle> g_listRectangles;
+
+void PrintRect(rectangle &r) {
+    dprintf(("(%d %d), (%d %d), color: %d", r.PtLl.x, r.PtLl.y, r.PtUr.x, r.PtUr.y, r.color));
+}
+
+void PrintPoint(Point &pt) {
+    dprintf(("(%d %d)", pt.x, pt.y));
+}
+
+//Verifies that rect is contained within background.
+int VerifyRectangle(rectangle &rect, rectangle &background) {
+    if (background.PtLl.x <= rect.PtLl.x && rect.PtLl.x <= background.PtUr.x &&
+        background.PtLl.y <= rect.PtLl.y && rect.PtLl.y <= background.PtUr.y &&
+        background.PtLl.x <= rect.PtUr.x && rect.PtUr.x <= background.PtUr.x && 
+        background.PtLl.y <= rect.PtUr.y && rect.PtUr.y <= background.PtUr.y) {
+        return true;
+    }
+    dprintf(("Found a bullshit rect!\n"));
+    return false;
+}
+
+bool DoesAxisLineIntersectLine(line l1, line l2) {
+    Point maxStart(std::max(l1.PtStart.x, l2.PtStart.x), std::max(l1.PtStart.y, l2.PtStart.y));
+    Point minEnd(std::min(l1.PtEnd.x, l2.PtEnd.x), std::min(l1.PtEnd.y, l2.PtEnd.y));
+    dprintf(("\tDoesAxisLineIntersectLine maxStart: ")); PrintPoint(maxStart);
+    dprintf(("\n\t minEnd: ")); PrintPoint(minEnd); dprintf(("\n"));
+    if ((maxStart.x > minEnd.x) || (maxStart.y > minEnd.y)) {return false;}
+    else {return true;}
+}
+
+bool DoesRectangleIntersectRectangle(rectangle r1, rectangle r2){
+    //It's nuts, but it works because my code is terrible:
+    return DoesAxisLineIntersectLine(line(r1.PtLl, r1.PtUr), line(r2.PtLl, r2.PtUr));
+}
+
+bool DoesLineIntersectRectangle(line myLine, rectangle rectIn) {
+    //Again, works because my code is terrible.
+    return DoesAxisLineIntersectLine(myLine, line(Point(rectIn.PtLl.x+1, rectIn.PtLl.y+1),
+                                                  Point(rectIn.PtUr.x-1, rectIn.PtUr.y-1)));
+};
+
+//Given a line, a location for the line, and a rectangle, appropriately splits the rectangle in two.
+//No, fuck you, I'm not telling you what "appropriately" means.  This code is not maintainable.
+//Good luck fixing this unholy mess.  
+void ProcessLine(line myLine, location loc, std::list<rectangle>::iterator &itRectIn){
+    dprintf(("splitting rect given by ")); PrintRect(*itRectIn); dprintf(("\n"));
+    rectangle rectNew;
+    rectNew.color = itRectIn->color;
+    switch(loc) {
+    case TOP:
+    case BOTTOM: {
+        dprintf(("x-axis split at %d\n", myLine.PtStart.y));
+        myLine.PtStart.x = 0;
+        myLine.PtEnd.x = MAX_WIDTH;
+        if (!DoesLineIntersectRectangle(myLine, *itRectIn)){goto Return;}
+        //Find virtual intersection
+        Point ptLeft(itRectIn->PtLl.x, myLine.PtStart.y);
+        Point ptRight(itRectIn->PtUr.x, myLine.PtStart.y);
+        //Split the rectangles, marking the one we don't want to process further as "new"
+        if (loc == TOP) {
+            rectNew.PtLl = ptLeft;
+            rectNew.PtUr = itRectIn->PtUr;
+            itRectIn->PtUr = ptRight;
+            rectNew.PtLl.y++;
+        }
+        else if (loc == BOTTOM) {
+            rectNew.PtLl = itRectIn->PtLl;
+            rectNew.PtUr = ptRight;
+            itRectIn->PtLl = ptLeft;
+            rectNew.PtUr.y--;
+        }
+        else {assert(false);}
+        break;
+    }
+    case LEFT:
+    case RIGHT: {
+        dprintf(("y-axis split at %d\n", myLine.PtStart.x));
+        myLine.PtStart.y = 0;
+        myLine.PtEnd.y = MAX_HEIGHT;
+        if (!DoesLineIntersectRectangle(myLine, *itRectIn)){goto Return;}
+        //Find virtual intersection
+        Point ptBottom(myLine.PtStart.x, itRectIn->PtLl.y);
+        Point ptTop(myLine.PtStart.x, itRectIn->PtUr.y);
+        //Split the rectangles
+        if (loc == LEFT) {
+            rectNew.PtLl = itRectIn->PtLl;
+            rectNew.PtUr = ptTop;
+            itRectIn->PtLl = ptBottom;
+            rectNew.PtUr.x--;
+        }
+        else if (loc == RIGHT) {
+            rectNew.PtLl = ptBottom;
+            rectNew.PtUr = itRectIn->PtUr;
+            itRectIn->PtUr = ptTop;
+            rectNew.PtLl.x++;
+        }
+        else {assert(false);}
+        break;
+    }
+    }
+    
+    dprintf(("Split Rect into \n\t old: ")); PrintRect(*itRectIn); dprintf(("\n\t new: ")); PrintRect(rectNew); dprintf(("\n"));
+    g_listRectangles.insert(itRectIn, rectNew);
+ Return:
+    return;
+}
+
+void ProcessRectangle(rectangle rectIn) {
+
+    static const int nLines = 4;
+    static line lines[nLines];
+
+    int nStoredOldColor;
+    std::list<rectangle>::iterator iterNext;
+    for (std::list<rectangle>::iterator iter = g_listRectangles.begin();
+         iter != g_listRectangles.end();
+         /*iter++  //Manually manage increments */){
+        
+
+        //If the rectangles don't intersect, do nothing
+        if (!DoesRectangleIntersectRectangle(rectIn, *iter)) {
+            iter++;
+            continue;
+        }
+        
+        //If the rectangles do intersect, process line by line
+        //Label vertices as below
+        //
+        //  b  c
+        //  a  d
+        //
+
+        //a->b
+        lines[0].PtStart = rectIn.PtLl;
+        lines[0].PtEnd = Point(rectIn.PtLl.x, rectIn.PtUr.y);
+        
+        //b->c
+        lines[1].PtStart = lines[0].PtEnd;
+        lines[1].PtEnd = rectIn.PtUr;
+
+        //c->d
+        lines[2].PtStart = lines[1].PtEnd;
+        lines[2].PtEnd = Point(rectIn.PtUr.x, rectIn.PtLl.y);
+
+        //d->a
+        lines[3].PtStart = lines[2].PtEnd;
+        lines[3].PtEnd = rectIn.PtLl;
+
+        for (int i = 0; i < nLines; i++){
+            ProcessLine(lines[i], (location)i, iter);
+        }
+
+        //Once we've finished processing, erase the remaining rectangle
+        iterNext = iter;
+        iterNext++;
+        g_listRectangles.erase(iter);
+        iter = iterNext;
+    }
+    
+    g_listRectangles.push_back(rectIn);
+
+    return;
+}
+
+int main(){
+    
+    FILE *fin = fopen("rect1.in", "r");
+    FILE *fout = fopen("rect1.out", "w");
+    
+    fscanf(fin, "%d %d %d\n", &g_nWidth, &g_nHeight, &g_nRectangles);
+
+    rectangle rectIn;
+
+    //Initialize a background rectangle.
+    rectIn.PtLl.x = 0;
+    rectIn.PtLl.y = 0;
+    rectIn.PtUr.x = g_nHeight-1;
+    rectIn.PtUr.y = g_nHeight-1;
+    rectIn.color = 1;
+    g_listRectangles.push_front(rectIn);
+    dprintf(("Inserted rectangle (%d, %d), (%d, %d), %d into our list\n", 
+             rectIn.PtLl.x, rectIn.PtLl.y, rectIn.PtUr.x, rectIn.PtUr.y, rectIn.color));
+
+        
+    for (int i=0; i < g_nRectangles; i++){
+        dprintf(("=========READFILE RECTANGLE %d IS BEING PROCESSED=========\n", i));
+        fscanf(fin, "%d %d %d %d %d\n",
+               &rectIn.PtLl.x, &rectIn.PtLl.y, &rectIn.PtUr.x, &rectIn.PtUr.y, &rectIn.color);
+        rectIn.PtUr.x--;
+        rectIn.PtUr.y--;
+        dprintf(("processing (%d, %d), (%d, %d), c: %d\n", 
+                 rectIn.PtLl.x, rectIn.PtLl.y, rectIn.PtUr.x, rectIn.PtUr.y, rectIn.color));
+        ProcessRectangle(rectIn);
+        //g_listRectangles.push_front(rectIn);
+        //dprintf(("Inserted rectangle (%d, %d), (%d, %d), %d into our list\n", 
+        //         rectIn.PtLl.x, rectIn.PtLl.y, rectIn.PtUr.x, rectIn.PtUr.y, rectIn.color));
+
+    }
+
+    //Aggregate results
+    int nArea;
+    for (std::list<rectangle>::iterator iter = g_listRectangles.begin();
+         iter != g_listRectangles.end();
+         iter++) {
+        nArea = (iter->PtUr.x-iter->PtLl.x+1)*(iter->PtUr.y-iter->PtLl.y+1);
+        PrintRect(*iter); dprintf((" nArea: %d\n", nArea));
+        g_ColorAreas[iter->color] += nArea;
+    }
+
+    //Print results
+    for (int i = 0; i < MAX_COLORS; i++){
+        //dprintf(("scanning colors[%d] = %d\n", i, g_ColorAreas[i]));
+        if (g_ColorAreas[i] >0){
+            fprintf(fout, "%d %d\n", i, g_ColorAreas[i]);
+        }
+    }
+    exit(0);
+
+}

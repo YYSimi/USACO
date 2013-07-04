@@ -1,0 +1,44 @@
+/*
+ID:  ysimidjiy1
+LANG: C++
+TASK: agri-net
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+
+#define MAX_FARMS 100
+
+int g_ConnectivityMatrix[MAX_FARMS][MAX_FARMS] = {0};
+
+#ifdef DEBUG 
+#define dprintf(printf_args, ...) printf(printf_args, ...)
+#else
+#define dprintf(printf_args)
+#endif
+
+void ReadData(){
+    FILE *fIn = fopen("test.in", "r");
+    int nFarms = 0;
+    assert(fIn != NULL);
+    printf("Getting started.\n");
+    fscanf(fIn, "%d\n", &nFarms); //Read in the number of farms
+    
+    //Fill in the array one farm at a time.
+    for (int i = 0; i < nFarms; i++){
+        for (int j = 0; j < nFarms; j++) {
+            fscanf(fIn, "%d", &g_ConnectivityMatrix[i][j]);
+            dprintf("%d %d: %d \n", i, j, g_ConnectivityMatrix[i][j]);            
+        }
+    }
+
+    return;
+}
+
+int main(){
+
+    ReadData();
+    return 0;
+
+}

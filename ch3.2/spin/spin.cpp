@@ -1,0 +1,479 @@
+/*
+ID:  ysimidjiy1
+LANG: C++
+TASK: spin
+*/
+
+#define NDEBUG
+
+#ifndef NDEBUG
+#define DEBUG
+#endif
+
+//#define TEST
+
+#ifdef DEBUG
+#define DBGRUN(x) x
+#else
+#define DBGRUN(x) while(0) {}
+#endif
+
+#define TASKNAME spin
+
+#include <cstdio>
+#include <cstdlib>
+#include <cassert>
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <list>
+#include <queue>
+#include <algorithm>
+
+using namespace std;
+
+std::queue<int> g_newValidTimes;
+std::queue<int> g_oldValidTimes;
+int g_newPeriod;
+int g_oldPeriod;
+
+int GCD(const int& period1, const int& period2);
+int LCM(const int& period1, const int& period2);
+
+class CWedge {
+public: //"Meaty" functions
+    CWedge(uint _start, uint _end): start(_start), end(_end), id(WedgeCount) {WedgeCount++; Validate();}
+    static CWedge CWedgeFromExtant(uint _start, uint _extant) {int _end = (_start + _extant)%360; return CWedge(_start, _end);} 
+    CWedge &operator+=(int angle) {start += angle; start = start %360; end += angle; end = end %360;}
+    bool Contains(uint angle);
+
+public: //helper functions
+    uint GetId() {return id;}
+    uint GetStart() {return start;}
+    uint GetEnd() {return end;}
+    friend std::ostream &operator<<(std::ostream &stream, CWedge &wedge);
+private:
+    bool Validate();
+private:
+    static uint WedgeCount;
+    const uint id;
+    uint start; //Inclusive
+    uint end; //Inclusive
+};
+uint CWedge::WedgeCount = 0;
+
+std::ostream &operator<<(std::ostream &stream, CWedge &wedge) {
+    stream << "id:" << wedge.GetId() << " start:" << wedge.GetStart() << " end:" << wedge.GetEnd();
+    return stream;
+}
+
+class CWheel{
+public:
+    CWheel(uint _speed): speed(_speed), id(wheelCount), period(LCM(speed,360)/speed) {wheelCount++;}
+    void AddWedge(const CWedge &wedge);
+    bool AllowsLightThrough(const int &angle);
+    void step(int nTimes) {     
+        for (std::list<CWedge>::iterator iter = wedgeList.begin(); iter != wedgeList.end(); iter++) 
+            {(*iter)+=nTimes*speed;}
+    }
+    void FillValidChecksList(list<uint> &list) {
+        for (std::list<CWedge>::iterator iter = wedgeList.begin(); iter != wedgeList.end(); iter++)
+            {list.push_back(iter->GetStart());}
+    }
+    friend ostream &operator<<(ostream &out, CWheel wheel);
+
+public: //getters/setters
+    uint GetId() {return id;}
+    uint GetPeriod() {return period;}
+
+private:
+    list<CWedge> wedgeList;
+    uint const speed;
+    uint const period;
+
+private:
+    static uint wheelCount;
+    const uint id;
+};
+uint CWheel::wheelCount = 0;
+
+bool CWedge::Contains(uint angle){
+    assert(start != end);
+    if (start < end) {
+        if (start <= angle && angle <= end) {return true;}
+        else {return false;}
+    }
+    if (end < start) {
+        if (angle >= start || angle <= end) {return true;}
+        else {return false;}
+    }
+
+}
+
+bool CWedge::Validate() {
+    if (start > 359) {
+        std::cerr << "Wedge " << id << " has bad value for start: " << start << std::endl;
+        return false;
+    }
+    if (end > 359) {
+        std::cerr << "Wedge " << id << " has bad value for end: " << end << std::endl;
+        return false;
+    }
+    return true;
+};
+
+void CWheel::AddWedge(const CWedge &wedge){
+    wedgeList.push_back(wedge);
+    return;
+}
+
+bool CWheel::AllowsLightThrough(const int &angle){
+    for (std::list<CWedge>::iterator iter = wedgeList.begin(); iter != wedgeList.end(); iter++)
+        {
+            if(iter->Contains(angle)) {return true;}
+        }
+    return false;
+}
+
+int GCD(const int &v1, const int &v2) {
+    int a = v1;
+    int b = v2;
+    int r = a % b;
+        
+    while (r > 0) {
+        a = b;
+        b = r;
+        r = a % b;
+    }
+
+    return b;
+}
+
+int LCM(const int& period1, const int& period2) {
+    return period1*period2/GCD(period1, period2); //( = LCM)
+}
+
+ostream &operator<<(ostream &out, CWheel wheel){
+    out << "Wheel " << wheel.GetId() << " has speed " << wheel.speed << " and contains the following wedges:" << endl;
+    for (std::list<CWedge>::iterator iter = wheel.wedgeList.begin();
+         iter != wheel.wedgeList.end();
+         iter++){
+        out << *iter << endl;
+    }
+    out << endl;
+    return out;
+}
+
+class IUnitTests{
+public:
+    void Execute();
+    IUnitTests(std::string _strTestName): strTestName(_strTestName) {};
+    virtual ~IUnitTests() {};
+protected:
+    const std::string strTestName;
+private: //Virtual/template methods and hooks
+    virtual void TestFunction() = 0;
+    virtual void PrintParametersHook() {}
+};
+
+class CSampleTest: public IUnitTests {
+public:
+    CSampleTest(int a, int b): IUnitTests(std::string("SampleTest")), nArgA(a), nArgB(b) {};
+
+private:
+    int nArgA;
+    int nArgB;
+    void PrintParametersHook() {std::cout << "nArgA: " << nArgA << ", nArgB: " << nArgB << std::endl;}
+    void TestFunction() {return;}
+};
+
+class CWedgeTest: public IUnitTests {
+public:
+    CWedgeTest(uint start, uint end): IUnitTests("CWedgeTester"), wedge(start, end) {};
+private: //tester privates
+    CWedge wedge;
+    void ContainmentTest(uint angle);
+    void AdditionTest(int angle);
+private: //template overrides
+    void PrintParametersHook() {std::cout << "Created wedge " << wedge << endl;}
+    void TestFunction();
+};
+
+void CWedgeTest::ContainmentTest(uint angle) {
+    if (wedge.Contains(angle)) {std::cout << "wedge " << wedge.GetId() << " contains angle " << angle << endl;}
+    else {std::cout << "wedge " << wedge.GetId() << " does not contain angle " << angle << endl;}
+}
+
+void CWedgeTest::AdditionTest(int angle){
+    cout << "Adding " << angle << " to wedge" << endl;
+    wedge += angle;
+    cout << wedge << endl;
+}
+
+void CWedgeTest::TestFunction(){
+    
+    cout << "Wedge Containment Tests" << endl;
+    ContainmentTest(0);
+    ContainmentTest(100);
+    ContainmentTest(359);
+    ContainmentTest(wedge.GetStart());
+    ContainmentTest(wedge.GetEnd());
+    ContainmentTest((wedge.GetEnd() - 1)%360);
+    cout << endl;
+
+    cout << "Wedge Addition Tests" << endl;
+    AdditionTest(0);
+    AdditionTest(100);
+    AdditionTest(360);
+    AdditionTest(460);
+    AdditionTest(-100);
+    cout << endl;
+}
+
+class CWheelTest: public IUnitTests {
+public:
+    CWheelTest(uint _speed): IUnitTests("CWheel Tests"), wheel(_speed) {};
+    void AddWedge(int start, int end) {
+        CWedge wedge(start, end); wheel.AddWedge(wedge); cout << "Added Wedge: " << wedge << endl;
+    }
+    void AllowsLightThrough(const int &angle);
+    void step(int nTimes);
+private:
+    CWheel wheel;
+    void PrintParametersHook() {cout << "Testing " << wheel << endl;}
+    void TestFunction();
+};
+
+void CWheelTest::AllowsLightThrough(const int &angle) {
+    if (wheel.AllowsLightThrough(angle)) { cout << wheel.GetId() << " lets light through at angle " << angle << endl;}
+    else { cout << wheel.GetId() << " does not let light through at angle " << angle << endl;}
+}
+
+void CWheelTest::step(int n) {
+    cout << "Stepping wheel by " << n << " units of time." << endl;
+    wheel.step(n);
+    cout << "Wheel is now " << wheel << endl;
+}
+
+void CWheelTest::TestFunction() {
+    AddWedge(100, 120);
+    AddWedge(350, 10);
+    cout << "Testing " << wheel;
+
+    AllowsLightThrough(0);
+    AllowsLightThrough(100);
+    AllowsLightThrough(120);
+    AllowsLightThrough(200);
+    AllowsLightThrough(355);
+
+    step(2);
+
+    AllowsLightThrough(0);
+    AllowsLightThrough(100);
+    AllowsLightThrough(120);
+    AllowsLightThrough(200);
+    AllowsLightThrough(355);
+
+    step(1);
+
+    cout << "Finished wheel tests." << endl << endl;
+}
+
+void IUnitTests::Execute(){
+    std::cout << std::endl;
+    std::cout << "Executing " << strTestName << " unit tests." << std::endl;
+    PrintParametersHook();
+    TestFunction();
+    std::cout << strTestName << " unit tests finished executing." << std::endl;
+    std::cout << std::endl;
+}
+
+CWheel WheelFactory(istream &inStream, uint _speed){
+    uint nSpeed(_speed);
+    uint nWedges(0);
+    uint start = 0;
+    uint extant = 0;
+    
+
+    inStream >> nWedges;
+    CWheel wheel(nSpeed);
+    for (uint i = 0; i < nWedges; i++) {
+        inStream >> start >> extant;
+        wheel.AddWedge(CWedge::CWedgeFromExtant(start, extant));
+    }
+    return wheel;
+}
+
+int main(){
+
+#ifdef TEST
+    CWedgeTest WedgeTest(0, 50);
+    WedgeTest.Execute();
+    CWedgeTest WedgeTest2(300, 0);
+    WedgeTest2.Execute();
+    CWedgeTest WedgeTest3(300, 359);
+    WedgeTest3.Execute();
+
+    CWheelTest WheelTest1(1);
+    WheelTest1.Execute();
+    CWheelTest WheelTest2(10);
+    WheelTest2.Execute();
+    CWheelTest WheelTest3(180);
+    WheelTest3.Execute();
+#endif
+
+    ifstream inStream("spin.in");
+    ofstream outStream("spin.out");
+
+    std::list<CWheel> wheels;
+    uint nSpeed;
+    while (inStream >> nSpeed){
+        wheels.push_back(WheelFactory(inStream, nSpeed));
+        DBGRUN(cout << "read in " << wheels.back() << endl);
+    }
+
+    DBGRUN(cout << "Finished reading in wheels" << endl);
+    
+    int fSuccess = false;
+    
+    uint nTimesteps = 0;
+    list<uint> ValidAnglesList;
+    int angle = 0;
+    int currentWheel = 1;
+    g_oldPeriod = 1;
+    g_oldValidTimes.push(0);
+
+    /*
+    //Add wheels to our collection one by one
+    for (std::list<CWheel>::iterator curWheel = wheels.begin(); curWheel != wheels.end(); curWheel++) {
+        DBGRUN(std::cout << "Adding wheel " << curWheel->GetId() << " to our collection!" << endl);
+
+        std::list<CWheel>::iterator nextWheel = curWheel;
+        nextWheel++;
+
+        g_newPeriod = LCM(g_oldPeriod, curWheel->GetPeriod());
+        DBGRUN(std::cout << "New Period is " << g_newPeriod <<endl);
+
+        //Grab the first timestamp to be checked.
+        int nextTime = g_oldValidTimes.front();
+        g_oldValidTimes.pop();
+        //until we've gone past the period of our new collection, check if the current timestep lets in light.
+        while (nextTime < g_newPeriod) {
+            g_oldValidTimes.push(nextTime+g_oldPeriod);
+            ValidAnglesList.clear();
+            //Fill in the ValidAnglesList
+            for (std::list<CWheel>::iterator iter = wheels.begin(); iter != nextWheel; iter++) {
+                iter->FillValidChecksList(ValidAnglesList);
+            }
+
+            //Test all potentially valid angles until a valid one is found or until we run out.
+            for (std::list<uint>::iterator iter = ValidAnglesList.begin();
+                 iter != ValidAnglesList.end();
+                 iter++){
+                uint angle = *iter;
+                bool fSuccess = true;
+                for (list<CWheel>::iterator testWheel = wheels.begin();
+                     testWheel != nextWheel;
+                     testWheel++) {
+                    if (!testWheel->AllowsLightThrough(angle)) {
+                        DBGRUN(cout << "The following wheel failed to allow light at angle " << angle << endl
+                               << *testWheel  << endl);
+                        fSuccess = false;
+                        break;
+                    }
+                }
+                if (fSuccess) {
+                    DBGRUN(cout << "Found valid time: " << nextTime << endl;);
+                    g_newValidTimes.push(nextTime);
+                    break;
+                }
+                DBGRUN(cout << "Incrementing iter" << endl);
+            }
+            DBGRUN(cout << "Incrementing Timestep to " << nextTime << endl);
+            nextTime = g_oldValidTimes.front();
+            g_oldValidTimes.pop();
+        }
+        g_oldValidTimes = g_newValidTimes;
+        g_oldPeriod = g_newPeriod;
+        g_newValidTimes = std::queue<int>();
+    }
+    */
+
+    //for (int i = 0; i < 100; i++) {
+    //    for (list<CWheel>::iterator iter = wheels.begin();
+    //         iter != wheels.end();
+    //         iter++){
+    //        iter->step(-1*nTimesteps);
+    //    }
+
+    //    nTimesteps = 0;
+    //    fSuccess = false;
+    //    ValidAnglesList = std::list<uint>();
+    while (!fSuccess) {
+        ValidAnglesList.clear();
+        
+        for (list<CWheel>::iterator iter = wheels.begin();
+             iter != wheels.end();
+             iter++){
+            iter->FillValidChecksList(ValidAnglesList);
+        }
+        //Test all potentially valid angles
+        for (std::list<uint>::iterator iter = ValidAnglesList.begin();
+             iter != ValidAnglesList.end();
+             iter++){
+            fSuccess = true;
+            angle = *iter;
+            for (list<CWheel>::iterator iter = wheels.begin();
+                 iter != wheels.end();
+                 iter++){
+                if (!iter->AllowsLightThrough(angle)) {
+                    fSuccess = false;
+                    if (nTimesteps == 261) {
+                        //DBGRUN(cout << "The following wheel failed to allow light at angle " << angle << endl
+                        //            << *iter  << endl);
+                    }
+                    break;
+                }
+            }
+            if (fSuccess) {break;}
+        }
+        
+        //Increment wheels if needed
+        if (!fSuccess) {
+            //if (nTimesteps == 261) 
+                DBGRUN(cerr << "For Timestep " << nTimesteps << " wheels were..." << endl);
+
+            for (list <CWheel>::iterator iter = wheels.begin(); iter != wheels.end(); iter++) {
+                //if (nTimesteps == 261)
+                    DBGRUN(cerr << *iter << endl;)
+                iter->step(1);
+            }
+            if (!(nTimesteps % 4)) {
+                DBGRUN(std::cerr << "Timestep " << nTimesteps << " failed.  Next timestep!\n");
+            }
+            nTimesteps++;
+            if (nTimesteps > 360) {
+                cout << "No valid timesteps found!" << endl;
+                outStream << "none" << endl;
+
+                exit(0);
+            }
+        }
+    }
+    
+    if (nTimesteps == 261) {
+        cout << "Timestep 261!  Our wheels were... " << endl;
+    }
+
+    for (list <CWheel>::iterator iter = wheels.begin(); iter != wheels.end(); iter++) {
+        cout << *iter;
+    }
+
+
+    //outStream << g_newValidTimes.front() << endl;
+    outStream << nTimesteps << endl;
+    cerr << "Successful angle was " << angle << endl; 
+    //}
+  exit(0);
+
+}

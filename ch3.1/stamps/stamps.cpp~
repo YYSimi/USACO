@@ -1,0 +1,17 @@
+/*
+ID:  ysimidjiy1
+LANG: C++
+TASK: stamps
+*/
+
+#define TASKNAME stamps
+
+#include <cstdio>
+#include <cstdlib>
+#include <cassert>
+
+int main(){
+
+  exit(0);
+
+}

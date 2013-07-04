@@ -1,0 +1,17 @@
+/*
+ID:  ysimidjiy1
+LANG: C++
+TASK: fact4
+*/
+
+#define TASKNAME fact4
+
+#include <cstdio>
+#include <cstdlib>
+#include <cassert>
+
+int main(){
+
+  exit(0);
+
+}
