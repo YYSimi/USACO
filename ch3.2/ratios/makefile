@@ -3,18 +3,18 @@ make pretty: clear all
 ugly: all
 
 all: 
-	gcc -g -pg -lm cur.c
+	g++ -g -pg -lm ratios.cpp
 
 clear:
 	clear
 
 test: pretty
-	./a.out test.in
-	cat test.out
+	./a.out ratios.in
+	cat ratios.out
 
 longtest: pretty
-	./a.out test.in > results.out
-	cat test.out
+	./a.out ratios.in > longtest.out
+	cat ratios.out
 
 clean:
 	rm *~

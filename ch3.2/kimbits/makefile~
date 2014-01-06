@@ -1,0 +1,24 @@
+make pretty: clear all
+
+ugly: all
+
+all: 
+	g++ -g -pg -lm Stringsorbits.cpp
+
+clear:
+	clear
+
+test: pretty
+	./a.out Stringsorbits.in
+	cat Stringsorbits.out
+
+longtest: pretty
+	./a.out Stringsorbits.in > longtest.out
+	cat Stringsorbits.out
+
+clean:
+	rm *~
+
+totalclean:
+	rm *~
+	rm \#*\#

@@ -1,20 +1,20 @@
 /*
 ID:  ysimidjiy1
 LANG: C++
-TASK: kimbits
+TASK: Stringsorbits
 */
 
 #ifndef NDEBUG
 #define DEBUG
 #endif
 
+#define TASKNAME Stringsorbits
+
 #ifdef DEBUG
 #define DBGRUN(x) x
 #else
 #define DBGRUN(x) 
 #endif
-
-#define TASKNAME kimbits
 
 #include <cstdio>
 #include <cstdlib>
