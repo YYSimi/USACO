@@ -1,10 +1,10 @@
 /*
 ID:  ysimidjiy1
-LANG: C++
-TASK: MSQUARE
+LANG: C++11
+TASK: msquare
 */
 
-#define NDEBUG
+//#define NDEBUG
 
 #ifndef NDEBUG
 #define DEBUG
@@ -26,15 +26,18 @@ TASK: MSQUARE
 #include <fstream>
 #include <unordered_map>
 #include <queue>
-#include <list>
+#include <vector>
+#include <cstdint>
 
 using namespace std;
 
 static const int nNumbers = 8;
 static const int nMoves = 3;
 
-typedef struct state { short nums[nNumbers]; std::list<char> moves; } state;
-std::unordered_map<int, bool> g_stateMap;
+int g_nStatesVisited = 0;
+
+typedef struct state { uint8_t nums[nNumbers]; std::list<char> moves; } state;
+std::unordered_map<uint32_t, bool> g_stateMap;
 state g_targetState;
 state g_initialState;
 std::queue<state> g_bfsQueue;
@@ -96,6 +99,7 @@ void ReadData() {
 
 void WriteData(state &outState) {
 	std::ofstream myOfStream("msquare.out");
+	myOfStream << outState.moves.size() << endl;
 	PrintMoves(outState, myOfStream);
 }
 
@@ -147,7 +151,6 @@ state& RunBfs(){
 
 	assert(!g_bfsQueue.empty());
 	state currentState = g_bfsQueue.front();
-	g_bfsQueue.pop();
 
 #ifdef DEBUG
 	std::cout << "Current State is ";	PrintState(currentState); std::cout << std::endl;
@@ -160,6 +163,7 @@ state& RunBfs(){
 	}
 	//Otherwise, enqueue new states
 	else {
+		g_bfsQueue.pop();
 		state newStates[nMoves];
 		for (int i = 0; i < nMoves; i++) {
 			newStates[i] = currentState;
@@ -175,6 +179,14 @@ state& RunBfs(){
 				//If not, mark it as visited and enqueue it	
 				g_bfsQueue.push(newStates[i]);
 				g_stateMap[PackState(newStates[i])] = true;
+
+#ifdef DEBUG
+				++g_nStatesVisited;
+				std::cout << "numStatesVisited:" << g_nStatesVisited << std::endl;
+#endif
+			}
+			else {
+				DBGRUN(cout << "Already visited node with moves "; PrintMoves(newStates[i]); cout << endl);
 			}
 		}
 	}
