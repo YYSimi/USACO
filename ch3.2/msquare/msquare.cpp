@@ -4,7 +4,7 @@ LANG: C++11
 TASK: msquare
 */
 
-//#define NDEBUG
+#define NDEBUG
 
 #ifndef NDEBUG
 #define DEBUG
@@ -26,7 +26,7 @@ TASK: msquare
 #include <fstream>
 #include <unordered_map>
 #include <queue>
-#include <vector>
+#include <list>
 #include <cstdint>
 
 using namespace std;
@@ -149,51 +149,49 @@ void MoveC(state &inState) {
 
 state& RunBfs(){
 
-	assert(!g_bfsQueue.empty());
-	state currentState = g_bfsQueue.front();
+	while (true) {
+		assert(!g_bfsQueue.empty());
+		state currentState = g_bfsQueue.front();
 
 #ifdef DEBUG
-	std::cout << "Current State is ";	PrintState(currentState); std::cout << std::endl;
-	std::cout << "Current moves are "; PrintMoves(currentState); std::cout << std::endl;
+		std::cout << "Current State is ";	PrintState(currentState); std::cout << std::endl;
+		std::cout << "Current moves are "; PrintMoves(currentState); std::cout << std::endl;
 #endif //DEBUG
 
-	//Are we at our goal?  If so, return our result.
-	if (!StateCmp(currentState, g_targetState)) {
-		return g_bfsQueue.front();
-	}
-	//Otherwise, enqueue new states
-	else {
-		g_bfsQueue.pop();
-		state newStates[nMoves];
-		for (int i = 0; i < nMoves; i++) {
-			newStates[i] = currentState;
+		//Are we at our goal?  If so, return our result.
+		if (!StateCmp(currentState, g_targetState)) {
+			return g_bfsQueue.front();
 		}
+		//Otherwise, enqueue new states
+		else {
+			g_bfsQueue.pop();
+			state newStates[nMoves];
+			for (int i = 0; i < nMoves; i++) {
+				newStates[i] = currentState;
+			}
 
-		MoveA(newStates[0]);
-		MoveB(newStates[1]);
-		MoveC(newStates[2]);
+			MoveA(newStates[0]);
+			MoveB(newStates[1]);
+			MoveC(newStates[2]);
 
-		for (int i = 0; i < nMoves; i++) {
-			//Check if we've already visited this node
-			if (g_stateMap[PackState(newStates[i])] != true){
-				//If not, mark it as visited and enqueue it	
-				g_bfsQueue.push(newStates[i]);
-				g_stateMap[PackState(newStates[i])] = true;
+			for (int i = 0; i < nMoves; i++) {
+				//Check if we've already visited this node
+				if (g_stateMap[PackState(newStates[i])] != true){
+					//If not, mark it as visited and enqueue it	
+					g_bfsQueue.push(newStates[i]);
+					g_stateMap[PackState(newStates[i])] = true;
 
 #ifdef DEBUG
-				++g_nStatesVisited;
-				std::cout << "numStatesVisited:" << g_nStatesVisited << std::endl;
+					++g_nStatesVisited;
+					std::cout << "numStatesVisited:" << g_nStatesVisited << std::endl;
 #endif
-			}
-			else {
-				DBGRUN(cout << "Already visited node with moves "; PrintMoves(newStates[i]); cout << endl);
+				}
+				else {
+					DBGRUN(cout << "Already visited node with moves "; PrintMoves(newStates[i]); cout << endl);
+				}
 			}
 		}
 	}
-
-	//If we've gotten this far, Recur.
-	return RunBfs();
-
 }
 
 state ExecuteProgram() {
