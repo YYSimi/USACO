@@ -1,8 +1,10 @@
 /*
 ID:  ysimidjiy1
-LANG: C++
+LANG: C++11
 TASK: ratios
 */
+
+#define NDEBUG
 
 #ifndef NDEBUG
 #define DEBUG
@@ -23,6 +25,113 @@ TASK: ratios
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <queue>
+
+static const int MAXFEEDS = 101;
+
+struct Feed{
+	int a;
+	int b;
+	int c;
+};
+
+struct Ratio {
+	int f1;
+	int f2;
+	int f3;
+};
+
+struct FeedQuantity {
+	Feed feed;
+	int quantity;
+};
+
+bool g_feedsVisited[100][100][100] = { 0 };
+Feed g_feeds[3];
+Feed g_targetFeed;
+
+void PrintRatio(const Ratio &r){
+	DBGRUN(std::cout << r.f1 << " " << r.f2 << " " << r.f3 << " " << std::endl);
+}
+
+bool TestFeedRatio(Ratio r) {
+	DBGRUN(std::cout << "Testing Feed Ratio" << std::endl);
+
+	Feed sum;
+	if (r.f1 == r.f2 && r.f2 == r.f3 && r.f3 == 0) { return false; }
+	sum.a = r.f1*g_feeds[0].a + r.f2*g_feeds[1].a + r.f3*g_feeds[2].a;
+	sum.b = r.f1*g_feeds[0].b + r.f2*g_feeds[1].b + r.f3*g_feeds[2].b;
+	sum.c = r.f1*g_feeds[0].c + r.f2*g_feeds[1].c + r.f3*g_feeds[2].c;
+	
+
+	//Test if sum.a/target.a = sum.b/target.b
+	if (sum.a*g_targetFeed.b == sum.b*g_targetFeed.a) {
+		//Test if sum.b/target.b = sum.c/target.c
+		if (sum.b*g_targetFeed.c == sum.c*g_targetFeed.b) { return true; }
+	}
+	return false;
+}
+
+void MarkVisited(const Ratio &r) {
+	Ratio temp = r;
+	while (temp.f1 < MAXFEEDS && temp.f2 < MAXFEEDS && temp.f3 < MAXFEEDS) {
+		g_feedsVisited[temp.f1][temp.f2][temp.f3] = true;
+		temp.f1 += r.f1; temp.f2 += r.f2; temp.f3 += r.f3;
+	}
+}
+
+void EnqueueRatio(const Ratio &r, std::queue<Ratio> &qRatios) {
+	DBGRUN(std::cout << "Enqueue-ing Ratio" << std::endl);
+	PrintRatio(r);
+	//Check if we've already visited this ratio
+	if (!g_feedsVisited[r.f1][r.f2][r.f3]) {
+		PrintRatio(r);
+
+		//Mark this ratio and all multiples of this ratio as visited.
+		MarkVisited(r);
+		PrintRatio(r);
+
+		//Add this ratio to the queue
+		qRatios.push(r);
+		PrintRatio(r);
+	}
+	return;
+
+}
+
+void EnqueueChildRatios(const Ratio &r, std::queue<Ratio> &qRatios) {
+	DBGRUN(std::cout << "Enqueue-ing Child Ratios" << std::endl);
+	Ratio rNew = r;
+	rNew.f1 += 1;
+	EnqueueRatio(rNew, qRatios);
+	rNew.f1 -= 1;
+	rNew.f2 += 1;
+	EnqueueRatio(rNew, qRatios);
+	rNew.f2 -= 1;
+	rNew.f3 += 1;
+	EnqueueRatio(rNew, qRatios);
+	DBGRUN(std::cout << "Enqueued Child Ratios" << std::endl;)
+
+	return;
+}
+
+Ratio BFS() {
+	std::queue<Ratio> qRatios;
+	Ratio rInitial;
+	rInitial.f1 = 0; rInitial.f2 = 0; rInitial.f3 = 0;
+	qRatios.push(rInitial);
+	Ratio rCurrent;
+	Ratio retval = rInitial;
+
+	while (!qRatios.empty())
+	{
+		rCurrent = qRatios.front();
+		if (TestFeedRatio(rCurrent)) { retval = rCurrent; break; }
+		EnqueueChildRatios(rCurrent, qRatios);
+		qRatios.pop();
+	}
+	return rCurrent;
+}
 
 class IUnitTests{
 public:
@@ -56,81 +165,24 @@ void IUnitTests::Execute(){
     std::cout << std::endl;
 }
 
-class Ratio {
-public:
-    //Ratio(): a(0), b(0), c(0) {}
-    explicit Ratio(int a): a(a), b(a), c(a) {}
-    Ratio(int a, int b, int c): a(a), b(b), c(c) {}
-    Ratio(const Ratio &rhs): a(rhs.a), b(rhs.b), c(rhs.c) {}
-    Ratio& operator*=(const Ratio &rhs) {
-        a *= rhs.a;
-        b *= rhs.b;
-        c *= rhs.c;
-        return *this;
-    }
-    Ratio& operator+=(const Ratio &rhs) {
-        a += rhs.a;
-        b += rhs.b;
-        c += rhs.c;
-        return *this;
-    }
-    int a;
-    int b;
-    int c;
-};
-
-Ratio operator*(Ratio lhs, const Ratio& rhs) {
-    lhs *= rhs;
-    return lhs;
-}
-
-Ratio operator+(Ratio lhs, const Ratio& rhs) {
-    lhs += rhs;
-    return lhs;
-}
-
-static const int TARGETID = 3;
-static const int MAXUNITS = 99;
-std::vector<Ratio> g_ratios;
-
-bool Validate(int x, int y, int z) {
-    Ratio totalRatio(Ratio(x)*g_ratios[0]+Ratio(y)*g_ratios[1]+Ratio(z)*g_ratios[2]);
-    int prodA, prodB, prodC;
-    prodA = totalRatio.a*g_ratios[TARGETID].b*g_ratios[TARGETID].c;
-    prodB = totalRatio.b*g_ratios[TARGETID].a*g_ratios[TARGETID].c;
-    prodC = totalRatio.c*g_ratios[TARGETID].a*g_ratios[TARGETID].b;
-    if ( prodA == prodB && prodB == prodC) {return true; }
-    return false;
-}
-
-bool Iterate() {
-    int j, k;
-    for (int sum1 = 1; sum1 <= 3*MAXUNITS; sum1++) { //i+j+k
-        for (int sum2 = 1; sum2 < sum1; sum2++) {//i+j
-            for (int i = 1; i < sum2; i++) {//i
-                j = sum2 - i;
-                k = sum1 - sum2;
-                if (Validate(i, j, k)) {
-                    DBGRUN(std::cout << "Found it!: (" << i << ", " << j << ", " << k << ")" << std::endl);
-                    break;
-                }
-            }
-        }
-    }
-}
-
 int main(){
 
     std::ifstream fIn("ratios.in");
     std::ofstream fOut("ratios.out");
 
-    int a, b, c;
-    for (int i = 0; i < 4; i++) {
-        fIn >> a >> b >> c;
-        g_ratios.push_back(Ratio(a, b, c));
-    }
+	//g_feeds[3]
+	//g_targetFeed
 
-    Iterate();
+	//Read the Input
+	fIn >> g_targetFeed.a >> g_targetFeed.b >> g_targetFeed.c;
+	for (int i = 0; i < 3; i++) {
+		fIn >> g_feeds[i].a >> g_feeds[i].b >> g_feeds[i].c;
+	}
+
+	Ratio target = BFS();
+
+	if (target.f1 == 0 && target.f2 == 0 && target.f3 == 0) { fOut << "NONE" << std::endl;  }
+	else { fOut << target.f1 << " " << target.f2 << " " << target.f3 << " " << (target.f1*g_feeds[0].a + target.f2*g_feeds[1].a + target.f3*g_feeds[2].a)/g_targetFeed.a << std::endl; }
 
 #ifdef DEBUG
     CSampleTest SampleTest(3, 5);
