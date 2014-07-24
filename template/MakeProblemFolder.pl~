@@ -1,3 +1,0 @@
-#!/usr/bin/perl -w
-
-$ProgramName=$argv[1]
