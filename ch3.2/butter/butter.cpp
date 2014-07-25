@@ -1,10 +1,10 @@
 /*
 ID:  ysimidjiy1
-LANG: C++
+LANG: C++11
 TASK: butter
 */
 
-//#define NDEBUG
+#define NDEBUG
 
 #ifndef NDEBUG
 #define DEBUG
@@ -32,7 +32,7 @@ static const int MAXCOWS = 500;
 static const int MAXPASTURES = 800;
 static const int MAXPATHS = 1450;
 
-static const int INFINITE = -1;
+static const int INFINITE = 500000;
 static const int NONE = -1;
 
 int g_nCows;
@@ -63,17 +63,28 @@ void PrintCowLocs() {
 }
 
 void FloydWarshall() {
+	static int nFirstHalf = 0;
+	static int nSecondHalf = 0;
+	static int nSum = 0;
+	static int nCurrentDistance = 0;
+
 	for (int k = 0; k < g_nPastures; k++) {
 		for (int i = 0; i < g_nPastures; i++) {
-			for (int f = 0; f < g_nPastures; f++){
-				if (g_pastureDistances[i][k] != INFINITE &&
-					g_pastureDistances[k][f] != INFINITE &&
-					(
-					g_pastureDistances[i][f] == INFINITE ||
-					g_pastureDistances[i][k] + g_pastureDistances[k][f] < g_pastureDistances[i][f]
-					)
-					){
-					g_pastureDistances[i][f] = g_pastureDistances[i][k] + g_pastureDistances[k][f];
+			for (int f = i+1; f < g_nPastures; f++){
+				if (i > k) { 
+					nFirstHalf = g_pastureDistances[k][i];
+					nSecondHalf = g_pastureDistances[k][f];
+				}
+				else {
+					nFirstHalf = g_pastureDistances[i][k];
+
+					if (f <= k) { nSecondHalf = g_pastureDistances[f][k]; }
+					else { nSecondHalf = g_pastureDistances[k][f]; }
+				}
+				nSum = nFirstHalf + nSecondHalf;
+				nCurrentDistance = g_pastureDistances[i][f];
+				if (nSum < nCurrentDistance){
+					g_pastureDistances[i][f] = nSum;
 				}
 			}
 		}
@@ -84,12 +95,19 @@ void FloydWarshall() {
 int FindBest() {
 	int nBestSoFar = INFINITE;
 	int bestPasture = -1;
+	int cowlocCurrent = 0;
 
 	int nTotalPath = 0;
 	for (int targetPasture = 0; targetPasture < g_nPastures; targetPasture++) {
 		nTotalPath = 0;
 		for (int j = 0; j < g_nCows; j++) {
-			nTotalPath += g_pastureDistances[targetPasture][g_cowLocs[j]];
+			cowlocCurrent = g_cowLocs[j];
+			if (targetPasture < cowlocCurrent){
+				nTotalPath += g_pastureDistances[targetPasture][cowlocCurrent];
+			}
+			else {
+				nTotalPath += g_pastureDistances[cowlocCurrent][targetPasture];
+			}
 		}
 		if (nTotalPath < nBestSoFar || nBestSoFar == INFINITE) { 
 			nBestSoFar = nTotalPath; 
@@ -192,7 +210,7 @@ int main(){
 	//Write Output
 	DBGRUN(cout << "answer: " << outval << endl;)
 	ofstream fOut("butter.out");
-	fOut << outval;
+	fOut << outval << endl;
 
 
 #ifdef DEBUG
